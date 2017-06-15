@@ -95,7 +95,7 @@ Clock组件现在被定义为一个class而不是一个function，这样我们�
 现在把props中的date移到state中，分三个步骤：
 1. 将render()方法中的this.props.date 替换为this.state.date
 
-    ```javascript
+```javascript
 class Clock extends React.Component {
   render() {
     return (
@@ -106,10 +106,10 @@ class Clock extends React.Component {
     );
   }
 }
-    ```
+```
 2. 添加一个constructor来初始化this.state
 
-    ```javascript
+```javascript
 class Clock extends React.Component {
   constructor(props) {
     super(props);
@@ -127,9 +127,9 @@ class Clock extends React.Component {
     );
   }
 }
-    ```
+```
     **注意怎么将props传递给了React.Component的构造函数的,class组件应始终调用父类 的构造函数，并传递props作为参数。**
- ```javascript
+```javascript
 constructor(props) {
     super(props);
     this.state = {date: new Date()};
