@@ -128,24 +128,25 @@ class Clock extends React.Component {
   }
 }
 ```
-    **注意怎么将props传递给了React.Component的构造函数的,class组件应始终调用父类 的构造函数，并传递props作为参数。**
+**注意怎么将props传递给了React.Component的构造函数的,class组件应始终调用父类 的构造函数，并传递props作为参数。**
+
 ```javascript
 constructor(props) {
     super(props);
     this.state = {date: new Date()};
 }
-    ```
-    [关于super关键字](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/super)
-    >在构造函数中使用时，super关键字单独出现，必须在可以使用this关键字之前使用。此关键字也可用于调用父对象上的函数。
+```
+[关于super关键字](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/super)
+>在构造函数中使用时，super关键字单独出现，必须在可以使用this关键字之前使用。此关键字也可用于调用父对象上的函数。
  
 3. 将date属性从 &lt;Clock /&gt;中移除
 
-    ```javascript
+```javascript
 ReactDOM.render(
   <Clock />,
   document.getElementById('root')
 );
-    ```
+```
 
 结果是这样的
 ```javascript
