@@ -80,7 +80,8 @@ ReactDOM.render(
 ```
 
 ## Keys
-**key 可以让React知道哪些列表项目已更改、添加或删除。**应该给每一项一个固定的key。
+
+**key 可以让React知道哪些列表项目已更改、添加或删除。** 应该给每一项一个固定的key。
 
 ```javascript
 const numbers = [1, 2, 3, 4, 5];

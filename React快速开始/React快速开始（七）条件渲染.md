@@ -57,7 +57,9 @@ function LogoutButton(props) {
 }
 ```
 
-现在创建一个有状态组件LoginControl，它将根据当前状态呈现&lt;LoginButton />或&lt;LogoutButton />。：[Try it on CodePen](https://codepen.io/gaearon/pen/QKzAgB?editors=0010)
+现在创建一个有状态组件LoginControl，它将根据当前状态呈现&lt;LoginButton />或&lt;LogoutButton />
+
+[Try it on CodePen](https://codepen.io/gaearon/pen/QKzAgB?editors=0010)
 
 ```javascript
 class LoginControl extends React.Component {
