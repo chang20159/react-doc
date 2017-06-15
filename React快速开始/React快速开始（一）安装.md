@@ -86,67 +86,68 @@ Yarn 和 npm 都是从[npm registry](https://www.npmjs.com/)下载包的
 
 ### [create-react-app](https://github.com/facebookincubator/create-react-app)
 
-    执行`npm run build`会在项目的build/目录生成生产版本代码，如果不是在生产环境，执行`npm start`
+执行`npm run build`会在项目的build/目录生成生产版本代码，如果不是在生产环境，执行`npm start`
 
 ### 引用外部文件
 下面引用的直接就是生产环境版本，注意只有 .min.js结尾的才是生产环境稳定版本
 
-    ```html
+```html
 <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
 <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
-    ```
+```
 ### Brunch配置
 
-    安装插件uglify-js-brunch 
+安装插件uglify-js-brunch 
     
-    ```
+```
 //If you use npm
 npm install --save-dev uglify-js-brunch
 //If you use Yarn
 yarn add --dev uglify-js-brunch
-    ```
-    然后使用`brunch build -p`构建
+```
+
+然后使用`brunch build -p`构建
     
 ### Browserify配置
-    安装几个插件
+安装几个插件
     
-    ```
+```
 //If you use npm
 npm install --save-dev bundle-collapser envify uglify-js uglifyify 
 //If you use Yarn
 yarn add --dev bundle-collapser envify uglify-js uglifyify 
-    ```
-    执行时带上这些transforms
+```
+执行时带上这些transforms
     
         * [envify](https://github.com/hughsk/envify)
         * [uglifyify](https://github.com/hughsk/uglifyify)
         * [bundle-collapser](https://github.com/substack/bundle-collapser)
         * 最后结果都pipe到uglify-js 
-    例如:
+例如:
     
-    ```
+```
     browserify ./index.js \
       -g [ envify --NODE_ENV production ] \
       -g uglifyify \
       -p bundle-collapser/plugin \
       | uglifyjs --compress --mangle > ./bundle.js
-    ```
+```
 
 ### Rollup配置
-    安装插件
+安装插件
     
-    ```
+```
 //If you use npm
 npm install --save-dev rollup-plugin-commonjs rollup-plugin-replace rollup-plugin-uglify 
-    ```
+```
 
-    ```
+```
 //If you use Yarn
 yarn add --dev rollup-plugin-commonjs rollup-plugin-replace rollup-plugin-uglify
-    ```
+```
     再配置文件
     
-    ```
+```
 plugins: [
   // ...
   require('rollup-plugin-replace')({
@@ -156,20 +157,20 @@ plugins: [
   require('rollup-plugin-uglify')(),
   // ...
 ]
-    ```
+```
 ### webpack配置
 
-    例如,  
+例如,  
     `npm run build`会根据生产版本配置文件webpack.config.js构建,  
     `npm run dev`会根据开发配置文件webpack-dev.config.js构建   
     在生产版本配置文件webpack.config.js中配置如下插件，需要生产版本就执行`npm run build`，平时开发就执行`npm run dev`
     
-    ```
+```
 new webpack.DefinePlugin({
   'process.env': {
     NODE_ENV: JSON.stringify('production')
   }
 }),
 new webpack.optimize.UglifyJsPlugin()
-    ```
+```
 
