@@ -135,19 +135,20 @@ JSX采用驼峰写法来描述事件名称，例如onChange、onClick
 样式属性名用-连接的都采用驼峰写法，例如font-size : fontSize,background-color:backgroundColor
 
 - 静态样式
-  ```html
+
+```html
 <span className='triangle' style={{display:'inline-block'}}></span>
-  ```
+```
 - 动态样式
 
-  ```javascript
+```javascript
 let spanStyle = {
   color: '#ff6633',
   fontSize: '14px'
 };
 <span style={{display:(spanStyle?'inline-block':'none'),...spanStyle}}></span>
 
-  ```
+```
 
 ### 使用表达式
 {}里面都是表达式，那就可以这样写
