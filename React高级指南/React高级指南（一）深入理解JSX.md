@@ -189,7 +189,7 @@ function NumberDescriber(props) {
 ### 字符串
 也可以给props传一个字符串，下面两种方式是等同的
 
-```javascript
+```jsx
 <MyComponent message="hello world" />
 
 <MyComponent message={'hello world'} />
@@ -198,7 +198,7 @@ function NumberDescriber(props) {
 
 如果要传递没有转义的字符串，下面这两种JSX表达式是等价的
 
-```javascript
+```jsx
 <MyComponent message="&lt;3" />
 
 <MyComponent message={'<3'} />
@@ -206,7 +206,7 @@ function NumberDescriber(props) {
 
 注意：如果这样写：
 
-```javascript
+```jsx
 <MyComponent message={"&lt;3"} />
 ```
 
@@ -221,7 +221,7 @@ React.createElement(MyComponent, { message: "&lt;3" });
 ### props默认为“真”
 如果没有给一个props传值，它默认为true。 下面这两个JSX表达式是等价的：
 
-```javascript
+```jsx
 <MyTextBox autocomplete />
 
 <MyTextBox autocomplete={true} />
