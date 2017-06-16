@@ -2,7 +2,7 @@ JSX其实就是React.createElement（component，props，... children）函数�
 
 JSX代码：
 
-```javascript
+```xml
 <MyButton color="blue" shadowSize={2}>
   Click Me
 </MyButton>
@@ -20,7 +20,7 @@ React.createElement(
 
 如果没有children，也可以用自闭合标签
 
-```javascript
+```xml
 <div className="sidebar" />
 ```
 

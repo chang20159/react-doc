@@ -1,0 +1,602 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>条件渲染 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="React快速开始（八）Lists和Keys.html" />
+    
+    
+    <link rel="prev" href="React快速开始（六）事件处理.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">快速开始</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="React快速开始（一）安装.html">
+            
+                <a href="React快速开始（一）安装.html">
+            
+                    
+                    安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="React快速开始（二）使用JSX.html">
+            
+                <a href="React快速开始（二）使用JSX.html">
+            
+                    
+                    使用JSX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="React快速开始（三）渲染元素.html">
+            
+                <a href="React快速开始（三）渲染元素.html">
+            
+                    
+                    渲染元素
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="React快速开始（四）组件和props.html">
+            
+                <a href="React快速开始（四）组件和props.html">
+            
+                    
+                    组件和props
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="React快速开始（五）State和生命周期.html">
+            
+                <a href="React快速开始（五）State和生命周期.html">
+            
+                    
+                    State和生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="React快速开始（六）事件处理.html">
+            
+                <a href="React快速开始（六）事件处理.html">
+            
+                    
+                    事件处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.7" data-path="React快速开始（七）条件渲染.html">
+            
+                <a href="React快速开始（七）条件渲染.html">
+            
+                    
+                    条件渲染
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="React快速开始（八）Lists和Keys.html">
+            
+                <a href="React快速开始（八）Lists和Keys.html">
+            
+                    
+                    Lists和Keys
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="React快速开始（九）表单.html">
+            
+                <a href="React快速开始（九）表单.html">
+            
+                    
+                    表单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="React快速开始（十）state提升.html">
+            
+                <a href="React快速开始（十）state提升.html">
+            
+                    
+                    state提升
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="React快速开始（十一）组合vs继承.html">
+            
+                <a href="React快速开始（十一）组合vs继承.html">
+            
+                    
+                    组合vs继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">高级指南</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../React高级指南/React高级指南（一）深入理解JSX.html">
+            
+                <a href="../React高级指南/React高级指南（一）深入理解JSX.html">
+            
+                    
+                    深入理解JSX
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">官方博客</li>
+        
+        
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >条件渲染</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <blockquote>
+<p><a href="https://facebook.github.io/react/docs/conditional-rendering.html" target="_blank">Conditional Rendering</a></p>
+</blockquote>
+<p>&#x5728;React&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x5728;&#x4E0D;&#x540C;&#x6761;&#x4EF6;&#x4E0B;&#x6E32;&#x67D3;&#x4E0D;&#x540C;&#x7EC4;&#x4EF6;&#x3002;</p>
+<p>&#x8FD9;&#x91CC;&#x6709;&#x4E24;&#x4E2A;&#x7EC4;&#x4EF6;&#xFF1A;</p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">UserGreeting</span>(<span class="hljs-params">props</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Welcome back!<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span></span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">GuestGreeting</span>(<span class="hljs-params">props</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Please sign up.<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span></span>;
+}
+</code></pre>
+<p>&#x73B0;&#x5728;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;Greeting&#x7EC4;&#x4EF6;&#xFF0C;&#x6839;&#x636E;&#x7528;&#x6237;&#x662F;&#x5426;&#x767B;&#x5F55;&#xFF0C;&#x663E;&#x793A;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#xFF1A;</p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Greeting</span>(<span class="hljs-params">props</span>) </span>{
+  <span class="hljs-keyword">const</span> isLoggedIn = props.isLoggedIn;
+  <span class="hljs-keyword">if</span> (isLoggedIn) {
+    <span class="hljs-keyword">return</span> &lt;UserGreeting /&gt;;
+  }
+  return &lt;GuestGreeting /&gt;;
+}
+
+ReactDOM.render(
+  // Try changing to isLoggedIn={true}:
+  &lt;Greeting isLoggedIn={false} /&gt;,
+  document.getElementById(&apos;root&apos;)
+);
+</code></pre>
+<p>&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x6839;&#x636E;props&#x4E2D;&#x7684;isLoggedIn&#x6E32;&#x67D3;&#x51FA;&#x4E0D;&#x540C;&#x7684;&#x5185;&#x5BB9;</p>
+<h2 id="&#x5143;&#x7D20;&#x53D8;&#x91CF;">&#x5143;&#x7D20;&#x53D8;&#x91CF;</h2>
+<p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x53D8;&#x91CF;&#x6765;&#x5B58;&#x50A8;&#x5143;&#x7D20;&#xFF0C;&#x5E76;&#x4E14;&#x6839;&#x636E;&#x6761;&#x4EF6;&#x5B58;&#x50A8;&#x5143;&#x7D20;&#xFF0C;&#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x6709;&#x6761;&#x4EF6;&#x5730;&#x6E32;&#x67D3;&#x3002;</p>
+<p>&#x8FD9;&#x91CC;&#x6709;&#x4E24;&#x4E2A;&#x7EC4;&#x4EF6;&#xFF0C;&#x6CE8;&#x9500;&#x548C;&#x767B;&#x5F55;&#x6309;&#x94AE;&#xFF1A;</p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">LoginButton</span>(<span class="hljs-params">props</span>) </span>{
+  <span class="hljs-keyword">return</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{props.onClick}</span>&gt;</span>
+      Login
+    <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span>
+  );
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">LogoutButton</span>(<span class="hljs-params">props</span>) </span>{
+  <span class="hljs-keyword">return</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{props.onClick}</span>&gt;</span>
+      Logout
+    <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span>
+  );
+}
+</code></pre>
+<p>&#x73B0;&#x5728;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6709;&#x72B6;&#x6001;&#x7EC4;&#x4EF6;LoginControl&#xFF0C;&#x5B83;&#x5C06;&#x6839;&#x636E;&#x5F53;&#x524D;&#x72B6;&#x6001;&#x5448;&#x73B0;&lt;LoginButton /&gt;&#x6216;&lt;LogoutButton /&gt;</p>
+<p><a href="https://codepen.io/gaearon/pen/QKzAgB?editors=0010" target="_blank">Try it on CodePen</a></p>
+<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LoginControl</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+  <span class="hljs-keyword">constructor</span>(props) {
+    <span class="hljs-keyword">super</span>(props);
+    <span class="hljs-keyword">this</span>.handleLoginClick = <span class="hljs-keyword">this</span>.handleLoginClick.bind(<span class="hljs-keyword">this</span>);
+    <span class="hljs-keyword">this</span>.handleLogoutClick = <span class="hljs-keyword">this</span>.handleLogoutClick.bind(<span class="hljs-keyword">this</span>);
+    <span class="hljs-keyword">this</span>.state = {isLoggedIn: <span class="hljs-literal">false</span>};
+  }
+
+  handleLoginClick() {
+    <span class="hljs-keyword">this</span>.setState({isLoggedIn: <span class="hljs-literal">true</span>});
+  }
+
+  handleLogoutClick() {
+    <span class="hljs-keyword">this</span>.setState({isLoggedIn: <span class="hljs-literal">false</span>});
+  }
+
+  render() {
+    <span class="hljs-keyword">const</span> isLoggedIn = <span class="hljs-keyword">this</span>.state.isLoggedIn;
+
+    <span class="hljs-keyword">let</span> button = <span class="hljs-literal">null</span>;
+    <span class="hljs-keyword">if</span> (isLoggedIn) {
+      button = &lt;LogoutButton onClick={this.handleLogoutClick} /&gt;;
+    } else {
+      button = &lt;LoginButton onClick={this.handleLoginClick} /&gt;;
+    }
+
+    return (
+      &lt;div&gt;
+        &lt;Greeting isLoggedIn={isLoggedIn} /&gt;
+        {button}
+      &lt;/div&gt;
+    );
+  }
+}
+
+ReactDOM.render(
+  &lt;LoginControl /&gt;,
+  document.getElementById(&apos;root&apos;)
+);
+</code></pre>
+<p>&#x58F0;&#x660E;&#x53D8;&#x91CF;&#x5E76;&#x4F7F;&#x7528;if&#x8BED;&#x53E5;,&#x8FD9;&#x662F;&#x6709;&#x6761;&#x4EF6;&#x5730;&#x5448;&#x73B0;&#x7EC4;&#x4EF6;&#x7684;&#x4E00;&#x4E2A;&#x597D;&#x65B9;&#x6CD5;&#xFF0C;&#x4F46;&#x6709;&#x65F6;&#x5E0C;&#x671B;&#x4F7F;&#x7528;&#x8F83;&#x77ED;&#x7684;&#x8BED;&#x6CD5;&#x3002; 
+&#x5728;JSX&#x4E2D;&#x6709;&#x51E0;&#x79CD;&#x5185;&#x8054;&#x6761;&#x4EF6;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x8FF0;&#x3002;</p>
+<h2 id="&#x903B;&#x8F91;&#x8FD0;&#x7B97;&#x7B26;-&#xFF08;&#x5185;&#x8054;if-&#xFF09;">&#x903B;&#x8F91;&#x8FD0;&#x7B97;&#x7B26;&amp;&amp; &#xFF08;&#x5185;&#x8054;If &#xFF09;</h2>
+<p>&#x53EF;&#x4EE5;&#x5728;JSX&#x4E2D;&#x5D4C;&#x5165;&#x4EFB;&#x4F55;&#x8868;&#x8FBE;&#x5F0F;&#x5E76;&#x5C06;&#x5176;&#x5305;&#x88F9;&#x5728;&#x82B1;&#x62EC;&#x53F7;&#x4E2D;&#xFF0C;JavaScript&#x903B;&#x8F91;&amp;&amp;&#x8FD0;&#x7B97;&#x7B26;&#x5C31;&#x53EF;&#x4EE5;&#x653E;&#x5728;{}&#x4E2D;&#x3002; </p>
+<p>&#x5B83;&#x53EF;&#x4EE5;&#x50CF;&#x8FD9;&#x6837;&#x63A7;&#x5236;&#x5143;&#x7D20;&#x5448;&#x73B0;&#xFF1A;<a href="https://codepen.io/gaearon/pen/ozJddz?editors=0010" target="_blank">Try it on CodePen</a></p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Mailbox</span>(<span class="hljs-params">props</span>) </span>{
+  <span class="hljs-keyword">const</span> unreadMessages = props.unreadMessages;
+  <span class="hljs-keyword">return</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Hello!<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+      {unreadMessages.length &gt; 0 &amp;&amp;
+        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>
+          You have {unreadMessages.length} unread messages.
+        <span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+      }
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+  );
+}
+
+<span class="hljs-keyword">const</span> messages = [<span class="hljs-string">&apos;React&apos;</span>, <span class="hljs-string">&apos;Re: React&apos;</span>, <span class="hljs-string">&apos;Re:Re: React&apos;</span>];
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Mailbox</span> <span class="hljs-attr">unreadMessages</span>=<span class="hljs-string">{messages}</span> /&gt;</span>,
+  document.getElementById(&apos;root&apos;)
+);
+</span></code></pre>
+<p>&#x5728;JavaScript&#x4E2D;&#xFF0C;true &amp;&amp; &#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x7ED3;&#x679C;&#x4E3A;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x5E76;&#x4E14; false &amp;&amp; &#x8868;&#x8FBE;&#x5F0F; &#x603B;&#x662F;&#x8BA1;&#x7B97;&#x4E3A;false&#x3002;</p>
+<p>&#x56E0;&#x6B64;&#xFF0C;&#x5982;&#x679C;&#x6761;&#x4EF6;&#x4E3A;&#x771F;&#xFF0C;&#x5219;&amp;&amp;&#x540E;&#x9762;&#x7684;&#x5143;&#x7D20;&#x5C06;&#x663E;&#x793A;&#x3002; &#x5982;&#x679C;&#x662F;false&#xFF0C;React&#x4F1A;&#x5FFD;&#x7565;&#x5E76;&#x8DF3;&#x8FC7;&#x5B83;&#x3002;</p>
+<h2 id="&#x6761;&#x4EF6;&#x8FD0;&#x7B97;&#x7B26;&#xFF08;&#x5185;&#x8054;if-else&#xFF09;">&#x6761;&#x4EF6;&#x8FD0;&#x7B97;&#x7B26;&#xFF08;&#x5185;&#x8054;if-Else&#xFF09;</h2>
+<p>&#x53E6;&#x4E00;&#x79CD;&#x5728;&#x5143;&#x7D20;&#x5185;&#x90E8;&#x6761;&#x4EF6;&#x6E32;&#x67D3;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x4F7F;&#x7528;JavaScript&#x6761;&#x4EF6;&#x8FD0;&#x7B97;&#x7B26;  ? true : false.
+&#x4E0B;&#x9762;&#x7684;&#x793A;&#x4F8B;&#xFF0C;&#x6709;&#x6761;&#x4EF6;&#x5730;&#x5448;&#x73B0;&#x4E00;&#x5C0F;&#x6BB5;&#x6587;&#x672C;&#x3002;</p>
+<pre><code class="lang-javascript">render() {
+  <span class="hljs-keyword">const</span> isLoggedIn = <span class="hljs-keyword">this</span>.state.isLoggedIn;
+  <span class="hljs-keyword">return</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+      The user is <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>{isLoggedIn ? &apos;currently&apos; : &apos;not&apos;}<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span> logged in.
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+  );
+}
+</code></pre>
+<p>&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x66F4;&#x5927;&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#xFF1A;</p>
+<pre><code class="lang-javascript">render() {
+  <span class="hljs-keyword">const</span> isLoggedIn = <span class="hljs-keyword">this</span>.state.isLoggedIn;
+  <span class="hljs-keyword">return</span> (
+    &lt;div&gt;
+      {isLoggedIn ? (
+        &lt;LogoutButton onClick={this.handleLogoutClick} /&gt;
+      ) : (
+        &lt;LoginButton onClick={this.handleLoginClick} /&gt;
+      )}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<p>&#x8FD9;&#x4E2A;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x4F60;&#x8BA4;&#x4E3A;&#x66F4;&#x6613;&#x8BFB;&#x7684;&#x65B9;&#x5F0F;&#x9009;&#x62E9;&#x5408;&#x9002;&#x7684;&#x65B9;&#x6CD5;&#x3002; </p>
+<p>&#x8FD8;&#x8981;&#x8BB0;&#x4F4F;&#xFF0C;&#x5982;&#x679C;&#x6761;&#x4EF6;&#x592A;&#x590D;&#x6742;&#xFF0C;&#x53EF;&#x4EE5;&#x8BD5;&#x8BD5;&#x63D0;&#x53D6;&#x7EC4;&#x4EF6;</p>
+<h2 id="&#x963B;&#x6B62;&#x7EC4;&#x4EF6;&#x6E32;&#x67D3;">&#x963B;&#x6B62;&#x7EC4;&#x4EF6;&#x6E32;&#x67D3;</h2>
+<p>&#x5728;&#x6781;&#x5C11;&#x6570;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x53EF;&#x80FD;&#x5E0C;&#x671B;&#x7EC4;&#x4EF6;&#x9690;&#x85CF;&#x81EA;&#x8EAB;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x8FD9;&#x6837;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;null&#x3002;
+<a href="https://codepen.io/gaearon/pen/Xjoqwm?editors=0010" target="_blank">Try it on CodePen</a></p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">WarningBanner</span>(<span class="hljs-params">props</span>) </span>{
+  <span class="hljs-keyword">if</span> (!props.warn) {
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;
+  }
+
+  <span class="hljs-keyword">return</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;warning&quot;</span>&gt;</span>
+      Warning!
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+  );
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Page</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+  <span class="hljs-keyword">constructor</span>(props) {
+    <span class="hljs-keyword">super</span>(props);
+    <span class="hljs-keyword">this</span>.state = {showWarning: <span class="hljs-literal">true</span>}
+    <span class="hljs-keyword">this</span>.handleToggleClick = <span class="hljs-keyword">this</span>.handleToggleClick.bind(<span class="hljs-keyword">this</span>);
+  }
+
+  handleToggleClick() {
+    <span class="hljs-keyword">this</span>.setState(prevState =&gt; ({
+      showWarning: !prevState.showWarning
+    }));
+  }
+
+  render() {
+    <span class="hljs-keyword">return</span> (
+      &lt;div&gt;
+        &lt;WarningBanner warn={this.state.showWarning} /&gt;
+        &lt;button onClick={this.handleToggleClick}&gt;
+          {this.state.showWarning ? &apos;Hide&apos; : &apos;Show&apos;}
+        &lt;/button&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+
+ReactDOM.render(
+  &lt;Page /&gt;,
+  document.getElementById(&apos;root&apos;)
+);
+</code></pre>
+<p><strong>&#x6CE8;&#x610F;&#xFF1A; &#x4ECE;&#x7EC4;&#x4EF6;&#x7684;render&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;null&#x4E0D;&#x4F1A;&#x5F71;&#x54CD;&#x7EC4;&#x4EF6;&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#x7684;&#x89E6;&#x53D1;&#x3002; 
+&#x4F8B;&#x5982;&#xFF0C;componentWillUpdate&#x548C;componentDidUpdate&#x4ECD;&#x5C06;&#x88AB;&#x8C03;&#x7528;&#x3002;</strong></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="React快速开始（六）事件处理.html" class="navigation navigation-prev " aria-label="Previous page: 事件处理">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="React快速开始（八）Lists和Keys.html" class="navigation navigation-next " aria-label="Next page: Lists和Keys">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"条件渲染","level":"2.7","depth":1,"next":{"title":"Lists和Keys","level":"2.8","depth":1,"path":"React快速开始/React快速开始（八）Lists和Keys.md","ref":"React快速开始/React快速开始（八）Lists和Keys.md","articles":[]},"previous":{"title":"事件处理","level":"2.6","depth":1,"path":"React快速开始/React快速开始（六）事件处理.md","ref":"React快速开始/React快速开始（六）事件处理.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"React快速开始/React快速开始（七）条件渲染.md","mtime":"2017-06-15T03:37:56.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-16T11:53:01.134Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

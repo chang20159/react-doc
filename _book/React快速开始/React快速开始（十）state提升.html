@@ -1,0 +1,605 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>state提升 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="React快速开始（十一）组合vs继承.html" />
+    
+    
+    <link rel="prev" href="React快速开始（九）表单.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">快速开始</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="React快速开始（一）安装.html">
+            
+                <a href="React快速开始（一）安装.html">
+            
+                    
+                    安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="React快速开始（二）使用JSX.html">
+            
+                <a href="React快速开始（二）使用JSX.html">
+            
+                    
+                    使用JSX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="React快速开始（三）渲染元素.html">
+            
+                <a href="React快速开始（三）渲染元素.html">
+            
+                    
+                    渲染元素
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="React快速开始（四）组件和props.html">
+            
+                <a href="React快速开始（四）组件和props.html">
+            
+                    
+                    组件和props
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="React快速开始（五）State和生命周期.html">
+            
+                <a href="React快速开始（五）State和生命周期.html">
+            
+                    
+                    State和生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="React快速开始（六）事件处理.html">
+            
+                <a href="React快速开始（六）事件处理.html">
+            
+                    
+                    事件处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="React快速开始（七）条件渲染.html">
+            
+                <a href="React快速开始（七）条件渲染.html">
+            
+                    
+                    条件渲染
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="React快速开始（八）Lists和Keys.html">
+            
+                <a href="React快速开始（八）Lists和Keys.html">
+            
+                    
+                    Lists和Keys
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="React快速开始（九）表单.html">
+            
+                <a href="React快速开始（九）表单.html">
+            
+                    
+                    表单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.10" data-path="React快速开始（十）state提升.html">
+            
+                <a href="React快速开始（十）state提升.html">
+            
+                    
+                    state提升
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="React快速开始（十一）组合vs继承.html">
+            
+                <a href="React快速开始（十一）组合vs继承.html">
+            
+                    
+                    组合vs继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">高级指南</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../React高级指南/React高级指南（一）深入理解JSX.html">
+            
+                <a href="../React高级指南/React高级指南（一）深入理解JSX.html">
+            
+                    
+                    深入理解JSX
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">官方博客</li>
+        
+        
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >state提升</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <blockquote>
+<p><a href="https://facebook.github.io/react/docs/lifting-state-up.html" target="_blank">Lifting State Up</a></p>
+</blockquote>
+<p>&#x8FD9;&#x7BC7;&#x7FFB;&#x8BD1;&#x7684;&#x65F6;&#x5019;&#x5570;&#x91CC;&#x5427;&#x55E6;&#xFF0C;Lifting State Up &#x8BD1;&#x4E3A; &#x2018;state&#x63D0;&#x5347;&#x2019;&#x611F;&#x89C9;&#x602A;&#x602A;&#x7684;&#xFF0C;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x4ECB;&#x7ECD;&#x4E86;&#x4E00;&#x79CD;&#x5144;&#x5F1F;&#x7EC4;&#x4EF6;&#x4E4B;&#x95F4;&#x901A;&#x4FE1;&#x7684;&#x65B9;&#x5F0F;&#x3002;&#x3002;&#x3002;</p>
+<p>&#x901A;&#x4FD7;&#x7684;&#x89E3;&#x91CA;&#x4E00;&#x4E0B;&#xFF1A;</p>
+<blockquote>
+<p>&#x7236;&#x7EC4;&#x4EF6;&#x6709;&#x5B50;&#x7EC4;&#x4EF6;A&#x548C;&#x5B50;&#x7EC4;&#x4EF6;B&#xFF0C;&#x5B50;&#x7EC4;&#x4EF6;A&#x63A5;&#x6536;&#x7236;&#x7EC4;&#x4EF6;&#x4F20;&#x9012;&#x7684;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x66F4;&#x65B0;&#x7236;&#x7EC4;&#x4EF6;&#x7684;state&#xFF0C;&#x5B50;&#x7EC4;&#x4EF6;&#x5728;&#x7528;&#x6237;&#x64CD;&#x4F5C;&#x65F6;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x6539;&#x53D8;&#x7236;&#x7EC4;&#x4EF6;&#x7684;state&#x4E86;&#x3002;</p>
+<p>&#x90A3;&#x5982;&#x679C;&#x7236;&#x7EC4;&#x4EF6;&#x628A;&#x8FD9;&#x4E2A;state&#x4F5C;&#x4E3A;props&#x4F20;&#x9012;&#x7ED9;&#x5B83;&#x7684;&#x53E6;&#x4E00;&#x4E2A;&#x5B50;&#x7EC4;&#x4EF6;B&#xFF0C;&#x90A3;&#x7ED3;&#x679C;&#x4E0D;&#x5C31;&#x662F; &#x5B50;&#x7EC4;&#x4EF6;A&#x4E2D;&#x7684;&#x64CD;&#x4F5C;&#x901A;&#x8FC7;&#x7236;&#x7EC4;&#x4EF6;&#x5F71;&#x54CD;&#x4E86;&#x5B50;&#x7EC4;&#x4EF6;B&#x4E48;&#x3002;&#x3002;&#x3002;</p>
+</blockquote>
+<p>&#x558F;&#xFF0C;&#x632B;&#x632B;&#x7684;&#x7FFB;&#x8BD1;&#x5F00;&#x59CB;&#x4E86;&#x3002;&#x3002;&#x3002;</p>
+<!--more-->
+<p>&#x6709;&#x65F6;&#x5019;&#x4F1A;&#x6709;&#x51E0;&#x4E2A;&#x7EC4;&#x4EF6;&#x6709;&#x76F8;&#x540C;state&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x6211;&#x4EEC;&#x5EFA;&#x8BAE;&#x628A;&#x5171;&#x4EAB;&#x7684;state&#x63D0;&#x5347;&#x5230;&#x6700;&#x8FD1;&#x7684;&#x5171;&#x540C;&#x7684;&#x7956;&#x5148;&#x4E0A;&#x3002; </p>
+<p>&#x8FD9;&#x91CC;&#xFF0C;&#x6211;&#x4EEC;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6E29;&#x5EA6;&#x8BA1;&#x7B97;&#x5668;&#x6765;&#x8BA1;&#x7B97;&#x6C34;&#x5728;&#x4E00;&#x5B9A;&#x6E29;&#x5EA6;&#x4E0B;&#x662F;&#x5426;&#x6CB8;&#x817E;&#x3002;</p>
+<p>&#x8FD9;&#x91CC;&#x6709;&#x4E00;&#x4E2A;BoilingVerdict&#x7EC4;&#x4EF6;&#xFF0C; &#x5B83;&#x63A5;&#x6536;celsius&#x6E29;&#x5EA6;&#x4F5C;&#x4E3A;props&#xFF0C;&#x5E76;&#x6253;&#x5370;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x8BA9;&#x6C34;&#x6CB8;&#x817E;&#xFF1A;</p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">BoilingVerdict</span>(<span class="hljs-params">props</span>) </span>{
+  <span class="hljs-keyword">if</span> (props.celsius &gt;= <span class="hljs-number">100</span>) {
+    <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>The water would boil.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span>;
+  }
+  <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>The water would not boil.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span>;
+}
+</code></pre>
+<p>&#x73B0;&#x5728;&#xFF0C;&#x6211;&#x4EEC;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;Calculator&#x7EC4;&#x4EF6;&#xFF0C;&#x5B83;&#x6709;&#x4E00;&#x4E2A;&lt;input&gt;&#x53EF;&#x4EE5;&#x8F93;&#x5165;&#x6E29;&#x5EA6;&#xFF0C;&#x5E76;&#x5C06;&#x8F93;&#x5165;&#x7684;&#x503C;&#x4FDD;&#x5B58;&#x5728;this.state.temperature&#x4E2D;&#xFF0C;&#x5E76;&#x4E14;&#x4F1A;&#x6839;&#x636E;&#x5F53;&#x524D;&#x8F93;&#x5165;&#x7684;&#x503C;&#x6E32;&#x67D3;BoilingVerdict&#x7EC4;&#x4EF6;.</p>
+<p><a href="https://codepen.io/valscion/pen/VpZJRZ?editors=0010" target="_blank">Try it on CodePen</a></p>
+<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Calculator</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+  <span class="hljs-keyword">constructor</span>(props) {
+    <span class="hljs-keyword">super</span>(props);
+    <span class="hljs-keyword">this</span>.handleChange = <span class="hljs-keyword">this</span>.handleChange.bind(<span class="hljs-keyword">this</span>);
+    <span class="hljs-keyword">this</span>.state = {temperature: <span class="hljs-string">&apos;&apos;</span>};
+  }
+
+  handleChange(e) {
+    <span class="hljs-keyword">this</span>.setState({temperature: e.target.value});
+  }
+
+  render() {
+    <span class="hljs-keyword">const</span> temperature = <span class="hljs-keyword">this</span>.state.temperature;
+    <span class="hljs-keyword">return</span> (
+      &lt;fieldset&gt;
+        &lt;legend&gt;Enter temperature in Celsius:&lt;/legend&gt;
+        &lt;input
+          value={temperature}
+          onChange={this.handleChange} /&gt;
+        &lt;BoilingVerdict
+          celsius={parseFloat(temperature)} /&gt;
+      &lt;/fieldset&gt;
+    );
+  }
+}
+</code></pre>
+<p>&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x9664;&#x4E86;&#x8981;&#x8F93;&#x5165;&#x6444;&#x6C0F;&#x6E29;&#x5EA6;&#xFF0C;&#x8FD8;&#x8981;&#x8F93;&#x5165;&#x534E;&#x6C0F;&#x6E29;&#x5EA6;&#xFF0C;&#x90A3;&#x6211;&#x4EEC;&#x518D;&#x52A0;&#x4E00;&#x4E2A;&#x8F93;&#x5165;&#x6846;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4ECE;Calculator&#x4E2D;&#x63D0;&#x53D6;&#x4E00;&#x4E2A;TemperatureInput&#x7EC4;&#x4EF6;&#x3002; &#x5E76;&#x4E14;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;props&#x5C5E;&#x6027;scale&#xFF0C;&#x5B83;&#x7684;&#x503C;&#x53EF;&#x80FD;&#x662F;&#x201C;c&#x201D;&#x6216;&#x201C;f&#x201D;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> scaleNames = {
+  c: <span class="hljs-string">&apos;Celsius&apos;</span>,
+  f: <span class="hljs-string">&apos;Fahrenheit&apos;</span>
+};
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TemperatureInput</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+  <span class="hljs-keyword">constructor</span>(props) {
+    <span class="hljs-keyword">super</span>(props);
+    <span class="hljs-keyword">this</span>.handleChange = <span class="hljs-keyword">this</span>.handleChange.bind(<span class="hljs-keyword">this</span>);
+    <span class="hljs-keyword">this</span>.state = {temperature: <span class="hljs-string">&apos;&apos;</span>};
+  }
+
+  handleChange(e) {
+    <span class="hljs-keyword">this</span>.setState({temperature: e.target.value});
+  }
+
+  render() {
+    <span class="hljs-keyword">const</span> temperature = <span class="hljs-keyword">this</span>.state.temperature;
+    <span class="hljs-keyword">const</span> scale = <span class="hljs-keyword">this</span>.props.scale;
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">legend</span>&gt;</span>Enter temperature in {scaleNames[scale]}:<span class="hljs-tag">&lt;/<span class="hljs-name">legend</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">value</span>=<span class="hljs-string">{temperature}</span>
+               <span class="hljs-attr">onChange</span>=<span class="hljs-string">{this.handleChange}</span> /&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span>
+    );
+  }
+}
+</span></code></pre>
+<p>&#x73B0;&#x5728;Calculator&#x662F;&#x8FD9;&#x6837;&#x7684;,&#x6709;&#x4E24;&#x4E2A;&#x8F93;&#x5165;&#xFF0C;&#x8F93;&#x5165;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x65F6;&#xFF0C;&#x53E6;&#x4E00;&#x4E2A;&#x4E0D;&#x66F4;&#x65B0;&#x3002; &#x4F46;&#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x80FD;&#x4FDD;&#x6301;&#x540C;&#x6B65;&#x3002;</p>
+<p><a href="https://codepen.io/valscion/pen/GWKbao?editors=0010" target="_blank">Try it on CodePen</a></p>
+<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Calculator</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+  render() {
+    <span class="hljs-keyword">return</span> (
+      &lt;div&gt;
+        &lt;TemperatureInput scale=&quot;c&quot; /&gt;
+        &lt;TemperatureInput scale=&quot;f&quot; /&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+</code></pre>
+<p>&#x9996;&#x5148;&#xFF0C;&#x6211;&#x4EEC;&#x8981;&#x5199;&#x4E24;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x6444;&#x6C0F;&#x5EA6;&#x548C;&#x534E;&#x6C0F;&#x5EA6;&#x7684;&#x8F6C;&#x6362;&#xFF0C;&#x7136;&#x540E;&#x8FD4;&#x56DE;&#xFF1A;</p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">toCelsius</span>(<span class="hljs-params">fahrenheit</span>) </span>{
+  <span class="hljs-keyword">return</span> (fahrenheit - <span class="hljs-number">32</span>) * <span class="hljs-number">5</span> / <span class="hljs-number">9</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">toFahrenheit</span>(<span class="hljs-params">celsius</span>) </span>{
+  <span class="hljs-keyword">return</span> (celsius * <span class="hljs-number">9</span> / <span class="hljs-number">5</span>) + <span class="hljs-number">32</span>;
+}
+</code></pre>
+<p>&#x8FD9;&#x4E24;&#x4E2A;&#x51FD;&#x6570;&#x90FD;&#x662F;&#x8F6C;&#x6362;&#x6570;&#x5B57;&#x7684;&#x3002; &#x6211;&#x4EEC;&#x7F16;&#x5199;&#x53E6;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x5C06;&#x5B57;&#x7B26;&#x4E32;&#x6E29;&#x5EA6;&#x548C;&#x8F6C;&#x6362;&#x5668;&#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x7136;&#x540E;&#x7528;&#x5B83;&#x6765;&#x6839;&#x636E;&#x4E00;&#x4E2A;input&#x6765;&#x8BA1;&#x7B97;&#x53E6;&#x4E00;&#x4E2A;input&#x7684;&#x503C;&#x3002;</p>
+<p>&#x5F53;temperature&#x4E0D;&#x5408;&#x6CD5;&#x65F6;&#x8FD4;&#x56DE;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x8FD4;&#x56DE;&#x503C;&#x56DB;&#x820D;&#x4E94;&#x5165;&#x5230;&#x5C0F;&#x6570;&#x70B9;&#x540E;&#x4E09;&#x4F4D;&#xFF1A;</p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">tryConvert</span>(<span class="hljs-params">temperature, convert</span>) </span>{
+  <span class="hljs-keyword">const</span> input = <span class="hljs-built_in">parseFloat</span>(temperature);
+  <span class="hljs-keyword">if</span> (<span class="hljs-built_in">Number</span>.isNaN(input)) {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;&apos;</span>;
+  }
+  <span class="hljs-keyword">const</span> output = convert(input);
+  <span class="hljs-keyword">const</span> rounded = <span class="hljs-built_in">Math</span>.round(output * <span class="hljs-number">1000</span>) / <span class="hljs-number">1000</span>;
+  <span class="hljs-keyword">return</span> rounded.toString();
+}
+</code></pre>
+<p>&#x4F8B;&#x5982;&#xFF0C;tryConvert(&apos;abc&apos;,toCelsius&#xFF09;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x800C;tryConvert(&apos;10.22&apos;,toFahrenheit&#xFF09;&#x8FD4;&#x56DE;&apos;50.396&apos;.</p>
+<p>&#x73B0;&#x5728;&#x4E24;&#x4E2A;TemperatureInput&#x7EC4;&#x4EF6;&#x90FD;&#x5C06;&#x5176;&#x8F93;&#x5165;&#x503C;&#x4FDD;&#x5B58;&#x5728;&#x81EA;&#x5DF1;&#x7684;state&#x3002;</p>
+<p>&#x4F46;&#x662F;&#xFF0C;&#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x8FD9;&#x4E24;&#x4E2A;&#x8F93;&#x5165;&#x662F;&#x76F8;&#x4E92;&#x540C;&#x6B65;&#x7684;&#x3002;&#x5F53;&#x6211;&#x4EEC;&#x66F4;&#x65B0;&#x6444;&#x6C0F;&#x6E29;&#x5EA6;&#x7684;&#x8F93;&#x5165;&#x503C;&#x65F6;&#xFF0C;&#x534E;&#x6C0F;&#x6E29;&#x5EA6;&#x8F93;&#x5165;&#x6846;&#x4E5F;&#x80FD;&#x663E;&#x793A;&#x8F6C;&#x6362;&#x4E86;&#x7684;&#x534E;&#x6C0F;&#x6E29;&#x5EA6;&#xFF0C;&#x53CD;&#x4E4B;&#x4EA6;&#x7136;&#x3002;</p>
+<p>&#x5728;React&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5C06;state&#x79FB;&#x52A8;&#x5230;&#x6700;&#x63A5;&#x8FD1;&#x7684;&#x5171;&#x540C;&#x7956;&#x5148;&#x5171;&#x4EAB;state&#xFF0C;&#x8FD9;&#x53EB;&#x505A;&#x201C;&#x63D0;&#x5347;state&#x201D;&#x3002;&#x73B0;&#x5728;&#x4ECE;TemperatureInput&#x4E2D;&#x5220;&#x9664;&#x672C;&#x5730;state&#xFF0C;&#x5E76;&#x5C06;&#x5176;&#x79FB;&#x52A8;&#x5230;Calculator&#x4E2D;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x8BA1;&#x7B97;&#x5668;&#x62E5;&#x6709;&#x5171;&#x4EAB;state&#xFF0C;&#x90A3;&#x4E24;&#x4E2A;&#x8F93;&#x5165;&#x4E2D;&#x663E;&#x793A;&#x7684;&#x5F53;&#x524D;&#x6E29;&#x5EA6;&#x6570;&#x636E;&#x5C31;&#x662F;&#x8FD9;&#x4E2A;&#x5171;&#x4EAB;&#x7684;state&#x4E2D;&#x83B7;&#x5F97;,&#x8FD9;&#x4E2A;&#x5171;&#x4EAB;state&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x7EC4;&#x4EF6;&#x7684;props&#x4F20;&#x9012;&#x7ED9;&#x7EC4;&#x4EF6;&#x3002;</p>
+<p>&#x4F46;&#x662F;props&#x662F;&#x53EA;&#x8BFB;&#x7684;&#x3002; &#x5F53;temperature&#x4FDD;&#x5B58;&#x5728;&#x672C;&#x5730;&#x72B6;&#x6001;&#x65F6;&#xFF0C;TemperatureInput&#x53EF;&#x4EE5;&#x8C03;&#x7528;this.setState()&#x6765;&#x66F4;&#x6539;&#x5B83;&#x3002; &#x4F46;&#x662F;&#xFF0C;&#x73B0;&#x5728;temperature&#x6765;&#x81EA;parent&#x7684;props&#xFF0C;&#x65E0;&#x6CD5;&#x63A7;&#x5236;temperature&#x3002;</p>
+<p>&#x4F46;&#x662F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x63A5;&#x6536;&#x7236;&#x5BB9;&#x5668;&#x7684;onTemperatureChange&#x6765;&#x6539;&#x53D8;state,&#x5F53;TemperatureInput&#x66F4;&#x65B0;&#x6E29;&#x5EA6;&#x65F6;&#xFF0C;&#x8C03;&#x7528;this.props.onTemperatureChange.</p>
+<p>&#x7FFB;&#x8BD1;&#x4E0D;&#x4E0B;&#x53BB;&#x4E86;&#xFF0C;&#x597D;&#x5570;&#x55E6;&#x3002;&#x3002;&#x3002;&#x76F4;&#x63A5;&#x770B;&#x6700;&#x540E;&#x4EE3;&#x7801;&#x5427;</p>
+<p><a href="http://codepen.io/valscion/pen/jBNjja?editors=0010" target="_blank">Try it on CodePen</a></p>
+<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TemperatureInput</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+  <span class="hljs-keyword">constructor</span>(props) {
+    <span class="hljs-keyword">super</span>(props);
+    <span class="hljs-keyword">this</span>.handleChange = <span class="hljs-keyword">this</span>.handleChange.bind(<span class="hljs-keyword">this</span>);
+  }
+
+  handleChange(e) {
+    <span class="hljs-keyword">this</span>.props.onTemperatureChange(e.target.value);
+  }
+
+  render() {
+    <span class="hljs-keyword">const</span> temperature = <span class="hljs-keyword">this</span>.props.temperature;
+    <span class="hljs-keyword">const</span> scale = <span class="hljs-keyword">this</span>.props.scale;
+    <span class="hljs-keyword">return</span> (
+      &lt;fieldset&gt;
+        &lt;legend&gt;Enter temperature in {scaleNames[scale]}:&lt;/legend&gt;
+        &lt;input value={temperature}
+               onChange={this.handleChange} /&gt;
+      &lt;/fieldset&gt;
+    );
+  }
+}
+
+class Calculator extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleCelsiusChange = this.handleCelsiusChange.bind(this);
+    this.handleFahrenheitChange = this.handleFahrenheitChange.bind(this);
+    this.state = {temperature: &apos;&apos;, scale: &apos;c&apos;};
+  }
+
+  handleCelsiusChange(temperature) {
+    this.setState({scale: &apos;c&apos;, temperature});
+  }
+
+  handleFahrenheitChange(temperature) {
+    this.setState({scale: &apos;f&apos;, temperature});
+  }
+
+  render() {
+    const scale = this.state.scale;
+    const temperature = this.state.temperature;
+    const celsius = scale === &apos;f&apos; ? tryConvert(temperature, toCelsius) : temperature;
+    const fahrenheit = scale === &apos;c&apos; ? tryConvert(temperature, toFahrenheit) : temperature;
+
+    return (
+      &lt;div&gt;
+        &lt;TemperatureInput
+          scale=&quot;c&quot;
+          temperature={celsius}
+          onTemperatureChange={this.handleCelsiusChange} /&gt;
+        &lt;TemperatureInput
+          scale=&quot;f&quot;
+          temperature={fahrenheit}
+          onTemperatureChange={this.handleFahrenheitChange} /&gt;
+        &lt;BoilingVerdict
+          celsius={parseFloat(celsius)} /&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+</code></pre>
+<p>&#x770B;&#x4E0B;&#x7F16;&#x8F91;input&#x65F6;&#x4F1A;&#x53D1;&#x751F;&#x4EC0;&#x4E48;&#xFF1A;</p>
+<ol>
+<li>React&#x8C03;&#x7528;&#x5728;DOM &lt;input&gt;&#x4E0A;onChange&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x51FD;&#x6570;&#x3002;&#x5728;&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x5C31;&#x662F;TemperatureInput&#x7EC4;&#x4EF6;&#x4E2D;&#x7684;handleChange&#x65B9;&#x6CD5;&#x3002;</li>
+<li>TemperatureInput&#x7EC4;&#x4EF6;&#x4E2D;&#x7684;handleChange&#x65B9;&#x6CD5;&#x7528;&#x8F93;&#x5165;&#x7684;&#x503C;&#x8C03;&#x7528;this.props.onTemperatureChange()</li>
+<li>&#x6839;&#x636E;&#x7F16;&#x8F91;&#x7684;&#x8F93;&#x5165;&#x6846;&#x8C03;&#x7528;&#x76F8;&#x5E94;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x5206;&#x522B;&#x662F;handleCelsiusChange &#x548C;handleFahrenheitChange&#xFF0C;&#x66F4;&#x65B0;state</li>
+<li><strong>state&#x6539;&#x53D8;&#x540E;&#xFF0C;&#x901A;&#x77E5;React&#x91CD;&#x65B0;&#x83B7;&#x53D6;render&#x65B9;&#x6CD5;&#x7684;&#x8FD4;&#x56DE;&#xFF0C;&#x5F97;&#x5230;&#x6700;&#x65B0;&#x7684;UI&#x5C55;&#x793A;&#x5BF9;&#x8C61;&#x3002;</strong></li>
+<li>&#x4E0E;&#x539F;&#x6709;&#x7684;render&#x8FD4;&#x56DE;&#x5BF9;&#x6BD4;&#x540E;&#xFF0C;&#x66F4;&#x65B0;&#x5FC5;&#x8981;&#x7684;&#x771F;&#x5B9E;DOM&#x91CD;&#x65B0;&#x6E32;&#x67D3;</li>
+<li>&#x53E6;&#x4E00;&#x4E2A;&#x8F93;&#x5165;&#x6846;&#x66F4;&#x65B0;&#x4E3A;&#x8F6C;&#x6362;&#x540E;&#x7684;&#x6E29;&#x5EA6;</li>
+</ol>
+<p>&#x63D0;&#x5347;state&#x9700;&#x8981;&#x6BD4;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;&#x5199;&#x66F4;&#x591A;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x4F46;&#x6709;&#x4E00;&#x4E2A;&#x597D;&#x5904;&#x662F;&#xFF1A;&#x53EF;&#x4EE5;&#x5F88;&#x65B9;&#x4FBF;&#x7684;&#x627E;bug&#x3002;&#x56E0;&#x4E3A;state&#x90FD;&#x662F;&#x5728;&#x67D0;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#x4E2D;&#xFF0C;&#x8FD9;&#x6837;&#x5B9A;&#x4F4D;&#x95EE;&#x9898;&#x7684;&#x8303;&#x56F4;&#x5C31;&#x53EF;&#x4EE5;&#x5927;&#x5927;&#x7F29;&#x5C0F;&#x3002;</p>
+<p>&#x6B64;&#x5916;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x81EA;&#x5B9A;&#x4E49;&#x903B;&#x8F91;&#x62D2;&#x7EDD;&#x6216;&#x8F6C;&#x6362;&#x7528;&#x6237;&#x8F93;&#x5165;&#x3002;&#xFF08;&#x6BD4;&#x5982;&#x5728;onChange&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x51FD;&#x6570;&#x4E2D;&#x5BF9;&#x8F93;&#x5165;&#x8FDB;&#x884C;&#x6821;&#x9A8C;&#xFF0C;&#x6821;&#x9A8C;&#x4E0D;&#x901A;&#x8FC7;&#x5C31;&#x4E0D;&#x66F4;&#x65B0;state,&#x7ED9;&#x51FA;&#x63D0;&#x793A;&#x3002;&#xFF09;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="React快速开始（九）表单.html" class="navigation navigation-prev " aria-label="Previous page: 表单">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="React快速开始（十一）组合vs继承.html" class="navigation navigation-next " aria-label="Next page: 组合vs继承">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"state提升","level":"2.10","depth":1,"next":{"title":"组合vs继承","level":"2.11","depth":1,"path":"React快速开始/React快速开始（十一）组合vs继承.md","ref":"React快速开始/React快速开始（十一）组合vs继承.md","articles":[]},"previous":{"title":"表单","level":"2.9","depth":1,"path":"React快速开始/React快速开始（九）表单.md","ref":"React快速开始/React快速开始（九）表单.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"React快速开始/React快速开始（十）state提升.md","mtime":"2017-06-15T03:18:39.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-16T11:53:01.134Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,848 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>State和生命周期 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="React快速开始（六）事件处理.html" />
+    
+    
+    <link rel="prev" href="React快速开始（四）组件和props.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">快速开始</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="React快速开始（一）安装.html">
+            
+                <a href="React快速开始（一）安装.html">
+            
+                    
+                    安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="React快速开始（二）使用JSX.html">
+            
+                <a href="React快速开始（二）使用JSX.html">
+            
+                    
+                    使用JSX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="React快速开始（三）渲染元素.html">
+            
+                <a href="React快速开始（三）渲染元素.html">
+            
+                    
+                    渲染元素
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="React快速开始（四）组件和props.html">
+            
+                <a href="React快速开始（四）组件和props.html">
+            
+                    
+                    组件和props
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.5" data-path="React快速开始（五）State和生命周期.html">
+            
+                <a href="React快速开始（五）State和生命周期.html">
+            
+                    
+                    State和生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="React快速开始（六）事件处理.html">
+            
+                <a href="React快速开始（六）事件处理.html">
+            
+                    
+                    事件处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="React快速开始（七）条件渲染.html">
+            
+                <a href="React快速开始（七）条件渲染.html">
+            
+                    
+                    条件渲染
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="React快速开始（八）Lists和Keys.html">
+            
+                <a href="React快速开始（八）Lists和Keys.html">
+            
+                    
+                    Lists和Keys
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="React快速开始（九）表单.html">
+            
+                <a href="React快速开始（九）表单.html">
+            
+                    
+                    表单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="React快速开始（十）state提升.html">
+            
+                <a href="React快速开始（十）state提升.html">
+            
+                    
+                    state提升
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="React快速开始（十一）组合vs继承.html">
+            
+                <a href="React快速开始（十一）组合vs继承.html">
+            
+                    
+                    组合vs继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">高级指南</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../React高级指南/React高级指南（一）深入理解JSX.html">
+            
+                <a href="../React高级指南/React高级指南（一）深入理解JSX.html">
+            
+                    
+                    深入理解JSX
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">官方博客</li>
+        
+        
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >State和生命周期</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <blockquote>
+<p><a href="https://facebook.github.io/react/docs/state-and-lifecycle.html" target="_blank">State and Lifecycle</a></p>
+</blockquote>
+<p>&#x524D;&#x9762;&#x4ECB;&#x7ECD;&#x8FC7;&#x65F6;&#x949F;&#x7684;&#x4F8B;&#x5B50;&#xFF0C;&#x901A;&#x8FC7;ReactDOM.render()&#x6765;&#x6539;&#x53D8;&#x9875;&#x9762;&#x6E32;&#x67D3;&#x5185;&#x5BB9;</p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">tick</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> element = (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Hello, world!<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>It is {new Date().toLocaleTimeString()}.<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+  );
+  ReactDOM.render(
+    element,
+    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;root&apos;</span>)
+  );
+}
+setInterval(tick, <span class="hljs-number">1000</span>);
+</code></pre>
+<p>&#x5728;&#x672C;&#x8282;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x5B66;&#x4E60;&#x5982;&#x4F55;&#x8BA9;Clock&#x7EC4;&#x4EF6;&#x771F;&#x6B63;&#x53EF;&#x91CD;&#x7528;&#x548C;&#x53EF;&#x5C01;&#x88C5;&#xFF0C; &#x5B83;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x81EA;&#x5DF1;&#x7684;&#x8BA1;&#x65F6;&#x5668;&#x5E76;&#x6BCF;&#x79D2;&#x66F4;&#x65B0;&#x4E00;&#x6B21;
+<!-- more -->
+&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4ECE;&#x5C01;&#x88C5;&#x65F6;&#x949F;&#x5F00;&#x59CB;&#xFF1A;</p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Clock</span>(<span class="hljs-params">props</span>) </span>{
+  <span class="hljs-keyword">return</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Hello, world!<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>It is {props.date.toLocaleTimeString()}.<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+  );
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">tick</span>(<span class="hljs-params"></span>) </span>{
+  ReactDOM.render(
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Clock</span> <span class="hljs-attr">date</span>=<span class="hljs-string">{new</span> <span class="hljs-attr">Date</span>()} /&gt;</span>,
+    document.getElementById(&apos;root&apos;)
+  );
+}
+
+setInterval(tick, 1000);
+</span></code></pre>
+<p>&#x4F46;&#x662F;&#x8FD9;&#x5E76;&#x4E0D;&#x80FD;&#x6EE1;&#x8DB3;&#x8981;&#x6C42;&#xFF0C;Clock&#x8BBE;&#x7F6E;&#x5B9A;&#x65F6;&#x5668;&#x5E76;&#x6BCF;&#x79D2;&#x66F4;&#x65B0;UI&#x7684;&#x4EFB;&#x52A1;&#x5E94;&#x8BE5;&#x662F;Clock&#x7684;&#x5B9E;&#x73B0;&#x7EC6;&#x8282;&#xFF0C;&#x4E0D;&#x5E94;&#x8BE5;&#x7531;&#x5916;&#x90E8;&#x6765;&#x63A7;&#x5236;&#x3002;
+&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x7684;&#x662F;&#x8FD9;&#x6837;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#xFF1A;Clock&#x7EC4;&#x4EF6;&#x80FD;&#x591F;&#x81EA;&#x5DF1;&#x66F4;&#x65B0;&#x81EA;&#x5DF1;&#x3002;</p>
+<pre><code class="lang-javascript">ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Clock</span> /&gt;</span>,
+  document.getElementById(&apos;root&apos;)
+);
+</span></code></pre>
+<p><strong>&#x4E3A;&#x4E86;&#x5B9E;&#x73B0;&#x8FD9;&#x4E00;&#x70B9;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5728;Clock&#x7EC4;&#x4EF6;&#x4E2D;&#x6DFB;&#x52A0;&#x201C;state&#x201D;&#xFF0C;state&#x4E0E;props&#x76F8;&#x4F3C;&#xFF0C;&#x4F46;&#x5B83;&#x662F;&#x7EC4;&#x4EF6;&#x79C1;&#x6709;&#x7684;&#xFF0C;&#x5B8C;&#x5168;&#x7531;&#x7EC4;&#x4EF6;&#x63A7;&#x5236;&#x3002;</strong>          </p>
+<p>&#x6211;&#x4EEC;&#x4E4B;&#x524D;&#x63D0;&#x5230;&#x8FC7;&#xFF08;React&#x5FEB;&#x901F;&#x5F00;&#x59CB;&#xFF08;&#x56DB;&#xFF09;&#x7EC4;&#x4EF6;&#x548C;props&#xFF09;&#xFF0C;&#x5B9A;&#x4E49;&#x4E3A;class&#x7684;&#x7EC4;&#x4EF6;&#x5177;&#x6709;&#x4E00;&#x4E9B;&#x989D;&#x5916;&#x529F;&#x80FD;&#xFF0C;<strong>&#x7EC4;&#x4EF6;&#x7684;state&#x5C31;&#x662F;&#x8FD9;&#x6837;&#xFF1A;&#x53EA;&#x80FD;&#x5728;&#x5B9A;&#x4E49;&#x4E3A;class &#x7684;&#x7EC4;&#x4EF6;&#x4E2D;&#x4F7F;&#x7528;</strong></p>
+<h2 id="&#x5C06;function&#x8F6C;&#x6362;&#x4E3A;class">&#x5C06;Function&#x8F6C;&#x6362;&#x4E3A;Class</h2>
+<p>&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4E0B;&#x9762;&#x4E94;&#x4E2A;&#x6B65;&#x9AA4;&#x5C06;&#x65F6;&#x949F;functional&#x7EC4;&#x4EF6;&#x8F6C;&#x6362;&#x4E3A;class&#x7EC4;&#x4EF6;&#xFF1A;</p>
+<ol>
+<li>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4E0E;functional&#x7EC4;&#x4EF6;&#x76F8;&#x540C;&#x540D;&#x79F0;&#x7684;ES6 class,&#x5E76;&#x7EE7;&#x627F;<a href="https://facebook.github.io/react/docs/react-component.html" target="_blank">React.Component</a></li>
+<li>&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;render()&#x7684;&#x7A7A;&#x65B9;&#x6CD5;</li>
+<li>&#x5C06;functional&#x7EC4;&#x4EF6;&#x7684;&#x51FD;&#x6570;&#x4E3B;&#x4F53;&#x79FB;&#x52A8;&#x5230;render()&#x65B9;&#x6CD5;&#x4E2D;</li>
+<li>&#x5728;render()&#x65B9;&#x6CD5;&#x4F53;&#x4E2D;&#x7528;this.props&#x66FF;&#x6362;props</li>
+<li>&#x5220;&#x9664;&#x5269;&#x4E0B;&#x7684;&#x7A7A;&#x51FD;&#x6570;&#x58F0;&#x660E;</li>
+</ol>
+<p>functional&#x7EC4;&#x4EF6;:</p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Clock</span>(<span class="hljs-params">props</span>) </span>{
+  <span class="hljs-keyword">return</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Hello, world!<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>It is {props.date.toLocaleTimeString()}.<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+  );
+}
+</code></pre>
+<p>class&#x7EC4;&#x4EF6;:</p>
+<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Clock</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+  render() {
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Hello, world!<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>It is {this.props.date.toLocaleTimeString()}.<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+    );
+  }
+}
+</code></pre>
+<p>Clock&#x7EC4;&#x4EF6;&#x73B0;&#x5728;&#x88AB;&#x5B9A;&#x4E49;&#x4E3A;&#x4E00;&#x4E2A;class&#x800C;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;function&#xFF0C;&#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E00;&#x4E9B;&#x989D;&#x5916;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x6BD4;&#x5982;state&#x548C;&#x7EC4;&#x4EF6;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x94A9;&#x5B50;&#x65B9;&#x6CD5;&#xFF08; lifecycle hooks&#xFF09;</p>
+<h2 id="&#x5728;class&#x4E2D;&#x6DFB;&#x52A0;state">&#x5728;class&#x4E2D;&#x6DFB;&#x52A0;state</h2>
+<p>&#x73B0;&#x5728;&#x628A;props&#x4E2D;&#x7684;date&#x79FB;&#x5230;state&#x4E2D;&#xFF0C;&#x5206;&#x4E09;&#x4E2A;&#x6B65;&#x9AA4;&#xFF1A;</p>
+<ol>
+<li>&#x5C06;render()&#x65B9;&#x6CD5;&#x4E2D;&#x7684;this.props.date &#x66FF;&#x6362;&#x4E3A;this.state.date</li>
+</ol>
+<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Clock</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+  render() {
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Hello, world!<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>It is {this.state.date.toLocaleTimeString()}.<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+    );
+  }
+}
+</code></pre>
+<ol>
+<li>&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;constructor&#x6765;&#x521D;&#x59CB;&#x5316;this.state</li>
+</ol>
+<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Clock</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+  <span class="hljs-keyword">constructor</span>(props) {
+    <span class="hljs-keyword">super</span>(props);
+    <span class="hljs-keyword">this</span>.state = {
+        date: <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()
+    };
+  }
+
+  render() {
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Hello, world!<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>It is {this.state.date.toLocaleTimeString()}.<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+    );
+  }
+}
+</code></pre>
+<p><strong>&#x6CE8;&#x610F;&#x600E;&#x4E48;&#x5C06;props&#x4F20;&#x9012;&#x7ED9;&#x4E86;React.Component&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x7684;,class&#x7EC4;&#x4EF6;&#x5E94;&#x59CB;&#x7EC8;&#x8C03;&#x7528;&#x7236;&#x7C7B; &#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x5E76;&#x4F20;&#x9012;props&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x3002;</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">constructor</span>(props) {
+    <span class="hljs-keyword">super</span>(props);
+    <span class="hljs-keyword">this</span>.state = {date: <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()};
+}
+</code></pre>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/super" target="_blank">&#x5173;&#x4E8E;super&#x5173;&#x952E;&#x5B57;</a></p>
+<blockquote>
+<p>&#x5728;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E2D;&#x4F7F;&#x7528;&#x65F6;&#xFF0C;super&#x5173;&#x952E;&#x5B57;&#x5355;&#x72EC;&#x51FA;&#x73B0;&#xFF0C;&#x5FC5;&#x987B;&#x5728;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;this&#x5173;&#x952E;&#x5B57;&#x4E4B;&#x524D;&#x4F7F;&#x7528;&#x3002;&#x6B64;&#x5173;&#x952E;&#x5B57;&#x4E5F;&#x53EF;&#x7528;&#x4E8E;&#x8C03;&#x7528;&#x7236;&#x5BF9;&#x8C61;&#x4E0A;&#x7684;&#x51FD;&#x6570;&#x3002;</p>
+</blockquote>
+<ol>
+<li>&#x5C06;date&#x5C5E;&#x6027;&#x4ECE; &lt;Clock /&gt;&#x4E2D;&#x79FB;&#x9664;</li>
+</ol>
+<pre><code class="lang-javascript">ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Clock</span> /&gt;</span>,
+  document.getElementById(&apos;root&apos;)
+);
+</span></code></pre>
+<p>&#x7ED3;&#x679C;&#x662F;&#x8FD9;&#x6837;&#x7684;</p>
+<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Clock</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+  <span class="hljs-keyword">constructor</span>(props) {
+    <span class="hljs-keyword">super</span>(props);
+    <span class="hljs-keyword">this</span>.state = {date: <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()};
+  }
+
+  render() {
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Hello, world!<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>It is {this.state.date.toLocaleTimeString()}.<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+    );
+  }
+}
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Clock</span> /&gt;</span>,
+  document.getElementById(&apos;root&apos;)
+);
+</span></code></pre>
+<p>&#x4E0B;&#x4E00;&#x6B65;&#xFF0C;&#x6211;&#x4EEC;&#x8BA9;Clock&#x7EC4;&#x4EF6;&#x8BBE;&#x7F6E;&#x5B83;&#x81EA;&#x5DF1;&#x7684;&#x5B9A;&#x65F6;&#x5668;&#xFF0C;&#x6BCF;&#x79D2;&#x949F;&#x66F4;&#x65B0;&#x81EA;&#x5DF1;</p>
+<h2 id="&#x5411;class&#x4E2D;&#x6DFB;&#x52A0;&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;">&#x5411;class&#x4E2D;&#x6DFB;&#x52A0;&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;</h2>
+<p>&#x5728;&#x6709;&#x5F88;&#x591A;&#x7EC4;&#x4EF6;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E2D;&#xFF0C;&#x5728;&#x9500;&#x6BC1;&#x7EC4;&#x4EF6;&#x65F6;&#x91CA;&#x653E;&#x7EC4;&#x4EF6;&#x5360;&#x7528;&#x7684;&#x8D44;&#x6E90;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x3002;</p>
+<ul>
+<li>&#x5F53;Clock&#x7B2C;&#x4E00;&#x6B21;&#x6DFB;&#x52A0;&#x5230;DOM&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x8981;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x5B9A;&#x65F6;&#x5668;&#xFF0C; &#x8FD9;&#x5728;React&#x4E2D;&#x79F0;&#x4E3A;&#x201C;&#x6302;&#x8F7D;&#x201D;&#x3002;</li>
+<li>&#x5F53;Clock&#x4EA7;&#x751F;&#x7684;DOM&#x88AB;&#x5220;&#x9664;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x4E5F;&#x60F3;&#x6E05;&#x9664;&#x8BE5;&#x8BA1;&#x65F6;&#x5668;&#xFF0C; &#x8FD9;&#x5728;React&#x4E2D;&#x79F0;&#x4E3A;&#x201C;&#x5378;&#x8F7D;&#x201D;&#x3002;</li>
+<li>&#x5F53;&#x7EC4;&#x4EF6;&#x6302;&#x8F7D;&#x548C;&#x5378;&#x8F7D;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5728;&#x7EC4;&#x4EF6;&#x7C7B;&#x4E0A;&#x58F0;&#x660E;&#x7279;&#x6B8A;&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x505A;&#x4E00;&#x4E9B;&#x4E8B;&#x60C5;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Clock</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+  <span class="hljs-keyword">constructor</span>(props) {
+    <span class="hljs-keyword">super</span>(props);
+    <span class="hljs-keyword">this</span>.state = {date: <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()};
+  }
+
+  componentDidMount() {
+
+  }
+
+  componentWillUnmount() {
+
+  }
+
+  render() {
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Hello, world!<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>It is {this.state.date.toLocaleTimeString()}.<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+    );
+  }
+}
+</code></pre>
+<p>&#x5982;&#x4E0A;componentDidMount&#x548C;componentWillUnmount&#xFF0C;
+&#x8FD9;&#x4E9B;&#x65B9;&#x6CD5;&#x79F0;&#x4E3A; &#x751F;&#x547D;&#x5468;&#x671F;&#x94A9;&#x5B50;&#x51FD;&#x6570; &quot;lifecycle hooks&quot;</p>
+<p>&#x5728;&#x7EC4;&#x4EF6;&#x5DF2;&#x7ECF;&#x6DFB;&#x52A0;&#x5230;DOM&#x6811;&#x4E4B;&#x540E;&#xFF0C;&#x4F1A;&#x6267;&#x884C;componentDidMount()&#xFF0C;&#x5728;&#x8FD9;&#x91CC;&#x6700;&#x9002;&#x5408;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x5B9A;&#x65F6;&#x5668;</p>
+<pre><code class="lang-javascript"> componentDidMount() {
+    <span class="hljs-keyword">this</span>.timerID = setInterval(
+      () =&gt; <span class="hljs-keyword">this</span>.tick(),
+      <span class="hljs-number">1000</span>
+    );
+  }
+</code></pre>
+<p>&#x6CE8;&#x610F;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;timerID &#x4FDD;&#x5B58;&#x5728;this&#x4E2D;&#x3002;</p>
+<p><strong>this.props&#x7531;React&#x8BBE;&#x7F6E;&#xFF0C;this.state&#x5177;&#x6709;&#x7279;&#x6B8A;&#x7684;&#x542B;&#x4E49;&#xFF08;&#x6839;&#x636E;&#x7528;&#x6237;&#x64CD;&#x4F5C;&#x6539;&#x53D8;&#x81EA;&#x8EAB;&#x72B6;&#x6001;&#xFF09;&#xFF0C;&#x5982;&#x679C;&#x9700;&#x8981;&#x5B58;&#x50A8;&#x4E00;&#x4E9B;&#x4E0D;&#x7528;&#x4E8E;&#x66F4;&#x65B0;&#x9875;&#x9762;&#x6E32;&#x67D3;&#x7684;&#x5B57;&#x6BB5;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;&#x5B83;&#x6DFB;&#x52A0;&#x5230;&#x7C7B;&#x4E2D;&#xFF0C;&#x6BD4;&#x5982;&#x8FD9;&#x91CC;&#x7684;timerID&#x3002;</strong></p>
+<p>&#x4E0D;&#x5728;render()&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#xFF0C;&#x4E0D;&#x5E94;&#x8BE5;&#x628A;&#x4ED6;&#x653E;&#x5728;this.state&#x4E2D;&#xFF0C;&#x6BD4;&#x5982;&#x8FD9;&#x91CC;&#x7684;timerID</p>
+<p>&#x5728;&#x7EC4;&#x4EF6;componentWillUnmount()&#x751F;&#x547D;&#x5468;&#x671F;&#x94A9;&#x5B50;&#x4E2D;&#x62C6;&#x4E0B;&#x8BA1;&#x65F6;&#x5668;&#xFF1A;</p>
+<pre><code class="lang-javascript">  componentWillUnmount() {
+    clearInterval(<span class="hljs-keyword">this</span>.timerID);
+  }
+</code></pre>
+<p>&#x6700;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x5B9E;&#x73B0;&#x6BCF;&#x79D2;&#x8FD0;&#x884C;&#x7684;tick()&#x65B9;&#x6CD5;&#x3002;&#x5B83;&#x4F7F;&#x7528;this.setState()&#x6765;&#x66F4;&#x65B0;&#x7EC4;&#x4EF6;&#x72B6;&#x6001;&#x3002;
+<a href="https://codepen.io/gaearon/pen/amqdNA?editors=0010" target="_blank">Try it on CodePen</a></p>
+<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Clock</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+  <span class="hljs-keyword">constructor</span>(props) {
+    <span class="hljs-keyword">super</span>(props);
+    <span class="hljs-keyword">this</span>.state = {date: <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()};
+  }
+
+  componentDidMount() {
+    <span class="hljs-keyword">this</span>.timerID = setInterval(
+      () =&gt; <span class="hljs-keyword">this</span>.tick(),
+      <span class="hljs-number">1000</span>
+    );
+  }
+
+  componentWillUnmount() {
+    clearInterval(<span class="hljs-keyword">this</span>.timerID);
+  }
+
+  tick() {
+    <span class="hljs-keyword">this</span>.setState({
+      date: <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()
+    });
+  }
+
+  render() {
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Hello, world!<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>It is {this.state.date.toLocaleTimeString()}.<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+    );
+  }
+}
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Clock</span> /&gt;</span>,
+  document.getElementById(&apos;root&apos;)
+);
+</span></code></pre>
+<p>&#x8BA9;&#x6211;&#x4EEC;&#x5FEB;&#x901F;&#x56DE;&#x987E;&#x4E00;&#x4E0B;&#x53D1;&#x751F;&#x4E86;&#x4EC0;&#x4E48;&#x4EE5;&#x53CA;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x7684;&#x987A;&#x5E8F;(&#x6E32;&#x67D3;&#x8FC7;&#x7A0B;)&#xFF1A;</p>
+<p>1&#xFF09;&#x5F53;<clock>&#x4F20;&#x9012;&#x7ED9;ReactDOM.render()&#x65F6;&#xFF0C;React&#x8C03;&#x7528;Clock&#x7EC4;&#x4EF6;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x3002;&#x7531;&#x4E8E;Clock&#x9700;&#x8981;&#x663E;&#x793A;&#x5F53;&#x524D;&#x65F6;&#x95F4;&#xFF0C;&#x6240;&#x4EE5;&#x5B83;new&#x4E00;&#x4E2A;&#x5F53;&#x524D;&#x65F6;&#x95F4;&#x5BF9;&#x8C61;&#x6765;&#x521D;&#x59CB;&#x5316;this.state&#x3002;&#x7A0D;&#x540E;&#x4F1A;&#x66F4;&#x65B0;&#x6B64;&#x72B6;&#x6001;&#x3002;&#xFF08;constructor&#xFF09;</clock></p>
+<p>2&#xFF09;React&#x8C03;&#x7528;Clock&#x7EC4;&#x4EF6;&#x7684;render()&#x65B9;&#x6CD5;,&#x83B7;&#x53D6;&#x5E94;&#x8BE5;&#x6E32;&#x67D3;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x66F4;&#x65B0;DOM&#xFF0C;&#x4F7F;&#x5176;&#x4E0E;Clock&#x7684;render&#x8F93;&#x51FA;&#x4E00;&#x81F4;&#x3002;&#xFF08;render &#xFF09;</p>
+<p>3&#xFF09;&#x5F53;Clock&#x7EC4;&#x4EF6;&#x63D2;&#x5165;DOM&#x4E2D;&#x65F6;&#xFF0C;React&#x8C03;&#x7528;componentDidMount()&#x751F;&#x547D;&#x5468;&#x671F;&#x94A9;&#x5B50;&#x3002;&#x5728;&#x8FD9;&#x91CC;&#xFF0C;Clock&#x7EC4;&#x4EF6;&#x8981;&#x6C42;&#x6D4F;&#x89C8;&#x5668;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x5B9A;&#x65F6;&#x5668;&#x6BCF;&#x79D2;&#x8C03;&#x7528;&#x4E00;&#x6B21;tick()&#x3002;&#xFF08;componentDidMount&#xFF09;</p>
+<p>4&#xFF09;&#x6D4F;&#x89C8;&#x5668;&#x6BCF;&#x79D2;&#x949F;&#x8C03;&#x7528;tick()&#x65B9;&#x6CD5;&#x3002;&#x5728;&#x8FD9;&#x91CC;&#xFF0C;Clock&#x7EC4;&#x4EF6;&#x901A;&#x8FC7;&#x8C03;&#x7528;setState()&#x66F4;&#x65B0;UI&#xFF0C;&#x663E;&#x793A;&#x5F53;&#x524D;&#x65F6;&#x95F4;&#x3002;&#x56E0;&#x4E3A;&#x8C03;&#x7528;&#x4E86;setState()&#x8BA9;React&#x77E5;&#x9053;state&#x6709;&#x53D8;&#x5316;&#xFF0C;&#x5E76;&#x518D;&#x6B21;&#x8C03;&#x7528;render()&#x65B9;&#x6CD5;&#x6765;&#x4E86;&#x89E3;&#x5C4F;&#x5E55;&#x4E0A;&#x5E94;&#x8BE5;&#x5448;&#x73B0;&#x662F;&#x4EC0;&#x4E48;&#x3002;&#x8FD9;&#x4E00;&#x6B21;&#xFF0C;render()&#x65B9;&#x6CD5;&#x4E2D;&#x7684;this.state.date&#x4E0E;&#x4E4B;&#x524D;&#x4E0D;&#x540C;&#xFF0C;&#x56E0;&#x800C;render&#x8F93;&#x51FA;&#x5C06;&#x5305;&#x542B;&#x66F4;&#x65B0;&#x7684;&#x65F6;&#x95F4;&#xFF0C;&#x5E76;&#x76F8;&#x5E94;&#x5730;&#x66F4;&#x65B0;&#x771F;&#x5B9E;DOM&#x3002;</p>
+<p>5&#xFF09;&#x5982;&#x679C;&#x65F6;&#x949F;&#x7EC4;&#x4EF6;&#x4ECE;DOM&#x4E2D;&#x5220;&#x9664;&#xFF0C;React&#x4F1A;&#x8C03;&#x7528;componentWillUnmount()&#x751F;&#x547D;&#x5468;&#x671F;&#x94A9;&#x5B50;&#xFF0C;&#x8BA9;&#x5B9A;&#x65F6;&#x5668;&#x505C;&#x6B62;&#x8BA1;&#x65F6;&#x3002;</p>
+<h2 id="&#x6B63;&#x786E;&#x4F7F;&#x7528;state">&#x6B63;&#x786E;&#x4F7F;&#x7528;state</h2>
+<p>&#x5173;&#x4E8E;setState()&#x65B9;&#x6CD5;&#xFF0C;&#x4F60;&#x5E94;&#x8BE5;&#x77E5;&#x9053;&#x4E09;&#x4EF6;&#x4E8B;&#x60C5;&#xFF1A;</p>
+<h3 id="&#x4E0D;&#x8981;&#x76F4;&#x63A5;&#x4FEE;&#x6539;state">&#x4E0D;&#x8981;&#x76F4;&#x63A5;&#x4FEE;&#x6539;state</h3>
+<p>&#x6BD4;&#x5982;&#x4E0B;&#x9762;&#x8FD9;&#x6837;&#x505A;&#xFF0C;&#x4E0D;&#x4F1A;&#x91CD;&#x65B0;&#x6E32;&#x67D3;&#x7EC4;&#x4EF6;</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// Wrong</span>
+<span class="hljs-keyword">this</span>.state.comment = <span class="hljs-string">&apos;Hello&apos;</span>;
+</code></pre>
+<p>&#x5E94;&#x8BE5;&#x4F7F;&#x7528;setState()</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// Correct</span>
+<span class="hljs-keyword">this</span>.setState({comment: <span class="hljs-string">&apos;Hello&apos;</span>});
+</code></pre>
+<p><strong>&#x552F;&#x4E00;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x7ED9;state&#x8D4B;&#x503C;&#x7684;&#x5730;&#x65B9;&#x662F;&#x5728; constructor&#x4E2D;</strong></p>
+<h3 id="state&#x66F4;&#x65B0;&#x53EF;&#x80FD;&#x662F;&#x5F02;&#x6B65;&#x7684;">state&#x66F4;&#x65B0;&#x53EF;&#x80FD;&#x662F;&#x5F02;&#x6B65;&#x7684;</h3>
+<p>&#x5728;&#x5BF9;setState()&#x591A;&#x6B21;&#x8C03;&#x7528;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4E3A;&#x4E86;&#x63D0;&#x9AD8;&#x6027;&#x80FD;&#xFF0C;React<strong>&#x53EF;&#x80FD;</strong>&#x5C06;&#x4ED6;&#x4EEC;&#x5408;&#x5E76;&#xFF0C;&#x6700;&#x540E;&#x4E00;&#x6B21;&#x6027;&#x66F4;&#x65B0;&#x3002;
+&#x7531;&#x4E8E;this.props&#x548C;this.state<strong>&#x53EF;&#x80FD;</strong>&#x4F1A;&#x5F02;&#x6B65;&#x66F4;&#x65B0;&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x5E94;&#x8BE5;&#x4F9D;&#x9760;&#x5B83;&#x4EEC;&#x7684;&#x503C;&#x8BA1;&#x7B97;&#x4E0B;&#x4E00;&#x4E2A;&#x72B6;&#x6001;&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#x4E0B;&#x9762;&#x8FD9;&#x6837;&#x66F4;&#x65B0;counter,&#x9875;&#x9762;&#x4E2D;&#x663E;&#x793A;1&#xFF08;&#x628A;&#x5B98;&#x65B9;&#x6587;&#x6863;&#x4F8B;&#x5B50;&#x6539;&#x4E86;&#x4E00;&#x4E0B;&#xFF0C;&#x611F;&#x89C9;&#x8FD9;&#x6837;&#x66F4;&#x80FD;&#x8BF4;&#x660E;&#x95EE;&#x9898;&#xFF09;</p>
+<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">App</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+  <span class="hljs-keyword">constructor</span>(props) {
+    <span class="hljs-keyword">super</span>(props);
+    <span class="hljs-keyword">this</span>.state = {
+        counter:<span class="hljs-number">0</span>
+    };
+  }
+
+  componentDidMount() {
+   <span class="hljs-comment">//&#x8FD9;&#x91CC;state&#x5E76;&#x6CA1;&#x6709;&#x7ACB;&#x5373;&#x66F4;&#x65B0;</span>
+    <span class="hljs-keyword">this</span>.setState({
+         counter: <span class="hljs-number">5</span>
+      });
+      <span class="hljs-comment">//setState()&#x63A5;&#x6536;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;this.state.counter&#x8FD8;&#x662F;0</span>
+     <span class="hljs-keyword">this</span>.setState({ 
+       counter: <span class="hljs-keyword">this</span>.state.counter + <span class="hljs-number">1</span> 
+     });       
+    }
+    render(){
+      <span class="hljs-keyword">return</span>(
+        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>{this.state.counter}<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span>
+      )
+    }
+}
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">App</span> /&gt;</span>,
+  document.getElementById(&apos;root&apos;)
+);
+</span></code></pre>
+<p>&#x4E0B;&#x9762;&#x8FD9;&#x6837;&#xFF0C;&#x9875;&#x9762;&#x663E;&#x793A;6&#xFF0C;&#x63A7;&#x5236;&#x53F0;&#x6253;&#x5370;&#xFF1A;</p>
+<pre><code>state:  0
+prevState:  Object {counter: 5}
+setState callback1: 6
+setState callback2: 6
+</code></pre><pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">App</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+      <span class="hljs-keyword">constructor</span>(props) {
+        <span class="hljs-keyword">super</span>(props);
+        <span class="hljs-keyword">this</span>.state = {counter:<span class="hljs-number">0</span>};
+      }
+
+      componentDidMount() {
+         <span class="hljs-keyword">this</span>.setState({
+           counter: <span class="hljs-number">5</span>
+         },<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;setState callback1:&apos;</span>,<span class="hljs-keyword">this</span>.state.counter)
+         });
+        <span class="hljs-comment">//setState&#x63A5;&#x6536;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x8FD9;&#x91CC;&#x7684;prevState&#x662F;&#x4E0A;&#x9762;this.setState&#x6267;&#x884C;&#x5B8C;&#x4E4B;&#x540E;&#x7684;state</span>
+         <span class="hljs-keyword">this</span>.setState((prevState, props)=&gt;{
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;prevState: &apos;</span>,prevState)
+           <span class="hljs-keyword">return</span> {
+             counter: prevState.counter + <span class="hljs-number">1</span>
+           };
+         },<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;setState callback2:&apos;</span>,<span class="hljs-keyword">this</span>.state.counter)
+         });
+         <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;state: &apos;</span>,<span class="hljs-keyword">this</span>.state.counter)
+      }
+    render(){
+      <span class="hljs-keyword">return</span>(
+        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>{this.state.counter}<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span>
+      )
+    }
+}
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">App</span> /&gt;</span>,
+  document.getElementById(&apos;root&apos;)
+);
+</span></code></pre>
+<p>&#x5148;&#x6267;&#x884C;&#x4E86;console.log(&apos;state: &apos;,this.state.counter)&#xFF0C;&#x8BF4;&#x660E;setState()&#x662F;&#x5F02;&#x6B65;&#x66F4;&#x65B0;&#x7684;
+setState()&#x6709;&#x4E24;&#x79CD;&#x5F62;&#x5F0F;
+1&#x3001;setState() &#x63A5;&#x6536;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x5728;setState()&#x4E2D;&#x8BBF;&#x95EE;this.state&#x53EF;&#x80FD;&#x4E0D;&#x662F;&#x6700;&#x65B0;&#x7684;state
+2&#x3001;setState(&#xFF09;&#x63A5;&#x6536;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x63A5;&#x6536;&#x6700;&#x65B0;&#x7684;state&#x4F5C;&#x4E3A;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x66F4;&#x65B0;&#x5E94;&#x7528;&#x540E;&#x7684;props&#x4F5C;&#x4E3A;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;</p>
+<h3 id="state&#x66F4;&#x65B0;&#x4F1A;&#x88AB;&#x5408;&#x5E76;">state&#x66F4;&#x65B0;&#x4F1A;&#x88AB;&#x5408;&#x5E76;</h3>
+<p>&#x5F53;&#x8C03;&#x7528;setState()&#x65F6;&#xFF0C;React&#x4F1A;&#x5C06;&#x4F60;&#x63D0;&#x4F9B;&#x7684;&#x5BF9;&#x8C61;&#x5408;&#x5E76;&#x5230;&#x5F53;&#x524D;state&#xFF0C;&#x4F8B;&#x5982;&#xFF0C;state&#x53EF;&#x80FD;&#x5305;&#x542B;&#x51E0;&#x4E2A;&#x72EC;&#x7ACB;&#x53D8;&#x91CF;&#xFF1A;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">constructor</span>(props) {
+    <span class="hljs-keyword">super</span>(props);
+    <span class="hljs-keyword">this</span>.state = {
+      posts: [],
+      comments: []
+    };
+}
+</code></pre>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x8C03;&#x7528;setState()&#x5355;&#x72EC;&#x66F4;&#x65B0;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#xFF1A;</p>
+<pre><code class="lang-javascript">componentDidMount() {
+    fetchPosts().then(response =&gt; {
+      <span class="hljs-keyword">this</span>.setState({
+        posts: response.posts
+      });
+    });
+
+    fetchComments().then(response =&gt; {
+      <span class="hljs-keyword">this</span>.setState({
+        comments: response.comments
+      });
+    });
+}
+</code></pre>
+<p><strong>state&#x5408;&#x5E76;&#x662F;&#x6D45;&#x5408;&#x5E76;(The merging is shallow)&#xFF0C;&#x6240;&#x4EE5;&#x8C03;&#x7528;this.setState&#xFF08;{comments}&#xFF09;&#x540E;&#xFF0C;this.state.post&#x4F9D;&#x7136;&#x4E0D;&#x53D8;&#xFF0C;&#x4F46;this.state.comments&#x4F1A;&#x88AB;&#x5B8C;&#x5168;&#x66FF;&#x4EE3;&#x3002;</strong></p>
+<p>&#x5B98;&#x65B9;&#x6587;&#x6863;&#x4F8B;&#x5B50;&#x8BB2;&#x5F97;&#x4E0D;&#x591F;&#x660E;&#x767D;&#xFF0C;&#x6211;&#x518D;&#x4E3E;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">constructor</span>(props) {
+    <span class="hljs-keyword">super</span>(props);
+    <span class="hljs-keyword">this</span>.state = {
+        info: {
+            value: <span class="hljs-number">1</span>,
+            text: <span class="hljs-string">&apos;&#x4E2A;&#x4EBA;&apos;</span>,
+            status: <span class="hljs-number">0</span>
+        },
+        array:[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>]
+    };
+}
+
+componentDidMount() {
+     <span class="hljs-keyword">this</span>.setState({
+       info: {
+         value: <span class="hljs-number">2</span>,
+         text: <span class="hljs-string">&apos;&#x516C;&#x53F8;&apos;</span>
+       },
+       array:[<span class="hljs-number">2</span>]
+     },<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;state updated:&apos;</span>,<span class="hljs-built_in">JSON</span>.stringify(<span class="hljs-keyword">this</span>.state))
+     });
+}
+</code></pre>
+<p>&#x63A7;&#x5236;&#x53F0;&#x6253;&#x5370;&#x7ED3;&#x679C;&#x662F;&#xFF1A; </p>
+<pre><code>{
+    &quot;info&quot;:{
+        &quot;value&quot;:2,
+        &quot;text&quot;:&quot;&#x516C;&#x53F8;&quot;
+    },
+    &quot;array&quot;:[2]
+}
+</code></pre><p><strong>&#x6240;&#x4EE5;&#xFF0C;&#x8BB0;&#x4F4F;&#x4E86;&#xFF01;&#xFF01;state&#x66F4;&#x65B0;&#x662F;&#x6D45;&#x5408;&#x5E76;&#xFF01;&#xFF01;state&#x4E2D;&#x7684;&#x5C5E;&#x6027;&#x503C;&#x4F1A;&#x88AB;&#x5B8C;&#x5168;&#x66FF;&#x4EE3;</strong></p>
+<h2 id="state&#x4ECE;&#x4E0A;&#x81F3;&#x4E0B;&#x4F20;&#x9012;">state&#x4ECE;&#x4E0A;&#x81F3;&#x4E0B;&#x4F20;&#x9012;</h2>
+<p>state&#x662F;&#x5C40;&#x90E8;&#x7684;&#x3001;&#x7EC4;&#x4EF6;&#x79C1;&#x6709;&#x7684;&#xFF0C;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#x7684;&#x7236;&#x7EC4;&#x4EF6;&#x548C;&#x5B50;&#x7EC4;&#x4EF6;&#x90FD;&#x4E0D;&#x80FD;&#x77E5;&#x9053;&#x8FD9;&#x4E2A;&#x7EC4;&#x4EF6;&#x662F;&#x6709;&#x72B6;&#x6001;&#x8FD8;&#x662F;&#x65E0;&#x72B6;&#x6001;&#xFF0C;&#x5B83;&#x4EEC;&#x4E5F;&#x4E0D;&#x9700;&#x8981;&#x5173;&#x5FC3;&#x8FD9;&#x4E2A;&#x7EC4;&#x4EF6;&#x662F;&#x88AB;&#x5B9A;&#x4E49;&#x4E3A;&#x51FD;&#x6570;&#x8FD8;&#x662F;&#x7C7B;&#x3002; &#x9664;&#x4E86;&#x62E5;&#x6709;&#x5E76;&#x8BBE;&#x7F6E;&#x5B83;&#x7684;&#x7EC4;&#x4EF6;&#x4E4B;&#x5916;&#xFF0C;&#x4EFB;&#x4F55;&#x5176;&#x4ED6;&#x7EC4;&#x4EF6;&#x90FD;&#x4E0D;&#x80FD;&#x8BBF;&#x95EE;&#x8FD9;&#x4E2A;state&#x3002;</p>
+<p>&#x4F46;&#x662F;&#x7EC4;&#x4EF6;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;props&#x5C06;&#x5B83;&#x7684;state&#x4F20;&#x9012;&#x7ED9;&#x5B50;&#x7EC4;&#x4EF6;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>It is {this.state.date.toLocaleTimeString()}.<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+</code></pre>
+<p>&#x5728;&#x81EA;&#x5B9A;&#x4E49;&#x7EC4;&#x4EF6;&#x4E2D;&#x4E5F;&#x53EF;&#x4EE5;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">FormattedDate</span> <span class="hljs-attr">date</span>=<span class="hljs-string">{this.state.date}</span> /&gt;</span>
+</code></pre>
+<p>FormattedDate &#x7EC4;&#x4EF6;&#x5728;&#x5B83;&#x7684;props&#x4E2D;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;date&#x5B57;&#x6BB5;&#xFF0C; &#x5728;&#x7EC4;&#x4EF6;&#x5185;&#x5E76;&#x4E0D;care&#x8FD9;&#x4E2A;date&#x662F;Clock&#x7684; state, &#x8FD8;&#x662F;Clock&#x7684; props, &#x8FD8;&#x662F;&#x624B;&#x52A8;&#x5199;&#x5165;&#x7684;</p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">FormattedDate</span>(<span class="hljs-params">props</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>It is {props.date.toLocaleTimeString()}.<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span></span>;
+}
+</code></pre>
+<p><strong>&#x8FD9;&#x901A;&#x5E38;&#x88AB;&#x79F0;&#x4E3A;&#x201C;&#x81EA;&#x9876;&#x5411;&#x4E0B;&#x201D;&#x6216;&#x201C;&#x5355;&#x5411;&#x201D;&#x6570;&#x636E;&#x6D41;&#x3002;</strong>
+&#x4EFB;&#x4F55;state&#x59CB;&#x7EC8;&#x7531;&#x67D0;&#x4E2A;&#x7279;&#x5B9A;&#x7EC4;&#x4EF6;&#x6240;&#x6709;&#xFF0C;&#x5E76;&#x4E14;&#x8FD9;&#x4E2A;&#x7EC4;&#x4EF6;&#x7684;state&#x53EA;&#x80FD;&#x5F71;&#x54CD;&#x5B83;&#x4E0B;&#x9762;&#x7684;&#x5B50;&#x7EC4;&#x4EF6;&#x3002;</p>
+<p>&#x53EF;&#x4EE5;&#x5C06;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#x6811;&#x7684;props&#x60F3;&#x8C61;&#x6210;&#x7011;&#x5E03;&#xFF0C;&#x6BCF;&#x4E2A;&#x7EC4;&#x4EF6;&#x7684;state&#x5C31;&#x50CF;&#x4E00;&#x4E2A;&#x989D;&#x5916;&#x7684;&#x6C34;&#x6E90;&#xFF0C;&#x5728;&#x67D0;&#x4E00;&#x4E2A;&#x70B9;&#x4E0E;props&#x4F1A;&#x5408;&#xFF0C;&#x5E76;&#x4E14;&#x4E5F;&#x5F80;&#x4E0B;&#x6D41;&#x52A8;&#x3002;</p>
+<p>&#x4E3A;&#x4E86;&#x8BC1;&#x660E;&#x6240;&#x6709;&#x7EC4;&#x4EF6;&#x90FD;&#x662F;&#x771F;&#x6B63;&#x5B64;&#x7ACB;&#x4E92;&#x4E0D;&#x5F71;&#x54CD;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;App&#x7EC4;&#x4EF6;&#xFF0C;&#x5448;&#x73B0;&#x4E09;&#x4E2A;&lt;Clock&gt;&#xFF1A;</p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">App</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> (
+    &lt;div&gt;
+      &lt;Clock /&gt;
+      &lt;Clock /&gt;
+      &lt;Clock /&gt;
+    &lt;/div&gt;
+  );
+}
+
+ReactDOM.render(
+  &lt;App /&gt;,
+  document.getElementById(&apos;root&apos;)
+);
+</code></pre>
+<p>&#x6BCF;&#x4E2A;Clock&#x90FD;&#x8BBE;&#x7F6E;&#x81EA;&#x5DF1;&#x7684;&#x5B9A;&#x65F6;&#x5668;&#x5E76;&#x72EC;&#x7ACB;&#x66F4;&#x65B0;&#x3002;
+&#x5728;React&#x5E94;&#x7528;&#x4E2D;&#xFF0C;&#x4E0D;&#x7BA1;&#x7EC4;&#x4EF6;&#x662F;&#x6709;&#x72B6;&#x6001;&#x8FD8;&#x662F;&#x65E0;&#x72B6;&#x6001;&#xFF0C;&#x90FD;&#x8BA4;&#x4E3A;&#x662F;&#x7EC4;&#x4EF6;&#x81EA;&#x8EAB;&#x7684;&#x5B9E;&#x73B0;&#x7EC6;&#x8282;.
+&#x53EF;&#x4EE5;&#x5728;&#x6709;&#x72B6;&#x6001;&#x7EC4;&#x4EF6;&#x4E2D;&#x4F7F;&#x7528;&#x65E0;&#x72B6;&#x6001;&#x7EC4;&#x4EF6;&#xFF0C;&#x53CD;&#x4E4B;&#x4EA6;&#x7136;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="React快速开始（四）组件和props.html" class="navigation navigation-prev " aria-label="Previous page: 组件和props">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="React快速开始（六）事件处理.html" class="navigation navigation-next " aria-label="Next page: 事件处理">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"State和生命周期","level":"2.5","depth":1,"next":{"title":"事件处理","level":"2.6","depth":1,"path":"React快速开始/React快速开始（六）事件处理.md","ref":"React快速开始/React快速开始（六）事件处理.md","articles":[]},"previous":{"title":"组件和props","level":"2.4","depth":1,"path":"React快速开始/React快速开始（四）组件和props.md","ref":"React快速开始/React快速开始（四）组件和props.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"React快速开始/React快速开始（五）State和生命周期.md","mtime":"2017-06-15T03:35:56.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-16T11:53:01.134Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
