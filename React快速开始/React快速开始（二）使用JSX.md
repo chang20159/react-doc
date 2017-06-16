@@ -1,6 +1,8 @@
 
 >[Introducing JSX](https://facebook.github.io/react/docs/introducing-jsx.html)
 
+# 使用JSX
+
 JSX，全称 JavaScript XML ，一种类XML语言，它是JavaScript的语法扩展。
 
 没有使用JSX

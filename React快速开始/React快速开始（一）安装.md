@@ -1,13 +1,11 @@
-> [Installation](https://facebook.github.io/react/docs/installation.html)  
-> [Optimizing Performance](https://facebook.github.io/react/docs/optimizing-performance.html)
+>[Installation](https://facebook.github.io/react/docs/installation.html)  
+>[Optimizing Performance](https://facebook.github.io/react/docs/optimizing-performance.html)
 
 
-
-## 安装
-
+# 安装
 react很灵活，可用于各种项目。 可以使用它创建新的应用程序，也可以引入到现有的代码库中。看看下面哪一种方式是你需要的。
 
-### 如果只想试一试React
+## 如果只想试一试React
 
 如果只想试一试React，那就使用CodePen，不需要安装任何东西，直接写React代码就能看到效果。
 
@@ -39,7 +37,7 @@ react很灵活，可用于各种项目。 可以使用它创建新的应用程�
 </html>
 ```
 
-### 创建React应用程序
+## 创建React应用程序
 
 看这里 &gt;&gt; [create-react-app](https://github.com/facebookincubator/create-react-app)，这是构建新的React单页应用程序的最佳方法，能够使用JavaScript最新特性
 
@@ -53,7 +51,7 @@ npm start
 
 这样创建的应用程序是零配置的，没有使用babel和webpack
 
-### 在已有项目中引入React
+## 在已有项目中引入React
 
 一个经典的React项目应该具备这些：
 
@@ -83,7 +81,7 @@ npm init
 
 Yarn 和 npm 都是从[npm registry](https://www.npmjs.com/)下载包的
 
-## 开发和生产版本
+# 开发和生产版本
 
 默认情况下，React包含许多有用的警告，这些警告在开发中非常有用。  
 但是这会让项目更大更慢，所以部署项目到线上时应该使用开发版本。
@@ -94,7 +92,7 @@ Yarn 和 npm 都是从[npm registry](https://www.npmjs.com/)下载包的
 
 执行`npm run build`会在项目的build/目录生成生产版本代码，如果不是在生产环境，执行`npm start`
 
-### 引用外部文件
+## 引用外部文件
 
 下面引用的直接就是生产环境版本，注意只有 .min.js结尾的才是生产环境稳定版本
 
@@ -103,7 +101,7 @@ Yarn 和 npm 都是从[npm registry](https://www.npmjs.com/)下载包的
 <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
 ```
 
-### Brunch配置
+## Brunch配置
 
 安装插件uglify-js-brunch
 
@@ -116,7 +114,7 @@ yarn add --dev uglify-js-brunch
 
 然后使用`brunch build -p`构建
 
-### Browserify配置
+## Browserify配置
 
 安装几个插件
 
@@ -143,7 +141,7 @@ yarn add --dev bundle-collapser envify uglify-js uglifyify
       | uglifyjs --compress --mangle > ./bundle.js
 ```
 
-### Rollup配置
+## Rollup配置
 
 安装插件
 
@@ -173,7 +171,7 @@ plugins: [
 ]
 ```
 
-### webpack配置
+## webpack配置
 
 例如,  
     `npm run build`会根据生产版本配置文件webpack.config.js构建,  
