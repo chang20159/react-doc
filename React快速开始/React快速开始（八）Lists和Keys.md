@@ -1,6 +1,7 @@
 
 >[Lists and Keys](https://facebook.github.io/react/docs/lists-and-keys.html)
 
+## Lists 和 Keys
 我们先来看下在JavaScript中如何转换列表，下面的代码使用map()函数将number数组中的每个数值乘以2，然后返回新的数组。
 
 控制台打印[2, 4, 6, 8, 10]
@@ -13,7 +14,6 @@ console.log(doubled);
 在React中，元素列表的转换与这几乎相同，像下面这样（官方文档啰里啰嗦，其实一看代码就明白了是不）
 [Try it on CodePen](https://codepen.io/gaearon/pen/GjPyQr?editors=0011)
 
-<!-- more -->
 
 ```javascript
 const numbers = [1, 2, 3, 4, 5];

@@ -1,12 +1,13 @@
 
 >[Handling Events](https://facebook.github.io/react/docs/handling-events.html)
 
+# 事件处理
 React元素事件处理与DOM元素上的事件处理很相似，但有一些语法差异：
 
 - React事件绑定采用驼峰式命名（onClick），而不是小写(onclick)。
 - 使用JSX，你可以传递一个函数作为事件处理程序，而不是一个字符串。
 
-<!-- more -->
+
 例如，html中绑定事件
 
 ```html
@@ -23,6 +24,8 @@ React元素事件处理与DOM元素上的事件处理很相似，但有一些语
 ```
 
 **另一个区别是:在React中不能通过return false来阻止默认行为，必须显式调用preventDefault。** 
+
+> 还有在react中onClick最终要绑定在DOM元素上才有效
 
 例如，为了阻止链接打开新页面的默认行为，在纯HTML中可以这样写：
 

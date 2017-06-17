@@ -1,10 +1,11 @@
 
 >[Components and Props](https://facebook.github.io/react/docs/components-and-props.html)
 
-使用组件可以将UI拆分成独立的可重复使用的部分，然后可以单独考虑每个组件的渲染。从概念上来讲，组件就像JavaScript函数，接受任意输入（称为“props”），并返回描述页面呈现的React元素。
-<!-- more -->
+# 组件和Props
 
-### 函数组件和类组件（Functional and Class ）
+使用组件可以将UI拆分成独立的可重复使用的部分，然后可以单独考虑每个组件的渲染。从概念上来讲，组件就像JavaScript函数，接受任意输入（称为“props”），并返回描述页面呈现的React元素。
+
+## 函数组件和类组件（Functional and Class ）
 定义组件最简单的方法是：编写一个JavaScript函数：
 ```javascript
 function Welcome(props) {
@@ -24,7 +25,7 @@ class Welcome extends React.Component {
 ```
 上面这两个组件是等同的，class组件有一些额外的功能（state、钩子函数），这会在下一章节讨论，这里先使用functional组件来讨论
 
-### 渲染组件
+## 渲染组件
 之前我们遇到的元素，都是DOM标签：
 ```javascript
 const element = <div />;

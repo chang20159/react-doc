@@ -1,3 +1,5 @@
+>[JSX In Depth](https://facebook.github.io/react/docs/jsx-in-depth.html)
+
 JSX其实就是React.createElement（component，props，... children）函数的语法糖。 
 
 JSX代码：

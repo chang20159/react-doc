@@ -1,6 +1,7 @@
 
 >[State and Lifecycle](https://facebook.github.io/react/docs/state-and-lifecycle.html)
 
+# State 和 生命周期
 前面介绍过时钟的例子，通过ReactDOM.render()来改变页面渲染内容
 
 ```javascript
@@ -19,7 +20,7 @@ function tick() {
 setInterval(tick, 1000);
 ```
 在本节，我们将学习如何让Clock组件真正可重用和可封装， 它可以设置自己的计时器并每秒更新一次
-<!-- more -->
+
 我们可以从封装时钟开始：
 
 ```javascript

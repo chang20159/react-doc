@@ -1,6 +1,7 @@
 
 >[Composition vs Inheritance](https://facebook.github.io/react/docs/composition-vs-inheritance.html)
 
+# 组合与继承
 刚接触React的开发人员通常通过继承来实现代码重用，然而我们建议使用组合而不是继承来重用组件之间的代码。React具有强大的组合模型，可以帮助我们解决这些代码重用的问题，而不需要使用继承。
 
 这篇主要是讲 this.props.children
