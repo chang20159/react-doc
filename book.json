@@ -8,7 +8,7 @@
     "root": ".",
     "links": {
         "sidebar": {
-            "主页": "http://chang20159.com"
+            "前端Girl": "http://chang20159.com"
         }
     },
     "plugins": [
@@ -82,7 +82,7 @@
             ]
         },
         "tbfed-pagefooter": {
-            "copyright": "Copyright © chang20159.com 2016",
+            "copyright": "Copyright © chang20159.com 2017",
             "modify_label": "该文件修订时间：",
             "modify_format": "YYYY-MM-DD HH:mm:ss"
         },
