@@ -20,6 +20,7 @@
 * [深入JSX](React高级指南/React高级指南（一）深入理解JSX.md)
 * [使用PropTypes进行类型检测](React高级指南/React高级指南（二）使用PropTypes进行类型检测.md)
 * [Refs与DOM](React高级指南/React高级指南（三）Refs与DOM.md)
+* [不受控组件](React高级指南/React高级指南（四）不受控组件.md)
 	
 ## 官方博客
 
