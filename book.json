@@ -48,7 +48,7 @@
         },
         "prism": {
             "css": [
-                "prism-themes/themes/prism-hopscotch.css"
+                "prism-themes/themes/prism-base16-ateliersulphurpool.light.css"
             ]
         },
         "github": {

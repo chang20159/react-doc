@@ -1,6 +1,6 @@
 # Summary
 
-* [Introduction](README.md)
+* [前言](README.md)
 
 ## 快速开始
 * [安装](React快速开始/React快速开始（一）安装.md)
