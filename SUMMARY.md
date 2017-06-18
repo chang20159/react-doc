@@ -21,6 +21,9 @@
 * [使用PropTypes进行类型检测](React高级指南/React高级指南（二）使用PropTypes进行类型检测.md)
 * [Refs与DOM](React高级指南/React高级指南（三）Refs与DOM.md)
 * [不受控组件](React高级指南/React高级指南（四）不受控组件.md)
+* [性能优化](React高级指南/React高级指南（五）性能优化.md)
+* [不使用ES6的React](React高级指南/React高级指南（六）不使用ES6的React.md)
+* [不使用JSX的React](React高级指南/React高级指南（七）不使用JSX的React.md)
 	
 ## 官方博客
 
