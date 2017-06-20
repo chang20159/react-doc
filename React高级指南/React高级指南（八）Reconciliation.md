@@ -1,75 +1,136 @@
-# Contribute to GitLab
+>[Reconciliation](https://facebook.github.io/react/docs/reconciliation.html)
 
-This guide details how to use issues and pull requests to improve GitLab.
+# 协调算法（Diff算法）
 
--  [Closing policy for issues and pull requests](#closing-policy-for-issues-and-pull-requests)
--  [Issue tracker](#issue-tracker)
--  [Pull requests](#pull-requests)
+React提供了一个声明式的API，因此您不必担心每次更新发生了什么变化。 这让编写应用程序变得容易得多，但是在React中这是如何实现的呢？本文介绍了React中的“diff”算法，这种算法让组件更新可预测，同时对于高性能应用程序来说足够快。
 
-If you want to know how the GitLab team handles contributions have a look at [the GitLab contributing process](PROCESS.md).
+## 动机
+当你使用React时，可以思考一下创建一个React元素树的render()函数。在下一次 state 或 props 更新时，render()函数会返回一个不同的React元素树。React需要知道如何有效的更新UI来与当前返回的React元素树匹配一致。
 
-## Closing policy for issues and pull requests
+这是一个需要以最小操作次数实现从一棵树转为另一棵树的算法问题，这个问题有一些通用的解决方案。然而[标准的diff的算法](http://grfia.dlsi.ua.es/ml/algorithms/references/editsurvey_bille.pdf)复杂度为O(n<sup>3</sup>)，n是树中元素个数。
 
-GitLab is a popular open source project and the capacity to deal with issues and pull requests is limited. Out of respect for our volunteers, issues and pull requests not in line with the guidelines listed in this document may be closed without notice.
+如果在React中使用这个算法，显示1000个元素需要大约10亿次比较，这无法满足性能要求。 然而React团队基于Web页面的特点做了两个简单的假设，将时间复杂度为降为O(n)：
 
-Please treat our volunteers with courtesy and respect, it will go a long way towards getting your issue resolved.
+1. 不同类型的两个元素会产生不同的树，相同类型的元素产生相似的DOM结构
+2. 对于同一层次的子节点可以通过key让react知道是否添加、删除或更改
 
-Issues and pull requests should be in English and contain appropriate language for audiences of all ages.
+实际上，这些假设对于几乎所有的实际用例都是有效的。
 
-## Issue tracker
+## diff算法
+当比较两棵树时，React首先比较两个根元素，对于不同类型的根元素，比较行为是不同的。
 
-To get support for your particular problem please use the channels as detailed in [the getting help section of the readme](https://github.com/gitlabhq/gitlabhq#getting-help). Professional [support subscriptions](http://www.gitlab.com/subscription/) and [consulting services](http://www.gitlab.com/consultancy/) are available from [GitLab.com](http://www.gitlab.com/).
+### 元素类型不相同
+当根元素类型不同时，React会删除旧的树，重新构建新的树。例如从&lt;a>到&lt;img>, 从&lt;Article> 到 &lt;Comment>, 从&lt;Button> 到 &lt;div> ，都会重新构建。
 
-The [issue tracker](https://github.com/gitlabhq/gitlabhq/issues) is only for obvious bugs or misbehavior in the latest [stable or development release of GitLab](MAINTENANCE.md). When submitting an issue please conform to the issue submission guidelines listed below. Not all issues will be addressed and your issue is more likely to be addressed if you submit a pull request which partially or fully addresses the issue.
+当删除旧的树时，老的DOM节点会被销毁，执行组件实例的componentWillUnmount()方法；当构建一个新的树时，新的DOM节点会插入到DOM树中，会执行组件实例的 componentWillMount()和componentDidMount()；任何与旧的树相关的state都会丢失，根组件下的任何子组件都会被销毁。
 
-Do not use the issue tracker for feature requests. We have a specific [feedback and suggestions forum](http://feedback.gitlab.com) for this purpose.
+例如：
 
-Please send a pull request with a tested solution or a pull request with a failing test instead of opening an issue if you can. If you're unsure where to post, post to the [mailing list](https://groups.google.com/forum/#!forum/gitlabhq) or [Stack Overflow](http://stackoverflow.com/questions/tagged/gitlab) first. There are a lot of helpful GitLab users there who may be able to help you quickly. If your particular issue turns out to be a bug, it will find its way from there.
+```xml
+<div>
+  <Counter />
+</div>
 
-### Issue tracker guidelines
+<span>
+  <Counter />
+</span>
+```
+这会将老的 <Counter />销毁，并创建一个新的 <Counter />。
 
-**[Search](https://github.com/gitlabhq/gitlabhq/search?q=&ref=cmdform&type=Issues)** for similar entries before submitting your own, there's a good chance somebody else had the same issue. Show your support with `:+1:` and/or join the discussion. Please submit issues in the following format (as the first post):
 
-1. **Summary:** Summarize your issue in one sentence (what goes wrong, what did you expect to happen)
-2. **Steps to reproduce:** How can we reproduce the issue, preferably on the [GitLab Vagrant virtual machine](https://github.com/gitlabhq/gitlab-vagrant-vm) (start with: `vagrant destroy && vagrant up && vagrant ssh`)
-3. **Expected behavior:** Describe your issue in detail
-4. **Observed behavior**
-5. **Relevant logs and/or screenshots:** Please use code blocks (\`\`\`) to format console output, logs, and code as it's very hard to read otherwise.
-6. **Output of checks**
-    * Results of GitLab [Application Check](doc/install/installation.md#check-application-status) (`sudo -u git -H bundle exec rake gitlab:check RAILS_ENV=production`); we will only investigate if the tests are passing
-    * Version of GitLab you are running; we will only investigate issues in the latest stable and development releases as per the [maintenance policy](MAINTENANCE.md)
-    * Add the last commit sha1 of the GitLab version you used to replicate the issue (obtainable from the help page)
-    * Describe your setup (use relevant parts from `sudo -u git -H bundle exec rake gitlab:env:info RAILS_ENV=production`)
-7. **Possible fixes**: If you can, link to the line of code that might be responsible for the problem
 
-## Pull requests
+### 相同类型的DOM元素
+当比较两个相同类型的DOM元素时，React会查看两者的属性，保留相同的底层DOM节点，并且只更新已更改的属性。例如：
 
-We welcome pull requests with fixes and improvements to GitLab code, tests, and/or documentation. The features we would really like a pull request for are listed with the [status 'accepting merge/pull requests' on our feedback forum](http://feedback.gitlab.com/forums/176466-general/status/796455) but other improvements are also welcome.
+```xml
+<div className="before" title="stuff" />
 
-### Pull request guidelines
+<div className="after" title="stuff" />
+```
+通过比较这两个元素，React知道只修改底层DOM节点上的className。
 
-If you can, please submit a pull request with the fix or improvements including tests. If you don't know how to fix the issue but can write a test that exposes the issue we will accept that as well. In general bug fixes that include a regression test are merged quickly while new features without proper tests are least likely to receive timely feedback. The workflow to make a pull request is as follows:
+更新样式时，React也知道只更新更改的属性。 例如：
 
-1. Fork the project on GitHub
-1. Create a feature branch
-1. Write [tests](README.md#run-the-tests) and code
-1. Add your changes to the [CHANGELOG](CHANGELOG)
-1. If you have multiple commits please combine them into one commit by [squashing them](http://git-scm.com/book/en/Git-Tools-Rewriting-History#Squashing-Commits)
-1. Push the commit to your fork
-1. Submit a pull request
-2. [Search for issues](https://github.com/gitlabhq/gitlabhq/search?q=&ref=cmdform&type=Issues) related to your pull request and mention them in the pull request description
+```xml
+<div style={{color: 'red', fontWeight: 'bold'}} />
 
-We will accept pull requests if:
+<div style={{color: 'green', fontWeight: 'bold'}} />
+```
 
-* The code has proper tests and all tests pass (or it is a test exposing a failure in existing code)
-* It can be merged without problems (if not please use: `git rebase master`)
-* It does not break any existing functionality
-* It's quality code that conforms to the [Ruby](https://github.com/bbatsov/ruby-style-guide) and [Rails](https://github.com/bbatsov/rails-style-guide) style guides and best practices
-* The description includes a motive for your change and the method you used to achieve it
-* It is not a catch all pull request but rather fixes a specific issue or implements a specific feature
-* It keeps the GitLab code base clean and well structured
-* We think other users will benefit from the same functionality
-* If it makes changes to the UI the pull request should include screenshots
-* It is a single commit (please use `git rebase -i` to squash commits)
+这里React只会修改color，而不会修改fontWeight。
 
-For examples of feedback on pull requests please look at already [closed pull requests](https://github.com/gitlabhq/gitlabhq/pulls?direction=desc&page=1&sort=created&state=closed).
+对DOM节点diff处理后，React再对子节点进行递归diff。
+
+### 相同类型的组件元素
+当组件更新时，实例保持不变，从而在渲染过程中保存状态。 React更新底层组件实例的props以匹配新元素，并调用底层实例上的componentWillReceiveProps()和componentWillUpdate()。
+
+接下来，调用render()方法，并且对上一个返回结果和新结果进行递归diff。
+### 在Children上递归
+默认情况下，当对DOM节点的子节点进行递归时，React会同时遍历两个子列表.
+例如，当在列表的最后添加一个元素时，这两个树之间的转换很简单：
+
+```xml
+<ul>
+  <li>first</li>
+  <li>second</li>
+</ul>
+
+<ul>
+  <li>first</li>
+  <li>second</li>
+  <li>third</li>
+</ul>
+
+```
+
+React会匹配第一个li &lt;li>first&lt;/li> 和第二个li &lt;li>first&lt;/li>，然后插入第三个li。
+
+但是如果在列表最前面插入一项，性能就会变差。例如：
+
+```xml
+<ul>
+  <li>Duke</li>
+  <li>Villanova</li>
+</ul>
+
+<ul>
+  <li>Connecticut</li>
+  <li>Duke</li>
+  <li>Villanova</li>
+</ul>
+```
+react会替换掉每一项， Connecticut替换Duke，Duke替换Villanova，然后插入Villanova，而不知道保留Duke和Villanova。这样效率会很低。
+### Keys
+为了解决这个问题，React提供一个属性key。 当children有key时，React使用该key将原始树中的列表与新的树中的列表相匹配。 例如，
+
+```xml
+<ul>
+  <li key="2015">Duke</li>
+  <li key="2016">Villanova</li>
+</ul>
+
+<ul>
+  <li key="2014">Connecticut</li>
+  <li key="2015">Duke</li>
+  <li key="2016">Villanova</li>
+</ul>
+```
+现在React知道key为2014的元素是一个新的元素，key为2015和2016的元素只需要移动一下。
+
+通常指定一个key并不困难,您要显示的元素可能已经具有唯一的ID，因此key可以来自你的数据：
+
+```xml
+<li key={item.id}>{item.name}</li>
+```
+
+key必须在兄弟节点中是唯一的，但在全局环境下不要求唯一。
+
+你也可以将数组中的项目索引作为key。 如果项目永远不会重新排序，可以使用这种方法。如果会重新排序，执行会很慢，建议不要使用索引。
+## 权衡
+React的这种diff算法基于两个假设，如果这个假设不能满足，性能就会受到影响。
+
+- 该算法不会尝试匹配不同组件类型的子树。如果两个组件输出很相似但类型不同，应该让它们类型相同。
+- key应该是稳定的、可预测的、唯一的。不稳定的键（如Math.random()生成的）将导致许多组件实例和DOM节点被不必要地重新创建，这会导致子组件的性能下降和状态丢失。
+
+## 总结
+这篇主要是讲react更新的细节：diff算法。 这篇翻译的不太好，不能完全概括diff算法。可以参考这篇[深入浅出React（四）：虚拟DOM Diff算法解析](http://www.infoq.com/cn/articles/react-dom-diff?from=timeline)，讲的很详细。

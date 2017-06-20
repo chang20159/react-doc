@@ -24,7 +24,10 @@
 * [性能优化](React高级指南/React高级指南（五）性能优化.md)
 * [不使用ES6的React](React高级指南/React高级指南（六）不使用ES6的React.md)
 * [不使用JSX的React](React高级指南/React高级指南（七）不使用JSX的React.md)
-	
+* [协调（Diff算法）](React高级指南/React高级指南（八）Reconciliation.md)
+* [Context](React高级指南/React高级指南（九）Context.md)
+* [Web Components](React高级指南/React高级指南（十）Web Components.md)	
+
 ## 官方博客
 
 ----
