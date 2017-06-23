@@ -383,7 +383,7 @@ import MyComponent, { someFunction } from './MyComponent.js';
 ### 不能传递Refs
 高阶组件一般会将所有的props传递给被包装的组件，但是不可能传递ref。 ref和key一样，并不是真正的prop,是由React特别处理的。 如果想要给一个元素添加ref，该元素的组件是HOC返回的组件，则ref引用的是最外层的容器组件的实例，而不是被包装组件的实例。
 
-如果你遇到了这个问题，应该想想怎么避免使用ref，如前面介绍过的 [Refs与DOM](React高级指南/React高级指南（三）Refs与DOM.html#将dom的refs暴露给父组件)，可以使用props传递ref回调。例如：
+如果你遇到了这个问题，应该想想怎么避免使用ref，如前面介绍过的 [Refs与DOM](./React高级指南（三）Refs与DOM.html#将dom的refs暴露给父组件)，可以使用props传递ref回调。例如：
 
 ```javascript
 function Field({ inputRef, ...rest }) {
