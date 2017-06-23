@@ -1,0 +1,991 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>高阶组件 · React中文文档</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        <meta name="author" content="Yanfang Chang">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-base16-ateliersulphurpool.light.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-sectionx/sectionx.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-local-video/video-js.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../part3/title.md" />
+    
+    
+    <link rel="prev" href="React高级指南（十）Web Components.html" />
+    
+
+    
+        <link rel="shortcut icon" href='../favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../favicon.ico' type="image/x-icon">
+    
+    
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"chang20159/react-doc","types":["star"],"size":"small"};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://chang20159.com" target="_blank" class="custom-link">前端Girl</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">快速开始</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../React快速开始/React快速开始（一）安装.html">
+            
+                <a href="../React快速开始/React快速开始（一）安装.html">
+            
+                    
+                    安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../React快速开始/React快速开始（二）使用JSX.html">
+            
+                <a href="../React快速开始/React快速开始（二）使用JSX.html">
+            
+                    
+                    使用JSX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../React快速开始/React快速开始（三）渲染元素.html">
+            
+                <a href="../React快速开始/React快速开始（三）渲染元素.html">
+            
+                    
+                    渲染元素
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../React快速开始/React快速开始（四）组件和props.html">
+            
+                <a href="../React快速开始/React快速开始（四）组件和props.html">
+            
+                    
+                    组件和props
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../React快速开始/React快速开始（五）State和生命周期.html">
+            
+                <a href="../React快速开始/React快速开始（五）State和生命周期.html">
+            
+                    
+                    State和生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../React快速开始/React快速开始（六）事件处理.html">
+            
+                <a href="../React快速开始/React快速开始（六）事件处理.html">
+            
+                    
+                    事件处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../React快速开始/React快速开始（七）条件渲染.html">
+            
+                <a href="../React快速开始/React快速开始（七）条件渲染.html">
+            
+                    
+                    条件渲染
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../React快速开始/React快速开始（八）Lists和Keys.html">
+            
+                <a href="../React快速开始/React快速开始（八）Lists和Keys.html">
+            
+                    
+                    Lists和Keys
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="../React快速开始/React快速开始（九）表单.html">
+            
+                <a href="../React快速开始/React快速开始（九）表单.html">
+            
+                    
+                    表单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="../React快速开始/React快速开始（十）state提升.html">
+            
+                <a href="../React快速开始/React快速开始（十）state提升.html">
+            
+                    
+                    state提升
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="../React快速开始/React快速开始（十一）组合vs继承.html">
+            
+                <a href="../React快速开始/React快速开始（十一）组合vs继承.html">
+            
+                    
+                    组合vs继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">高级指南</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="React高级指南（一）深入理解JSX.html">
+            
+                <a href="React高级指南（一）深入理解JSX.html">
+            
+                    
+                    深入JSX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="React高级指南（二）使用PropTypes进行类型检测.html">
+            
+                <a href="React高级指南（二）使用PropTypes进行类型检测.html">
+            
+                    
+                    使用PropTypes进行类型检测
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="React高级指南（三）Refs与DOM.html">
+            
+                <a href="React高级指南（三）Refs与DOM.html">
+            
+                    
+                    Refs与DOM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="React高级指南（四）不受控组件.html">
+            
+                <a href="React高级指南（四）不受控组件.html">
+            
+                    
+                    不受控组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="React高级指南（五）性能优化.html">
+            
+                <a href="React高级指南（五）性能优化.html">
+            
+                    
+                    性能优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="React高级指南（六）不使用ES6的React.html">
+            
+                <a href="React高级指南（六）不使用ES6的React.html">
+            
+                    
+                    不使用ES6的React
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="React高级指南（七）不使用JSX的React.html">
+            
+                <a href="React高级指南（七）不使用JSX的React.html">
+            
+                    
+                    不使用JSX的React
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="React高级指南（八）Reconciliation.html">
+            
+                <a href="React高级指南（八）Reconciliation.html">
+            
+                    
+                    协调（Diff算法）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.9" data-path="React高级指南（九）Context.html">
+            
+                <a href="React高级指南（九）Context.html">
+            
+                    
+                    Context
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.10" data-path="React高级指南（十）Web Components.html">
+            
+                <a href="React高级指南（十）Web Components.html">
+            
+                    
+                    Web组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.11" data-path="React高级指南（十一）高阶组件.html">
+            
+                <a href="React高级指南（十一）高阶组件.html">
+            
+                    
+                    高阶组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">官方博客</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../part3/title.md">
+            
+                <span>
+            
+                    
+                    Last part without title
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >高阶组件</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <blockquote>
+<p><a href="https://facebook.github.io/react/docs/higher-order-components.html" target="_blank">Higher-Order Components</a></p>
+</blockquote>
+<h1 id="&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;"><a name="&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;" class="plugin-anchor" href="#&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;" class="anchor-navigation-ex-anchor" href="#&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;</h1>
+<p>&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;&#xFF08;HOC&#xFF09;&#x662F;React&#x4E2D;&#x7528;&#x4E8E;&#x91CD;&#x7528;&#x7EC4;&#x4EF6;&#x903B;&#x8F91;&#x7684;&#x4E00;&#x79CD;&#x9AD8;&#x7EA7;&#x6280;&#x672F;&#x3002; HOCs&#x672C;&#x8EAB;&#x5E76;&#x4E0D;&#x662F;React API&#x7684;&#x4E00;&#x90E8;&#x5206;&#xFF0C;&#x800C;&#x662F;React&#x7EC4;&#x4EF6;&#x7EC4;&#x5408;&#x7684;&#x4E00;&#x79CD;&#x6A21;&#x5F0F;&#x3002;</p>
+<p><strong>&#x5177;&#x4F53;&#x6765;&#x8BF4;&#xFF0C;&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;&#x662F;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x63A5;&#x6536;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#x5E76;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x65B0;&#x7EC4;&#x4EF6;&#x3002;</strong></p>
+<pre class="language-"><code class="lang-javascript"><span class="token keyword">const</span> EnhancedComponent <span class="token operator">=</span> <span class="token function">higherOrderComponent</span><span class="token punctuation">(</span>WrappedComponent<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x5C31;&#x50CF;&#x7EC4;&#x4EF6;&#x5C06;props&#x8F6C;&#x6362;&#x6210;UI&#xFF0C;&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;&#x5C06;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#x8F6C;&#x6362;&#x6210;&#x53E6;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#x3002;HOC&#x5728;&#x7B2C;&#x4E09;&#x65B9;React&#x5E93;&#x4E2D;&#x5F88;&#x5E38;&#x89C1;&#xFF0C;&#x4F8B;&#x5982;Redux&#x7684; <a href="https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options" target="_blank">connect</a> &#x548C;Relay&#x7684; <a href="https://facebook.github.io/relay/docs/api-reference-relay.html#createcontainer-static-method" target="_blank">createContainer</a>&#x3002;</p>
+<p>&#x5728;&#x672C;&#x6587;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x8BA8;&#x8BBA;&#x4E3A;&#x4EC0;&#x4E48;&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;&#x662F;&#x6709;&#x7528;&#x7684;&#xFF0C;&#x4EE5;&#x53CA;&#x5982;&#x4F55;&#x7F16;&#x5199;&#x81EA;&#x5DF1;&#x7684;&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;&#x3002;</p>
+<h2 id="&#x4F7F;&#x7528;hoc&#x89E3;&#x51B3;&#x4E0D;&#x540C;&#x7EC4;&#x4EF6;&#x6709;&#x76F8;&#x4F3C;&#x529F;&#x80FD;&#x7684;&#x95EE;&#x9898;"><a name="&#x4F7F;&#x7528;hoc&#x89E3;&#x51B3;&#x4E0D;&#x540C;&#x7EC4;&#x4EF6;&#x6709;&#x76F8;&#x4F3C;&#x529F;&#x80FD;&#x7684;&#x95EE;&#x9898;" class="plugin-anchor" href="#&#x4F7F;&#x7528;hoc&#x89E3;&#x51B3;&#x4E0D;&#x540C;&#x7EC4;&#x4EF6;&#x6709;&#x76F8;&#x4F3C;&#x529F;&#x80FD;&#x7684;&#x95EE;&#x9898;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x4F7F;&#x7528;hoc&#x89E3;&#x51B3;&#x4E0D;&#x540C;&#x7EC4;&#x4EF6;&#x6709;&#x76F8;&#x4F3C;&#x529F;&#x80FD;&#x7684;&#x95EE;&#x9898;" class="anchor-navigation-ex-anchor" href="#&#x4F7F;&#x7528;hoc&#x89E3;&#x51B3;&#x4E0D;&#x540C;&#x7EC4;&#x4EF6;&#x6709;&#x76F8;&#x4F3C;&#x529F;&#x80FD;&#x7684;&#x95EE;&#x9898;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F7F;&#x7528;HOC&#x89E3;&#x51B3;&#x4E0D;&#x540C;&#x7EC4;&#x4EF6;&#x6709;&#x76F8;&#x4F3C;&#x529F;&#x80FD;&#x7684;&#x95EE;&#x9898;</h2>
+<blockquote>
+<p><a href="React&#x9AD8;&#x7EA7;&#x6307;&#x5357;&#xFF08;&#x516D;&#xFF09;&#x4E0D;&#x4F7F;&#x7528;ES6&#x7684;React.html#mixins">&#x4E0D;&#x4F7F;&#x7528;ES6&#x7684;React</a> &#x8FD9;&#x7BC7;&#x6709;&#x63D0;&#x5230;&#x8FD9;&#x4E2A;&#xFF1A;&#x6709;&#x65F6;&#x5B8C;&#x5168;&#x4E0D;&#x540C;&#x7684;&#x7EC4;&#x4EF6;&#x53EF;&#x80FD;&#x4F1A;&#x5171;&#x4EAB;&#x4E00;&#x4E9B;&#x5E38;&#x89C1;&#x7684;&#x529F;&#x80FD;&#x3002; &#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x6709;&#x65F6;&#x88AB;&#x79F0;&#x4E3A; <a href="https://en.wikipedia.org/wiki/Cross-cutting_concern" target="_blank">cross-cutting concerns</a></p>
+</blockquote>
+<p>&#x4E4B;&#x524D;&#x6211;&#x4EEC;&#x5EFA;&#x8BAE;&#x7528;mixins&#x89E3;&#x51B3;Cross-Cutting&#x95EE;&#x9898;&#xFF0C;&#x4F46;&#x6211;&#x4EEC;&#x610F;&#x8BC6;&#x5230;mixins&#x4F1A;&#x5E26;&#x6765;&#x5F88;&#x591A;&#x95EE;&#x9898;&#xFF0C;&#x53EF;&#x4EE5;&#x9605;&#x8BFB;&#x66F4;&#x591A;&#x5173;&#x4E8E;&#x4E3A;&#x4EC0;&#x4E48;&#x6211;&#x4EEC;&#x8981;&#x5F03;&#x7528;mixins&#xFF0C;&#x4EE5;&#x53CA;&#x5982;&#x4F55;&#x5C06;&#x4F60;&#x73B0;&#x6709;&#x7684;&#x4F7F;&#x7528;&#x5230;mixins&#x7684;&#x7EC4;&#x4EF6;&#x5265;&#x79BB;mixins&#x3002; &#x6233; <a href="https://facebook.github.io/react/blog/2016/07/13/mixins-considered-harmful.html" target="_blank">Mixins Considered Harmful</a>&#x3002;</p>
+<p>&#x7EC4;&#x4EF6;&#x662F;React&#x4E2D;&#x4EE3;&#x7801;&#x91CD;&#x7528;&#x7684;&#x4E3B;&#x8981;&#x5355;&#x5143;&#x3002; &#x4F46;&#x662F;&#xFF0C;&#x4F60;&#x4F1A;&#x53D1;&#x73B0;&#x67D0;&#x4E9B;&#x6A21;&#x5F0F;&#x5E76;&#x4E0D;&#x9002;&#x5408;&#x4F20;&#x7EDF;&#x7EC4;&#x4EF6;&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#xFF0C;&#x73B0;&#x5728;&#x6709;&#x4E00;&#x4E2A;CommentList&#x7EC4;&#x4EF6;&#xFF0C;&#x901A;&#x8FC7;&#x8BA2;&#x9605;&#x5916;&#x90E8;&#x6570;&#x636E;&#x6E90;&#x6765;&#x5448;&#x73B0;&#x6CE8;&#x91CA;&#x5217;&#x8868;&#xFF1A;</p>
+<pre class="language-"><code class="lang-javascript"><span class="token keyword">class</span> <span class="token class-name">CommentList</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>handleChange <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>handleChange<span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span>
+      <span class="token comment" spellcheck="true">// &quot;DataSource&quot; is some global data source</span>
+      comments<span class="token punctuation">:</span> DataSource<span class="token punctuation">.</span><span class="token function">getComments</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">componentDidMount</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// Subscribe to changes</span>
+    DataSource<span class="token punctuation">.</span><span class="token function">addChangeListener</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>handleChange<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">componentWillUnmount</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// Clean up listener</span>
+    DataSource<span class="token punctuation">.</span><span class="token function">removeChangeListener</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>handleChange<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">handleChange</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// Update component state whenever the data source changes</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      comments<span class="token punctuation">:</span> DataSource<span class="token punctuation">.</span><span class="token function">getComments</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+      <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+        <span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>comments<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span>comment<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span>
+          <span class="token operator">&lt;</span>Comment comment<span class="token operator">=</span><span class="token punctuation">{</span>comment<span class="token punctuation">}</span> key<span class="token operator">=</span><span class="token punctuation">{</span>comment<span class="token punctuation">.</span>id<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+        <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x7136;&#x540E;&#xFF0C;&#x53C8;&#x5199;&#x4E86;&#x4E00;&#x4E2A;&#x535A;&#x5BA2;&#x7EC4;&#x4EF6;&#xFF0C;&#x4E5F;&#x662F;&#x8BA2;&#x9605;&#x76F8;&#x540C;&#x7684;&#x5916;&#x90E8;&#x6570;&#x636E;&#x6E90;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x5199;&#x4E86;&#x4E00;&#x4EFD;&#x6A21;&#x5F0F;&#x76F8;&#x540C;&#x7684;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre class="language-"><code class="lang-javascript"><span class="token keyword">class</span> <span class="token class-name">BlogPost</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>handleChange <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>handleChange<span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span>
+      blogPost<span class="token punctuation">:</span> DataSource<span class="token punctuation">.</span><span class="token function">getBlogPost</span><span class="token punctuation">(</span>props<span class="token punctuation">.</span>id<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">componentDidMount</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    DataSource<span class="token punctuation">.</span><span class="token function">addChangeListener</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>handleChange<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">componentWillUnmount</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    DataSource<span class="token punctuation">.</span><span class="token function">removeChangeListener</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>handleChange<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">handleChange</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      blogPost<span class="token punctuation">:</span> DataSource<span class="token punctuation">.</span><span class="token function">getBlogPost</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>id<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token operator">&lt;</span>TextBlock text<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>blogPost<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>CommentList&#x4E0E;BlogPost&#x662F;&#x4E24;&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x7EC4;&#x4EF6; &#xFF1A; &#x5B83;&#x4EEC;&#x5728;DataSource&#x4E0A;&#x8C03;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5E76;&#x4E14;&#x5B83;&#x4EEC;&#x5448;&#x73B0;&#x4E0D;&#x540C;&#x7684;&#x8F93;&#x51FA;&#x3002; &#x4F46;&#x662F;&#x4ED6;&#x4EEC;&#x7684;&#x5B9E;&#x73B0;&#x5927;&#x90E8;&#x5206;&#x662F;&#x76F8;&#x540C;&#x7684;&#xFF1A;</p>
+<ul>
+<li>&#x5728;componentDidMount&#x4E2D;&#xFF08;&#x88C5;&#x8F7D;&#x540E;&#xFF09;&#xFF0C;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x66F4;&#x6539;&#x76D1;&#x542C;&#x5668;&#x5230;DataSource&#x3002;</li>
+<li>&#x5728;&#x4FA6;&#x542C;&#x5668;&#x4E2D;&#xFF0C;&#x53EA;&#x8981;&#x6570;&#x636E;&#x6E90;&#x53D1;&#x751F;&#x53D8;&#x5316;&#xFF0C;&#x5C31;&#x8C03;&#x7528;setState&#x3002;</li>
+<li>&#x5728;componentWillUnmount&#x4E2D;&#xFF08;&#x5378;&#x8F7D;&#x65F6;&#xFF09;&#xFF0C;&#x5220;&#x9664;&#x4FA6;&#x542C;&#x5668;&#x3002;</li>
+</ul>
+<p>&#x53EF;&#x4EE5;&#x60F3;&#x8C61;&#xFF0C;&#x5728;&#x4E00;&#x4E2A;&#x5927;&#x578B;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E2D;&#xFF0C;&#x540C;&#x6837;&#x7684;&#x8BA2;&#x9605;DataSource&#x548C;&#x8C03;&#x7528;setState&#x7684;&#x6A21;&#x5F0F;&#x4F1A;&#x51FA;&#x73B0;&#x5F88;&#x591A;&#x6B21;&#x3002; &#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x80FD;&#x628A;&#x8FD9;&#x4E2A;&#x903B;&#x8F91;&#x62BD;&#x8C61;&#x51FA;&#x6765;&#x5728;&#x4E00;&#x4E2A;&#x5730;&#x65B9;&#x5B9A;&#x4E49;&#xFF0C;&#x5F88;&#x591A;&#x7EC4;&#x4EF6;&#x90FD;&#x80FD;&#x5206;&#x4EAB;&#x8FD9;&#x4E2A;&#x903B;&#x8F91;&#xFF0C;&#x8FD9;&#x5C31;&#x662F;&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;&#x6700;&#x5F3A;&#x5927;&#x4E4B;&#x5904;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7F16;&#x5199;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x6765;&#x521B;&#x5EFA;&#x8BA2;&#x9605;DataSource&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x5982;CommentList&#x548C;BlogPost&#x3002;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x5C06;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x547D;&#x540D;&#x4E3A;withSubscription&#xFF0C;withSubscription&#x63A5;&#x6536;&#x4E00;&#x4E2A;&#x5B50;&#x7EC4;&#x4EF6;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#xFF0C;&#x8FD9;&#x4E2A;&#x7EC4;&#x4EF6;&#x5C06;&#x8BA2;&#x9605;&#x7684;&#x6570;&#x636E;&#x4F5C;&#x4E3A;props&#x3002;</p>
+<pre class="language-"><code class="lang-javascript"><span class="token keyword">const</span> CommentListWithSubscription <span class="token operator">=</span> <span class="token function">withSubscription</span><span class="token punctuation">(</span>
+  CommentList<span class="token punctuation">,</span>
+  <span class="token punctuation">(</span>DataSource<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> DataSource<span class="token punctuation">.</span><span class="token function">getComments</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> BlogPostWithSubscription <span class="token operator">=</span> <span class="token function">withSubscription</span><span class="token punctuation">(</span>
+  BlogPost<span class="token punctuation">,</span>
+  <span class="token punctuation">(</span>DataSource<span class="token punctuation">,</span> props<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> DataSource<span class="token punctuation">.</span><span class="token function">getBlogPost</span><span class="token punctuation">(</span>props<span class="token punctuation">.</span>id<span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x88AB;&#x5305;&#x88C5;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x63A5;&#x6536;DataSource&#x548C;&#x5F53;&#x524D;props,&#x8FD4;&#x56DE;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x7684;&#x6570;&#x636E;&#x3002;</p>
+<p>&#x5F53;&#x7EC4;&#x4EF6;CommentListWithSubscription&#x548C;BlogPostWithSubscription&#x88AB;&#x6E32;&#x67D3;&#x65F6;&#xFF0C;CommentList&#x548C;BlogPost&#x5C06;&#x88AB;&#x4F20;&#x9012;&#x4E00;&#x4E2A;prop&#xFF08;&#x4ECE;DataSource&#x83B7;&#x53D6;&#x7684;&#x6700;&#x65B0;&#x7684;&#x6570;&#x636E;&#xFF09;&#xFF1A;</p>
+<pre class="language-"><code class="lang-javascript"><span class="token comment" spellcheck="true">// This function takes a component...</span>
+<span class="token keyword">function</span> <span class="token function">withSubscription</span><span class="token punctuation">(</span>WrappedComponent<span class="token punctuation">,</span> selectData<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// ...and returns another component...</span>
+  <span class="token keyword">return</span> <span class="token keyword">class</span> <span class="token class-name">extends</span> React<span class="token punctuation">.</span>Component <span class="token punctuation">{</span>
+    <span class="token function">constructor</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>handleChange <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>handleChange<span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span>
+        data<span class="token punctuation">:</span> <span class="token function">selectData</span><span class="token punctuation">(</span>DataSource<span class="token punctuation">,</span> props<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token function">componentDidMount</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment" spellcheck="true">// ... that takes care of the subscription...</span>
+      DataSource<span class="token punctuation">.</span><span class="token function">addChangeListener</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>handleChange<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token function">componentWillUnmount</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      DataSource<span class="token punctuation">.</span><span class="token function">removeChangeListener</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>handleChange<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token function">handleChange</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        data<span class="token punctuation">:</span> <span class="token function">selectData</span><span class="token punctuation">(</span>DataSource<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment" spellcheck="true">// ... and renders the wrapped component with the fresh data!</span>
+      <span class="token comment" spellcheck="true">// Notice that we pass through any additional props</span>
+      <span class="token keyword">return</span> <span class="token operator">&lt;</span>WrappedComponent data<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>data<span class="token punctuation">}</span> <span class="token punctuation">{</span><span class="token operator">...</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p><strong>&#x6CE8;&#x610F;&#xFF0C;HOC&#x4E0D;&#x4F1A;&#x4FEE;&#x6539;&#x4F20;&#x5165;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x4E5F;&#x4E0D;&#x4F1A;&#x4F7F;&#x7528;&#x7EE7;&#x627F;&#x6765;&#x590D;&#x5236;&#x7EC4;&#x4EF6;&#x7684;&#x884C;&#x4E3A;&#x3002; &#x76F8;&#x53CD;&#xFF0C;HOC&#x901A;&#x8FC7;&#x5C06;&#x539F;&#x59CB;&#x7EC4;&#x4EF6;&#x5305;&#x88C5;&#x5728;&#x5BB9;&#x5668;&#x7EC4;&#x4EF6;&#x4E2D;&#x6765;&#x7EC4;&#x5408;&#x3002; HOC&#x662F;&#x5177;&#x6709;&#x96F6;&#x526F;&#x4F5C;&#x7528;&#x7684;&#x7EAF;&#x51FD;&#x6570;&#x3002;</strong></p>
+<p>&#x88AB;&#x5305;&#x88C5;&#x7684;&#x7EC4;&#x4EF6;&#x63A5;&#x6536;&#x5BB9;&#x5668;&#x7EC4;&#x4EF6;&#x7684;&#x6240;&#x6709;props&#xFF0C;&#x8FD8;&#x6709;&#x4E00;&#x4E2A;&#x65B0;&#x7684;prop&#xFF08;data&#xFF09;&#x3002;HOC&#x5E76;&#x4E0D;&#x5173;&#x5FC3;&#x600E;&#x4E48;&#x4F7F;&#x7528;&#x3001;&#x4E3A;&#x4EC0;&#x4E48;&#x9700;&#x8981;data;&#x88AB;&#x5305;&#x88C5;&#x7EC4;&#x4EF6;&#x4E5F;&#x4E0D;&#x9700;&#x8981;&#x5173;&#x5FC3;data&#x4ECE;&#x54EA;&#x91CC;&#x6765;&#x3002;</p>
+<p>&#x56E0;&#x4E3A;withSubscription&#x662F;&#x4E00;&#x4E2A;&#x6B63;&#x5E38;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x6240;&#x4EE5;&#x60A8;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x4EFB;&#x610F;&#x6570;&#x91CF;&#x7684;&#x53C2;&#x6570;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x60A8;&#x53EF;&#x80FD;&#x5E0C;&#x671B;prop.data&#x7684;&#x540D;&#x79F0;&#x53EF;&#x914D;&#x7F6E;&#xFF0C;&#x4ECE;&#x800C;&#x8FDB;&#x4E00;&#x6B65;&#x5C06;HOC&#x4E0E;&#x5305;&#x88C5;&#x7EC4;&#x4EF6;&#x9694;&#x79BB;&#x3002; &#x6216;&#x8005;&#x60A8;&#x53EF;&#x4EE5;&#x63A5;&#x6536;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x6765;&#x914D;&#x7F6E;shouldComponentUpdate&#x6216;&#x914D;&#x7F6E;&#x6570;&#x636E;&#x6E90;&#x3002; &#x8FD9;&#x4E9B;&#x90FD;&#x662F;&#x53EF;&#x80FD;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;HOC&#x53EF;&#x4EE5;&#x5B8C;&#x5168;&#x63A7;&#x5236;&#x7EC4;&#x4EF6;&#x7684;&#x5B9A;&#x4E49;&#x3002;</p>
+<p>&#x4E0E;&#x7EC4;&#x4EF6;&#x4E00;&#x6837;&#xFF0C;withSubscription&#x51FD;&#x6570;&#x4E0E;&#x88AB;&#x5305;&#x88C5;&#x7EC4;&#x4EF6;&#x4E4B;&#x95F4;&#x7684;&#x8054;&#x7CFB;&#x5B8C;&#x5168;&#x662F;&#x57FA;&#x4E8E;props&#x7684;&#x3002; &#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x65B9;&#x4FBF;&#x5730;&#x5C06;&#x4E00;&#x4E2A;HOC&#x8F6C;&#x6362;&#x4E3A;&#x4E0D;&#x540C;&#x7684;HOC&#xFF0C;&#x53EA;&#x8981;&#x5B83;&#x4EEC;&#x4E3A;&#x88AB;&#x5305;&#x88C5;&#x7EC4;&#x4EF6;&#x63D0;&#x4F9B;&#x76F8;&#x540C;&#x7684;props&#x3002; &#x4F8B;&#x5982;&#xFF0C;&#x66F4;&#x6539;&#x83B7;&#x53D6;&#x6570;&#x636E;&#x7684;&#x5E93;&#x3002;</p>
+<h2 id="&#x4E0D;&#x8981;&#x6539;&#x53D8;&#x539F;&#x59CB;&#x7EC4;&#x4EF6;&#xFF0C;&#x8BF7;&#x4F7F;&#x7528;&#x7EC4;&#x5408;"><a name="&#x4E0D;&#x8981;&#x6539;&#x53D8;&#x539F;&#x59CB;&#x7EC4;&#x4EF6;&#xFF0C;&#x8BF7;&#x4F7F;&#x7528;&#x7EC4;&#x5408;" class="plugin-anchor" href="#&#x4E0D;&#x8981;&#x6539;&#x53D8;&#x539F;&#x59CB;&#x7EC4;&#x4EF6;&#xFF0C;&#x8BF7;&#x4F7F;&#x7528;&#x7EC4;&#x5408;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x4E0D;&#x8981;&#x6539;&#x53D8;&#x539F;&#x59CB;&#x7EC4;&#x4EF6;&#xFF0C;&#x8BF7;&#x4F7F;&#x7528;&#x7EC4;&#x5408;" class="anchor-navigation-ex-anchor" href="#&#x4E0D;&#x8981;&#x6539;&#x53D8;&#x539F;&#x59CB;&#x7EC4;&#x4EF6;&#xFF0C;&#x8BF7;&#x4F7F;&#x7528;&#x7EC4;&#x5408;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E0D;&#x8981;&#x6539;&#x53D8;&#x539F;&#x59CB;&#x7EC4;&#x4EF6;&#xFF0C;&#x8BF7;&#x4F7F;&#x7528;&#x7EC4;&#x5408;</h2>
+<p>&#x4E0D;&#x8981;&#x518D;HOC&#x5185;&#x4FEE;&#x6539;&#x7EC4;&#x4EF6;&#x7684;&#x539F;&#x578B;</p>
+<pre class="language-"><code class="lang-javascript"><span class="token keyword">function</span> <span class="token function">logProps</span><span class="token punctuation">(</span>InputComponent<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">//&#x8FD9;&#x91CC;&#x7684;&#x5199;&#x6CD5;&#x6709;&#x95EE;&#x9898;&#x5427;&#xFF1F;&#x4E0D;&#x662F;&#x5E94;&#x8BE5;&#x76F4;&#x63A5;&#x7ED9;componentWillReceiveProps&#x8D4B;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x4E48;&#xFF0C;&#x8FD9;&#x6837;&#x4F1A;&#x62A5;&#x9519;&#x7684;</span>
+  InputComponent<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">componentWillReceiveProps</span><span class="token punctuation">(</span>nextProps<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;Current props: &apos;</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;Next props: &apos;</span><span class="token punctuation">,</span> nextProps<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment" spellcheck="true">// &#x8FD4;&#x56DE;&#x539F;&#x59CB;&#x7EC4;&#x4EF6;&#x662F;&#x4E3A;&#x4E86;&#x544A;&#x8BC9;&#x4F60;&#x8FD9;&#x4E2A;&#x7EC4;&#x4EF6;&#x5DF2;&#x7ECF;&#x88AB;&#x6539;&#x53D8;&#x4E86;</span>
+  <span class="token keyword">return</span> InputComponent<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// EnhancedComponent&#x5C06;&#x4F1A;&#x5728;&#x63A5;&#x6536;&#x5230;props&#x65F6;console.log</span>
+<span class="token keyword">const</span> EnhancedComponent <span class="token operator">=</span> <span class="token function">logProps</span><span class="token punctuation">(</span>InputComponent<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x8FD9;&#x6837;&#x5C31;&#x4F1A;&#x6709;&#x51E0;&#x4E2A;&#x95EE;&#x9898;&#xFF1A;</p>
+<ol>
+<li>&#x8F93;&#x5165;&#x7EC4;&#x4EF6;&#x4E0D;&#x80FD;&#x91CD;&#x7528;&#xFF0C;&#x56E0;&#x4E3A;&#x88AB;EnhancedComponent&#x4FEE;&#x6539;&#x4E86;</li>
+<li>&#x66F4;&#x91CD;&#x8981;&#x7684;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x5C06;&#x53E6;&#x4E00;&#x4E2A;HOC&#x5E94;&#x7528;&#x4E8E;EnhancedComponent&#xFF0C;componentWillReceiveProps&#x4F1A;&#x88AB;&#x6539;&#x53D8;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;HOC&#x7684;&#x529F;&#x80FD;&#x4F1A;&#x88AB;&#x8986;&#x76D6;&#x3002; ??&#x6CA1;&#x660E;&#x767D;</li>
+<li>&#x8FD9;&#x4E2A;HOC&#x4E5F;&#x4E0D;&#x9002;&#x7528;&#x4E8E;&#x6CA1;&#x6709;&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#x7684;&#x51FD;&#x6570;&#x7EC4;&#x4EF6;&#x3002;</li>
+</ol>
+<p>&#x4F1A;&#x6539;&#x53D8;&#x8F93;&#x5165;&#x7684;HOC&#x662F;&#x4E00;&#x4E2A;&#x6709;&#x7F3A;&#x6F0F;&#x7684;&#x62BD;&#x8C61;&#xFF0C;&#x4F7F;&#x7528;&#x8005;&#x5FC5;&#x987B;&#x77E5;&#x9053;&#x5B83;&#x7684;&#x5185;&#x90E8;&#x5B9E;&#x73B0;&#x4ECE;&#x800C;&#x907F;&#x514D;&#x4E0E;&#x5176;&#x4ED6;&#x7684;HOC&#x4EA7;&#x751F;&#x51B2;&#x7A81;&#x3002;</p>
+<p>&#x56E0;&#x800C;&#xFF0C;HOC&#x5E94;&#x8BE5;&#x4F7F;&#x7528;&#x7EC4;&#x5408;&#xFF0C;&#x5C06;&#x8F93;&#x5165;&#x7EC4;&#x4EF6;&#x5305;&#x88C5;&#x5728;&#x5BB9;&#x5668;&#x7EC4;&#x4EF6;&#x4E2D;&#xFF1A;</p>
+<pre class="language-"><code class="lang-javascript"><span class="token keyword">function</span> <span class="token function">logProps</span><span class="token punctuation">(</span>WrappedComponent<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">class</span> <span class="token class-name">extends</span> React<span class="token punctuation">.</span>Component <span class="token punctuation">{</span>
+    <span class="token function">componentWillReceiveProps</span><span class="token punctuation">(</span>nextProps<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;Current props: &apos;</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;Next props: &apos;</span><span class="token punctuation">,</span> nextProps<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment" spellcheck="true">// Wraps the input component in a container, without mutating it. Good!</span>
+      <span class="token keyword">return</span> <span class="token operator">&lt;</span>WrappedComponent <span class="token punctuation">{</span><span class="token operator">...</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x8FD9;&#x4E2A;HOC&#x4E0E;&#x4E0A;&#x9762;&#x7684;&#x7248;&#x672C;&#x6709;&#x7740;&#x76F8;&#x540C;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x540C;&#x65F6;&#x907F;&#x514D;&#x4E86;&#x51B2;&#x7A81;&#x7684;&#x53EF;&#x80FD;&#x6027;&#xFF0C;&#x5E76;&#x540C;&#x65F6;&#x9002;&#x7528;&#x4E8E;&#x7C7B;&#x7EC4;&#x4EF6;&#x548C;&#x51FD;&#x6570;&#x7EC4;&#x4EF6;&#x3002; &#x800C;&#x4E14;&#x56E0;&#x4E3A;&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x7EAF;&#x51FD;&#x6570;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x4E0E;&#x5176;&#x4ED6;HOC&#xFF0C;&#x751A;&#x81F3;&#x4E0E;&#x5B83;&#x672C;&#x8EAB;&#x7EC4;&#x5408;&#x3002;</p>
+<p>HOC&#x4E0E;&#x5BB9;&#x5668;&#x7EC4;&#x4EF6;&#x6A21;&#x5F0F;&#x5F88;&#x76F8;&#x4F3C;&#xFF0C;&#x5BB9;&#x5668;&#x7EC4;&#x4EF6;&#x662F;&#x5206;&#x79BB;&#x5904;&#x7406;&#x903B;&#x8F91;&#x7684;&#x4E00;&#x79CD;&#x7B56;&#x7565;&#x3002; &#x5BB9;&#x5668;&#x8D1F;&#x8D23;&#x5904;&#x7406;&#x8BF8;&#x5982;&#x8BA2;&#x9605;&#x548C;state&#x8FD9;&#x6837;&#x7684;&#xFF0C;&#x5E76;&#x5C06;props&#x4F20;&#x9012;&#x7ED9;&#x8D1F;&#x8D23;&#x8BF8;&#x5982;&#x6E32;&#x67D3;UI&#x4E4B;&#x7C7B;&#x7684;&#x7EC4;&#x4EF6;&#x3002; HOC&#x4F7F;&#x7528;&#x5BB9;&#x5668;&#x4F5C;&#x4E3A;&#x5176;&#x5B9E;&#x73B0;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x3002; &#x4F60;&#x53EF;&#x4EE5;&#x8BA4;&#x4E3A;HOC&#x662F;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x5316;&#x5BB9;&#x5668;&#x7EC4;&#x4EF6;&#x3002;</p>
+<h2 id="&#x7EA6;&#x5B9A;&#xFF1A;hoc&#x4F20;&#x9012;&#x5B83;&#x672C;&#x8EAB;&#x4E0D;&#x5173;&#x5FC3;&#x7684;props&#x7ED9;&#x88AB;&#x5305;&#x88F9;&#x7EC4;&#x4EF6;"><a name="&#x7EA6;&#x5B9A;&#xFF1A;hoc&#x4F20;&#x9012;&#x5B83;&#x672C;&#x8EAB;&#x4E0D;&#x5173;&#x5FC3;&#x7684;props&#x7ED9;&#x88AB;&#x5305;&#x88F9;&#x7EC4;&#x4EF6;" class="plugin-anchor" href="#&#x7EA6;&#x5B9A;&#xFF1A;hoc&#x4F20;&#x9012;&#x5B83;&#x672C;&#x8EAB;&#x4E0D;&#x5173;&#x5FC3;&#x7684;props&#x7ED9;&#x88AB;&#x5305;&#x88F9;&#x7EC4;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x7EA6;&#x5B9A;&#xFF1A;hoc&#x4F20;&#x9012;&#x5B83;&#x672C;&#x8EAB;&#x4E0D;&#x5173;&#x5FC3;&#x7684;props&#x7ED9;&#x88AB;&#x5305;&#x88F9;&#x7EC4;&#x4EF6;" class="anchor-navigation-ex-anchor" href="#&#x7EA6;&#x5B9A;&#xFF1A;hoc&#x4F20;&#x9012;&#x5B83;&#x672C;&#x8EAB;&#x4E0D;&#x5173;&#x5FC3;&#x7684;props&#x7ED9;&#x88AB;&#x5305;&#x88F9;&#x7EC4;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7EA6;&#x5B9A;&#xFF1A;HOC&#x4F20;&#x9012;&#x5B83;&#x672C;&#x8EAB;&#x4E0D;&#x5173;&#x5FC3;&#x7684;props&#x7ED9;&#x88AB;&#x5305;&#x88F9;&#x7EC4;&#x4EF6;</h2>
+<p>&#x4ECE;HOC&#x4E2D;&#x8FD4;&#x56DE;&#x7684;&#x7EC4;&#x4EF6;&#x5E94;&#x8BE5;&#x4E0E;&#x88AB;&#x5305;&#x88C5;&#x7EC4;&#x4EF6;&#x5177;&#x6709;&#x76F8;&#x4F3C;&#x7684;&#x754C;&#x9762;&#xFF0C;&#x56E0;&#x800C;HOC&#x5E94;&#x8BE5;&#x4F20;&#x9012;&#x5B83;&#x672C;&#x8EAB;&#x4E0D;&#x5173;&#x5FC3;&#x7684;props&#x7ED9;&#x88AB;&#x5305;&#x88F9;&#x7EC4;&#x4EF6;&#xFF08;&#x56E0;&#x4E3A;&#x88AB;&#x5305;&#x88F9;&#x7EC4;&#x4EF6;&#x5173;&#x5FC3;&#x554A;&#xFF09;&#x3002;&#x5927;&#x591A;&#x6570;HOC&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x5982;&#x4E0B;&#x6240;&#x793A;&#x7684;&#x6E32;&#x67D3;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre class="language-"><code class="lang-javascript"><span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">//&#x5C06;HOC&#x9700;&#x8981;&#x7684;&#x4F46;&#x4E0D;&#x9700;&#x8981;&#x4F20;&#x9012;&#x7ED9;&#x88AB;&#x5305;&#x88C5;&#x7EC4;&#x4EF6;&#x7684;props&#x5254;&#x51FA;&#x6765;</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span> extraProp<span class="token punctuation">,</span> <span class="token operator">...</span>passThroughProps <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">;</span>
+
+  <span class="token comment" spellcheck="true">// &#x5C06;props&#x6CE8;&#x5165;&#x88AB;&#x5305;&#x88F9;&#x7EC4;&#x4EF6;,&#x901A;&#x5E38;&#x662F;&#x72B6;&#x6001;&#x503C;&#x6216;&#x5B9E;&#x4F8B;&#x65B9;&#x6CD5;&#x3002;</span>
+  <span class="token keyword">const</span> injectedProp <span class="token operator">=</span> someStateOrInstanceMethod<span class="token punctuation">;</span>
+
+  <span class="token comment" spellcheck="true">// &#x5C06; props &#x4F20;&#x9012;&#x7ED9;&#x88AB;&#x5305;&#x88F9;&#x7EC4;&#x4EF6;</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>WrappedComponent
+      injectedProp<span class="token operator">=</span><span class="token punctuation">{</span>injectedProp<span class="token punctuation">}</span>
+      <span class="token punctuation">{</span><span class="token operator">...</span>passThroughProps<span class="token punctuation">}</span>
+    <span class="token operator">/</span><span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x8FD9;&#x4E2A;&#x60EF;&#x4F8B;&#x6709;&#x52A9;&#x4E8E;&#x786E;&#x4FDD;HOC&#x5C3D;&#x53EF;&#x80FD;&#x7075;&#x6D3B;&#x548C;&#x53EF;&#x91CD;&#x7528;&#x3002;</p>
+<h2 id="&#x7EA6;&#x5B9A;&#xFF1A;&#x5C06;&#x7EC4;&#x5408;&#x6700;&#x5927;&#x5316;"><a name="&#x7EA6;&#x5B9A;&#xFF1A;&#x5C06;&#x7EC4;&#x5408;&#x6700;&#x5927;&#x5316;" class="plugin-anchor" href="#&#x7EA6;&#x5B9A;&#xFF1A;&#x5C06;&#x7EC4;&#x5408;&#x6700;&#x5927;&#x5316;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x7EA6;&#x5B9A;&#xFF1A;&#x5C06;&#x7EC4;&#x5408;&#x6700;&#x5927;&#x5316;" class="anchor-navigation-ex-anchor" href="#&#x7EA6;&#x5B9A;&#xFF1A;&#x5C06;&#x7EC4;&#x5408;&#x6700;&#x5927;&#x5316;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7EA6;&#x5B9A;&#xFF1A;&#x5C06;&#x7EC4;&#x5408;&#x6700;&#x5927;&#x5316;</h2>
+<p>&#x5E76;&#x4E0D;&#x662F;&#x6240;&#x6709;&#x7684;HOC&#x90FD;&#x4E00;&#x6837;,&#x6709;&#x65F6;&#x4ED6;&#x4EEC;&#x53EA;&#x63A5;&#x53D7;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x5373;&#x88AB;&#x5305;&#x88C5;&#x7684;&#x7EC4;&#x4EF6;&#xFF1A;</p>
+<pre class="language-"><code class="lang-javascript"><span class="token keyword">const</span> NavbarWithRouter <span class="token operator">=</span> <span class="token function">withRouter</span><span class="token punctuation">(</span>Navbar<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x901A;&#x5E38;&#xFF0C;HOC&#x4F1A;&#x63A5;&#x6536;&#x5176;&#x4ED6;&#x53C2;&#x6570;&#x3002; &#x4E0B;&#x9762;&#x662F;Relay&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;&#x7528;config&#x5BF9;&#x8C61;&#x6765;&#x6307;&#x5B9A;&#x7EC4;&#x4EF6;&#x7684;&#x6570;&#x636E;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#xFF1A;</p>
+<pre class="language-"><code class="lang-javascript"><span class="token keyword">const</span> CommentWithRelay <span class="token operator">=</span> Relay<span class="token punctuation">.</span><span class="token function">createContainer</span><span class="token punctuation">(</span>Comment<span class="token punctuation">,</span> config<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>HOCs&#x6700;&#x5E38;&#x89C1;&#x7684;&#x5F62;&#x5F0F;&#x662F;&#x50CF;&#x8FD9;&#x6837;&#x7684;&#xFF1A;</p>
+<pre class="language-"><code class="lang-javascript"><span class="token comment" spellcheck="true">// React Redux&apos;s `connect`</span>
+<span class="token keyword">const</span> ConnectedComment <span class="token operator">=</span> <span class="token function">connect</span><span class="token punctuation">(</span>commentSelector<span class="token punctuation">,</span> commentActions<span class="token punctuation">)</span><span class="token punctuation">(</span>Comment<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x62C6;&#x5206;&#x4E00;&#x4E0B;&#x770B;&#x7684;&#x66F4;&#x6E05;&#x695A;&#xFF1A;</p>
+<pre class="language-"><code class="lang-javascript"><span class="token comment" spellcheck="true">// connect is a function that returns another function</span>
+<span class="token keyword">const</span> enhance <span class="token operator">=</span> <span class="token function">connect</span><span class="token punctuation">(</span>commentListSelector<span class="token punctuation">,</span> commentListActions<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// The returned function is an HOC, which returns a component that is connected to the Redux store</span>
+<span class="token keyword">const</span> ConnectedComment <span class="token operator">=</span> <span class="token function">enhance</span><span class="token punctuation">(</span>CommentList<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x6362;&#x53E5;&#x8BDD;&#x8BF4;&#xFF0C;connect&#x662F;&#x4E00;&#x4E2A;&#x9AD8;&#x9636;&#x51FD;&#x6570;&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;&#xFF01;</p>
+<p>&#x8FD9;&#x79CD;&#x8C03;&#x7528;&#x65B9;&#x5F0F;&#x770B;&#x8D77;&#x6765;&#x5F88;&#x6DF7;&#x4E71;&#x6216;&#x8005;&#x8BF4;&#x4E0D;&#x5FC5;&#x8981;&#xFF0C;&#x4F46;&#x5B83;&#x6709;&#x4E00;&#x4E2A;&#x6709;&#x7528;&#x7684;&#x7279;&#x70B9;&#xFF1A;HOC&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x3002;connect&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x7684;HOC&#x5177;&#x6709;Component =&gt; Component&#x7684;&#x7279;&#x70B9;&#xFF0C;&#x8F93;&#x51FA;&#x7C7B;&#x578B;&#x4E0E;&#x5176;&#x8F93;&#x5165;&#x7C7B;&#x578B;&#x76F8;&#x540C;&#x7684;&#x51FD;&#x6570;&#x5F88;&#x5BB9;&#x6613;&#x7EC4;&#x5408;&#x5728;&#x4E00;&#x8D77;&#x3002;</p>
+<pre class="language-"><code class="lang-javascript"><span class="token comment" spellcheck="true">// &#x4E0D;&#x662F;&#x8FD9;&#x6837;&#x505A;...</span>
+<span class="token keyword">const</span> EnhancedComponent <span class="token operator">=</span> <span class="token function">connect</span><span class="token punctuation">(</span>commentSelector<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token function">withRouter</span><span class="token punctuation">(</span>WrappedComponent<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">// &#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x7EC4;&#x5408;&#x5DE5;&#x5177;&#x51FD;&#x6570;compose</span>
+<span class="token comment" spellcheck="true">// compose(f, g, h) &#x4E0E; (...args) =&gt; f(g(h(...args)))&#x76F8;&#x540C;</span>
+<span class="token keyword">const</span> enhance <span class="token operator">=</span> <span class="token function">compose</span><span class="token punctuation">(</span>
+  <span class="token comment" spellcheck="true">// &#x8FD9;&#x4E9B;&#x90FD;&#x662F;&#x5355;&#x53C2;&#x6570;HOC</span>
+  <span class="token function">connect</span><span class="token punctuation">(</span>commentSelector<span class="token punctuation">)</span><span class="token punctuation">,</span>
+  withRouter
+<span class="token punctuation">)</span>
+<span class="token keyword">const</span> EnhancedComponent <span class="token operator">=</span> <span class="token function">enhance</span><span class="token punctuation">(</span>WrappedComponent<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x8FD9;&#x79CD;&#x7279;&#x70B9;&#x8FD8;&#x5141;&#x8BB8;connect&#x548C;&#x5176;&#x4ED6;&#x589E;&#x5F3A;&#x578B;HOC&#x7528;&#x4F5C;&#x88C5;&#x9970;&#x5668;&#xFF08;&#x4E00;&#x4E2A;&#x5B9E;&#x9A8C;&#x6027;JavaScript&#x63D0;&#x6848;&#xFF09;</p>
+<p>&#x5F88;&#x591A;&#x7B2C;&#x4E09;&#x65B9;&#x5E93;&#x90FD;&#x4F1A;&#x63D0;&#x4F9B;compose&#x5DE5;&#x5177;&#x51FD;&#x6570;&#xFF0C;&#x5982;lodash&#xFF08;<a href="https://lodash.com/docs/#flowRight" target="_blank">lodash.flowRight</a>&#xFF09;&#x3001;<a href="http://redux.js.org/docs/api/compose.html" target="_blank">Redux</a> &#x548C; <a href="http://ramdajs.com/docs/#compose" target="_blank">Ramda</a>.</p>
+<h2 id="&#x7EA6;&#x5B9A;&#xFF1A;&#x4E3A;&#x65B9;&#x4FBF;&#x8C03;&#x8BD5;&#xFF0C;&#x5C06;display-name&#x5305;&#x542B;&#x5176;&#x4E2D;"><a name="&#x7EA6;&#x5B9A;&#xFF1A;&#x4E3A;&#x65B9;&#x4FBF;&#x8C03;&#x8BD5;&#xFF0C;&#x5C06;display-name&#x5305;&#x542B;&#x5176;&#x4E2D;" class="plugin-anchor" href="#&#x7EA6;&#x5B9A;&#xFF1A;&#x4E3A;&#x65B9;&#x4FBF;&#x8C03;&#x8BD5;&#xFF0C;&#x5C06;display-name&#x5305;&#x542B;&#x5176;&#x4E2D;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x7EA6;&#x5B9A;&#xFF1A;&#x4E3A;&#x65B9;&#x4FBF;&#x8C03;&#x8BD5;&#xFF0C;&#x5C06;display-name&#x5305;&#x542B;&#x5176;&#x4E2D;" class="anchor-navigation-ex-anchor" href="#&#x7EA6;&#x5B9A;&#xFF1A;&#x4E3A;&#x65B9;&#x4FBF;&#x8C03;&#x8BD5;&#xFF0C;&#x5C06;display-name&#x5305;&#x542B;&#x5176;&#x4E2D;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7EA6;&#x5B9A;&#xFF1A;&#x4E3A;&#x65B9;&#x4FBF;&#x8C03;&#x8BD5;&#xFF0C;&#x5C06;Display Name&#x5305;&#x542B;&#x5176;&#x4E2D;</h2>
+<p>&#x7531;HOC&#x521B;&#x5EFA;&#x7684;&#x5BB9;&#x5668;&#x7EC4;&#x4EF6;&#x4E0E;&#x4EFB;&#x4F55;&#x5176;&#x4ED6;&#x7EC4;&#x4EF6;&#x4E00;&#x6837;&#x4F1A;&#x5728;<a href="https://github.com/facebook/react-devtools" target="_blank">React Developer Tools</a>&#x4E2D;&#x663E;&#x793A;&#x3002; &#x4E3A;&#x65B9;&#x4FBF;&#x8C03;&#x8BD5;&#xFF0C;&#x7ED9;HOC&#x8FD4;&#x56DE;&#x7684;&#x7EC4;&#x4EF6;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x663E;&#x793A;&#x540D;&#x79F0;&#x3002;</p>
+<p>&#x6700;&#x5E38;&#x89C1;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x5305;&#x88C5;&#x88AB;&#x5305;&#x88C5;&#x7EC4;&#x4EF6;&#x7684;&#x663E;&#x793A;&#x540D;&#x79F0;&#x3002;&#x5982;&#x679C;&#x4F60;&#x7684;&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;&#x540D;&#x4E3A;<code>withSubscription</code>&#xFF0C;&#x5E76;&#x4E14;&#x88AB;&#x5305;&#x88C5;&#x7EC4;&#x4EF6;&#x7684;&#x663E;&#x793A;&#x540D;&#x79F0;&#x4E3A;CommentList&#xFF0C;&#x90A3;HOC&#x8FD4;&#x56DE;&#x7EC4;&#x4EF6;&#x8BF7;&#x4F7F;&#x7528;&#x663E;&#x793A;&#x540D;&#x79F0;&#xFF1A;WithSubscription&#xFF08;CommentList&#xFF09;&#xFF1A;</p>
+<pre class="language-"><code class="lang-javascript"><span class="token keyword">function</span> <span class="token function">withSubscription</span><span class="token punctuation">(</span>WrappedComponent<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">class</span> <span class="token class-name">WithSubscription</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span><span class="token comment" spellcheck="true">/* ... */</span><span class="token punctuation">}</span>
+  WithSubscription<span class="token punctuation">.</span>displayName <span class="token operator">=</span> <span class="token template-string"><span class="token string">`WithSubscription(</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token function">getDisplayName</span><span class="token punctuation">(</span>WrappedComponent<span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">)`</span></span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> WithSubscription<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">getDisplayName</span><span class="token punctuation">(</span>WrappedComponent<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> WrappedComponent<span class="token punctuation">.</span>displayName <span class="token operator">||</span> WrappedComponent<span class="token punctuation">.</span>name <span class="token operator">||</span> <span class="token string">&apos;Component&apos;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="&#x6CE8;&#x610F;"><a name="&#x6CE8;&#x610F;" class="plugin-anchor" href="#&#x6CE8;&#x610F;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x6CE8;&#x610F;" class="anchor-navigation-ex-anchor" href="#&#x6CE8;&#x610F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6CE8;&#x610F;</h2>
+<p>&#x5173;&#x4E8E;&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;&#x6709;&#x4E00;&#x4E9B;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x5730;&#x65B9;&#x3002;</p>
+<h3 id="&#x4E0D;&#x8981;&#x5728;render&#x65B9;&#x6CD5;&#x4E2D;&#x4F7F;&#x7528;&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;"><a name="&#x4E0D;&#x8981;&#x5728;render&#x65B9;&#x6CD5;&#x4E2D;&#x4F7F;&#x7528;&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;" class="plugin-anchor" href="#&#x4E0D;&#x8981;&#x5728;render&#x65B9;&#x6CD5;&#x4E2D;&#x4F7F;&#x7528;&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x4E0D;&#x8981;&#x5728;render&#x65B9;&#x6CD5;&#x4E2D;&#x4F7F;&#x7528;&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;" class="anchor-navigation-ex-anchor" href="#&#x4E0D;&#x8981;&#x5728;render&#x65B9;&#x6CD5;&#x4E2D;&#x4F7F;&#x7528;&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E0D;&#x8981;&#x5728;render&#x65B9;&#x6CD5;&#x4E2D;&#x4F7F;&#x7528;&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;</h3>
+<p>React&#x7684;Diff&#x7B97;&#x6CD5;&#xFF08;&#x79F0;&#x4E3A;reconciliation&#xFF09;&#x4F7F;&#x7528;<strong>&#x7EC4;&#x4EF6;&#x6807;&#x8BC6;</strong>&#x6765;&#x786E;&#x5B9A;&#x662F;&#x5426;&#x9700;&#x8981;&#x66F4;&#x65B0;&#x3001;&#x5378;&#x8F7D;&#x6216;&#x88C5;&#x8F7D;&#x3002;&#x5982;&#x679C;&#x4ECE;render&#x65B9;&#x6CD5;&#x4E2D;&#x8FD4;&#x56DE;&#x7684;&#x7EC4;&#x4EF6;&#x4E0E;&#x5148;&#x524D;&#x7684;render&#x8FD4;&#x56DE;&#x7684;&#x7EC4;&#x4EF6;&#x76F8;&#x540C;&#xFF08;===&#xFF09;&#xFF0C;React&#x4F1A;&#x9012;&#x5F52;&#x7684;&#x5BF9;&#x5B50;&#x7EC4;&#x4EF6;diff&#xFF0C;&#x5982;&#x679C;&#x5B50;&#x7EC4;&#x4EF6;&#x7C7B;&#x578B;&#x4E0D;&#x76F8;&#x540C;&#x4F1A;&#x88AB;&#x5B8C;&#x5168;&#x5378;&#x8F7D;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x901A;&#x5E38;&#x4E0D;&#x9700;&#x8981;&#x8003;&#x8651;&#x8FD9;&#x4E2A;&#xFF0C;&#x4F46;&#x662F;&#x5BF9;&#x4E8E;HOC&#x6765;&#x8BF4;&#x5F88;&#x91CD;&#x8981;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x6211;&#x4EEC;&#x4E0D;&#x80FD;&#x5C06;HOC&#x5E94;&#x7528;&#x4E8E;render&#x65B9;&#x6CD5;&#x4E2D;&#x7684;&#x7EC4;&#x4EF6;&#xFF1A;</p>
+<pre class="language-"><code class="lang-javascript"><span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// &#x6BCF;&#x6B21;render&#x90FD;&#x4F1A;&#x521B;&#x5EFA;&#x65B0;&#x7684;EnhancedComponent&#xFF0C;&#x6BCF;&#x6B21;&#x7684;&#x7ED3;&#x679C;&#x90FD;&#x662F;&#x4E0D;&#x76F8;&#x7B49;&#x7684;&#xFF08;&#x7EC4;&#x4EF6;&#x6807;&#x8BC6;&#x4E0D;&#x540C;&#xFF09;</span>
+  <span class="token comment" spellcheck="true">// EnhancedComponent1 !== EnhancedComponent2</span>
+  <span class="token keyword">const</span> EnhancedComponent <span class="token operator">=</span> <span class="token function">enhance</span><span class="token punctuation">(</span>MyComponent<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment" spellcheck="true">// &#x56E0;&#x6B64;&#x6BCF;&#x6B21;&#x90FD;&#x4F1A;&#x5148;&#x5378;&#x8F7D;&#x8001;&#x7684;&#xFF0C;&#x518D;&#x88C5;&#x8F7D;&#x65B0;&#x7684;</span>
+  <span class="token keyword">return</span> <span class="token operator">&lt;</span>EnhancedComponent <span class="token operator">/</span><span class="token operator">&gt;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x8FD9;&#x4E0D;&#x4EC5;&#x4F1A;&#x4EA7;&#x751F;&#x6027;&#x80FD;&#x95EE;&#x9898;&#xFF0C;&#x91CD;&#x65B0;&#x5B89;&#x88C5;&#x7EC4;&#x4EF6;&#x4F1A;&#x5BFC;&#x81F4;&#x8BE5;&#x7EC4;&#x4EF6;&#x53CA;&#x5176;&#x6240;&#x6709;&#x5B50;&#x9879;&#x7684;&#x72B6;&#x6001;&#x4E22;&#x5931;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x6211;&#x4EEC;&#x5E94;&#x8BE5;&#x5728;&#x7EC4;&#x4EF6;&#x5B9A;&#x4E49;&#x4E4B;&#x5916;&#x5E94;&#x7528;HOC&#xFF0C;&#x8FD9;&#x6837;HOC&#x751F;&#x6210;&#x7684;&#x7EC4;&#x4EF6;&#x53EA;&#x80FD;&#x521B;&#x5EFA;&#x4E00;&#x6B21;&#xFF0C;&#x5728;&#x6E32;&#x67D3;&#x8FC7;&#x7A0B;&#x4E2D;&#x53EA;&#x4F1A;&#x6709;&#x8FD9;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#x6807;&#x8BC6;&#x3002;</p>
+<p>&#x5728;&#x4E00;&#x4E9B;&#x6BD4;&#x8F83;&#x5C11;&#x89C1;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x9700;&#x8981;&#x52A8;&#x6001;&#x5E94;&#x7528;HOC&#xFF0C;&#x8FD9;&#x65F6;&#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x7EC4;&#x4EF6;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#x6216;&#x5176;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E2D;&#x64CD;&#x4F5C;&#x3002;</p>
+<h3 id="&#x9759;&#x6001;&#x65B9;&#x6CD5;&#x5FC5;&#x987B;&#x590D;&#x5236;"><a name="&#x9759;&#x6001;&#x65B9;&#x6CD5;&#x5FC5;&#x987B;&#x590D;&#x5236;" class="plugin-anchor" href="#&#x9759;&#x6001;&#x65B9;&#x6CD5;&#x5FC5;&#x987B;&#x590D;&#x5236;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x9759;&#x6001;&#x65B9;&#x6CD5;&#x5FC5;&#x987B;&#x590D;&#x5236;" class="anchor-navigation-ex-anchor" href="#&#x9759;&#x6001;&#x65B9;&#x6CD5;&#x5FC5;&#x987B;&#x590D;&#x5236;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9759;&#x6001;&#x65B9;&#x6CD5;&#x5FC5;&#x987B;&#x590D;&#x5236;</h3>
+<p>&#x6709;&#x65F6;&#x5728;React&#x7EC4;&#x4EF6;&#x4E0A;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#x5F88;&#x6709;&#x7528;&#x5904;&#x3002; &#x4F8B;&#x5982;&#xFF0C;Relay&#x66B4;&#x9732;&#x4E00;&#x4E2A;&#x9759;&#x6001;&#x65B9;&#x6CD5;getFragment&#x7528;&#x6765;&#x6784;&#x5EFA;GraphQL&#x7247;&#x6BB5;&#x3002;</p>
+<p>&#x5F53;&#x5C06;HOC&#x5E94;&#x7528;&#x4E8E;&#x7EC4;&#x4EF6;&#x65F6;&#xFF0C;&#x539F;&#x59CB;&#x7EC4;&#x4EF6;&#x88AB;&#x5BB9;&#x5668;&#x7EC4;&#x4EF6;&#x5305;&#x88C5;&#x3002;&#x90A3;HOC&#x8FD4;&#x56DE;&#x7684;&#x65B0;&#x7EC4;&#x4EF6;&#x5C31;&#x6CA1;&#x6709;&#x539F;&#x59CB;&#x7EC4;&#x4EF6;&#x7684;&#x4EFB;&#x4F55;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#x3002;</p>
+<pre class="language-"><code class="lang-javascript"><span class="token comment" spellcheck="true">// Define a static method</span>
+WrappedComponent<span class="token punctuation">.</span>staticMethod <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token comment" spellcheck="true">/*...*/</span><span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">// Now apply an HOC</span>
+<span class="token keyword">const</span> EnhancedComponent <span class="token operator">=</span> <span class="token function">enhance</span><span class="token punctuation">(</span>WrappedComponent<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// The enhanced component has no static method</span>
+<span class="token keyword">typeof</span> EnhancedComponent<span class="token punctuation">.</span>staticMethod <span class="token operator">===</span> <span class="token string">&apos;undefined&apos;</span> <span class="token comment" spellcheck="true">// true</span>
+</code></pre>
+<p>&#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5728;&#x8FD4;&#x56DE;&#x4E4B;&#x524D;&#x5C06;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#x590D;&#x5236;&#x5230;&#x5BB9;&#x5668;&#x7EC4;&#x4EF6;&#x4E0A;&#xFF1A;</p>
+<pre class="language-"><code class="lang-javascript"><span class="token keyword">function</span> <span class="token function">enhance</span><span class="token punctuation">(</span>WrappedComponent<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">class</span> <span class="token class-name">Enhance</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span><span class="token comment" spellcheck="true">/*...*/</span><span class="token punctuation">}</span>
+  <span class="token comment" spellcheck="true">// Must know exactly which method(s) to copy :(</span>
+  Enhance<span class="token punctuation">.</span>staticMethod <span class="token operator">=</span> WrappedComponent<span class="token punctuation">.</span>staticMethod<span class="token punctuation">;</span>
+  <span class="token keyword">return</span> Enhance<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x4F46;&#x662F;&#xFF0C;&#x8FD9;&#x9700;&#x8981;&#x6211;&#x4EEC;&#x51C6;&#x786E;&#x5730;&#x77E5;&#x9053;&#x9700;&#x8981;&#x590D;&#x5236;&#x54EA;&#x4E9B;&#x65B9;&#x6CD5;&#x3002; &#x4F46;&#x662F;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<a href="https://github.com/mridgway/hoist-non-react-statics" target="_blank">hoist-non-react-statics</a>&#x6765;&#x81EA;&#x52A8;&#x590D;&#x5236;&#x6240;&#x6709;&#x975E;React&#x9759;&#x6001;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre class="language-"><code class="lang-javascript"><span class="token keyword">import</span> hoistNonReactStatic <span class="token keyword">from</span> <span class="token string">&apos;hoist-non-react-statics&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">enhance</span><span class="token punctuation">(</span>WrappedComponent<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">class</span> <span class="token class-name">Enhance</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span><span class="token comment" spellcheck="true">/*...*/</span><span class="token punctuation">}</span>
+  <span class="token function">hoistNonReactStatic</span><span class="token punctuation">(</span>Enhance<span class="token punctuation">,</span> WrappedComponent<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> Enhance<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<pre class="language-"><code class="lang-javascript"><span class="token comment" spellcheck="true">// Instead of...</span>
+MyComponent<span class="token punctuation">.</span>someFunction <span class="token operator">=</span> someFunction<span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> MyComponent<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// ...export the method separately...</span>
+<span class="token keyword">export</span> <span class="token punctuation">{</span> someFunction <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// ...and in the consuming module, import both</span>
+<span class="token keyword">import</span> MyComponent<span class="token punctuation">,</span> <span class="token punctuation">{</span> someFunction <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;./MyComponent.js&apos;</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x53E6;&#x4E00;&#x4E2A;&#x53EF;&#x80FD;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x662F;&#x5C06;&#x7EC4;&#x4EF6;&#x7684;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#x4E0E;&#x7EC4;&#x4EF6;&#x672C;&#x8EAB;&#x5206;&#x5F00;&#x5BFC;&#x51FA;&#x3002;</p>
+<h3 id="&#x4E0D;&#x80FD;&#x4F20;&#x9012;refs"><a name="&#x4E0D;&#x80FD;&#x4F20;&#x9012;refs" class="plugin-anchor" href="#&#x4E0D;&#x80FD;&#x4F20;&#x9012;refs"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x4E0D;&#x80FD;&#x4F20;&#x9012;refs" class="anchor-navigation-ex-anchor" href="#&#x4E0D;&#x80FD;&#x4F20;&#x9012;refs"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E0D;&#x80FD;&#x4F20;&#x9012;Refs</h3>
+<p>&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;&#x4E00;&#x822C;&#x4F1A;&#x5C06;&#x6240;&#x6709;&#x7684;props&#x4F20;&#x9012;&#x7ED9;&#x88AB;&#x5305;&#x88C5;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x53EF;&#x80FD;&#x4F20;&#x9012;ref&#x3002; ref&#x548C;key&#x4E00;&#x6837;&#xFF0C;&#x5E76;&#x4E0D;&#x662F;&#x771F;&#x6B63;&#x7684;prop,&#x662F;&#x7531;React&#x7279;&#x522B;&#x5904;&#x7406;&#x7684;&#x3002; &#x5982;&#x679C;&#x60F3;&#x8981;&#x7ED9;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x6DFB;&#x52A0;ref&#xFF0C;&#x8BE5;&#x5143;&#x7D20;&#x7684;&#x7EC4;&#x4EF6;&#x662F;HOC&#x8FD4;&#x56DE;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x5219;ref&#x5F15;&#x7528;&#x7684;&#x662F;&#x6700;&#x5916;&#x5C42;&#x7684;&#x5BB9;&#x5668;&#x7EC4;&#x4EF6;&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x88AB;&#x5305;&#x88C5;&#x7EC4;&#x4EF6;&#x7684;&#x5B9E;&#x4F8B;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4F60;&#x9047;&#x5230;&#x4E86;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x5E94;&#x8BE5;&#x60F3;&#x60F3;&#x600E;&#x4E48;&#x907F;&#x514D;&#x4F7F;&#x7528;ref&#xFF0C;&#x5982;&#x524D;&#x9762;&#x4ECB;&#x7ECD;&#x8FC7;&#x7684; <a href="React&#x9AD8;&#x7EA7;&#x6307;&#x5357;/React&#x9AD8;&#x7EA7;&#x6307;&#x5357;&#xFF08;&#x4E09;&#xFF09;Refs&#x4E0E;DOM.html#&#x5C06;dom&#x7684;refs&#x66B4;&#x9732;&#x7ED9;&#x7236;&#x7EC4;&#x4EF6;">Refs&#x4E0E;DOM</a>&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;props&#x4F20;&#x9012;ref&#x56DE;&#x8C03;&#x3002;&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre class="language-"><code class="lang-javascript"><span class="token keyword">function</span> <span class="token function">Field</span><span class="token punctuation">(</span><span class="token punctuation">{</span> inputRef<span class="token punctuation">,</span> <span class="token operator">...</span>rest <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token operator">&lt;</span>input ref<span class="token operator">=</span><span class="token punctuation">{</span>inputRef<span class="token punctuation">}</span> <span class="token punctuation">{</span><span class="token operator">...</span>rest<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// Wrap Field in a higher-order component</span>
+<span class="token keyword">const</span> EnhancedField <span class="token operator">=</span> <span class="token function">enhance</span><span class="token punctuation">(</span>Field<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// Inside a class component&apos;s render method...</span>
+<span class="token operator">&lt;</span>EnhancedField
+  inputRef<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span>inputEl<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// This callback gets passed through as a regular prop</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>inputEl <span class="token operator">=</span> inputEl
+  <span class="token punctuation">}</span><span class="token punctuation">}</span>
+<span class="token operator">/</span><span class="token operator">&gt;</span>
+
+<span class="token comment" spellcheck="true">// Now you can call imperative methods</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>inputEl<span class="token punctuation">.</span><span class="token function">focus</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x8FD9;&#x5E76;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x5B8C;&#x7F8E;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x3002; &#x6211;&#x4EEC;&#x5E0C;&#x671B;ref&#x4ECD;&#x7136;&#x662F;React&#x672C;&#x8EAB;&#x9700;&#x8981;&#x5173;&#x6CE8;&#x7684;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x8981;&#x6C42;&#x60A8;&#x624B;&#x52A8;&#x5904;&#x7406;&#x5B83;&#x4EEC;&#x3002; &#x6211;&#x4EEC;&#x6B63;&#x5728;&#x63A2;&#x7D22;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x4EE5;&#x4FBF;&#x4F7F;&#x7528;HOC&#x65F6;&#x4E0D;&#x9700;&#x8981;&#x5173;&#x6CE8;&#x8FD9;&#x4E9B;&#x3002;</p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; chang20159.com 2017 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2017-06-22 22:33:21
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="React高级指南（十）Web Components.html" class="navigation navigation-prev " aria-label="Previous page: Web组件">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../part3/title.md" class="navigation navigation-next " aria-label="Next page: Last part without title">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"高阶组件","level":"3.11","depth":1,"next":{"title":"Last part without title","level":"4.1","depth":1,"path":"part3/title.md","ref":"part3/title.md","articles":[]},"previous":{"title":"Web组件","level":"3.10","depth":1,"path":"React高级指南/React高级指南（十）Web Components.md","ref":"React高级指南/React高级指南（十）Web Components.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","disqus@^0.1.0","prism@^2.1.0","prism-themes@^0.0.2","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","sitemap-general@^0.1.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2","todo@^0.1.3","anchors","livereload"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © chang20159.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"]},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/chang20159/react-doc"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"todo":{},"splitter":{},"sitemap-general":{"prefix":"http://gitbook.chang20159.com"},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"prism-themes":{},"github-buttons":{"repo":"chang20159/react-doc","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/chang20159/react-doc/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"search-plus":{}},"theme":"default","author":"Yanfang Chang","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"React中文文档","language":"zh-hans","output.name":"site","links":{"sidebar":{"前端Girl":"http://chang20159.com"}},"gitbook":"3.2.2","description":"React官方文档  看一遍不如翻译一遍"},"file":{"path":"React高级指南/React高级指南（十一）高阶组件.md","mtime":"2017-06-22T14:33:21.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-23T01:54:45.367Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-local-video/video.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
