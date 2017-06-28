@@ -1,137 +1,57 @@
-chrome 
-[测量资源加载时间](https://developers.google.com/web/tools/chrome-devtools/network-performance/resource-loading#view-network-timing-details-for-a-specific-resource)
+>[ReactDOM](https://facebook.github.io/react/docs/react-dom.html)
 
-[了解 Resource Timing](https://developers.google.com/web/tools/chrome-devtools/network-performance/understanding-resource-timing)
+# ReactDOM
+- 如果从&lt;script>标签加载React，则这些在ReactDOM上的顶级API可在全局中使用。 
+- 如果您使用ES6，可以写```import ReactDOM from 'react-dom'```
+- 如果你使用ES5，可以写```var ReactDOM = require（'react-dom'）```
 
+## 总览
+react-dom提供特定的DOM方法，可以在应用程序的顶层使用。如果需要，可以在React模型之外使用。 大多数组件不需要使用此模块。
 
----
-title: 实现复制或截图可直接粘贴图片
-tag:
--  JavaScript
-categories:
-- 工作
----
-在很多富文本编辑器或者编辑框中添加图片，都是通过点击按钮-选择图片-上传的形式，这需要使用者先保存好图片。在有些情况下，实现截图或复制图片后直接粘贴图片，让操作更简单。    
-例如，在textarea中粘贴图片，通过监听paste动作来获取粘贴板中的图片数据，并将图片上传到服务器上，获取图片的url后在指定的地方显示，一般是将图片插入textarea中光标所在的地方。
-<!-- more -->
- 
-## 实现
-实现过程只需要一个js文件
+- ```render()```
+- ```unmountComponentAtNode()```
+- ```findDOMNode()```
 
-```javascript
-    var input = document.getElementsByTagName("textarea")[0];
-    input.addEventListener('paste', pasteHandler);
-    
-    /*Handle paste event*/
-    function pasteHandler(e){    //e:  ClipboardEvent
-        //check if event.clipboardData is supported(chrome)
-        if(e.clipboardData){
-            var items = e.clipboardData.items;
-            if(items){
-                for(var i=0;i<items.length;i++){
-                    if(items[i].kind == 'file' || items[i].type.indexOf('image') > -1){
-                        //need to represent the image as a file
-                        var blob = items[i].getAsFile();
-    
-                        var reader = new FileReader();
-                        //need base64 to upload to server
-                        reader.readAsDataURL(blob);
-                        reader.onload = function(e) {   // ProgressEvent
-                            uploadFile(e.target.result);  //or reader.result
-                        }
-                    }
-                }
-            }
-        }
-    };
-    
-    
-    var uploadFile = function (src) {
-        var fileBase64 = src.split(",")[1];
-        var data = [{
-            base64: fileBase64
-        }];
-        $.ajax({
-            type: "POST",
-            url: "/feedback/attach/upload",
-            data: JSON.stringify({data:data}),
-            dataType: "json",
-            contentType: "application/json",
-            success: function(data){
-                if (200 == data.code && data.msg.attachments && data.msg.attachments.length) {
-                    var attachs = data.msg.attachments;
-    
-                    var liNode = document.createElement("li");
-                    var imageNode = document.createElement('img');
-                    imageNode.setAttribute('src',attachs[0].thumbUrl);
-                    $(liNode).attr("data-fileId", attachs[0].fileId);
-                    $(liNode).attr("data-url", attachs[0].url);
-    
-                    liNode.appendChild(imageNode);
-                    document.getElementById('images-paste').appendChild(liNode);
-    
-                }
-            },
-            error: function(err){
-                console.log(err);
-            }
-        });
-    };
+### 浏览器支持
+React支持所有流行的浏览器，包括Internet Explorer 9及更高版本。
+
+>注意，对于不支持ES5方法的旧版浏览器，React不支持。但如果应用程序包含es5-shim和es5-sham等polyfill，React也可以在旧版浏览器中正常工作。 
+
+## 参考
+### render()
+```javasript
+ReactDOM.render(
+  element,
+  container,
+  [callback]
+)
 ```
- 
+将React元素渲染到container的DOM中，并返回对组件的 [引用](../React高级指南/React高级指南（三）Refs与DOM.md)（或对于 [无状态组件](../React快速开始/React快速开始（四）组件和props.md) 返回null）。
 
-1.   document.getElementsByTagName("textarea")， getElementsByTagName拿出来的是一个数组，在当前页面只有一个textarea,通过document.getElementsByTagName("textarea")[0]获得，但是建议用document.getElementsById()方法。
+如果React元素先前已经渲染到container中，那么ReactDOM.render将对其进行更新，并且只做有必要的DOM更新，来呈现最新的React元素。
 
-2.   通过dom节点的addEventListener方法监听paste动作，并作出相应的js处理
+如果提供了可选的回调，它将在组件呈现或更新后执行。
 
-3.   e是一个event对象ClipboardEvent，通过 e.clipboardData 可获取剪贴板中的数据，并且可以通过 clipboard.items[i].type.indexOf('image')来判断数据是不是图片
+>ReactDOM.render()控制着你传入的container节点的内容。当第一次调用时，任何现有的DOM元素都将被替换。 后面调用ReactDOM.render()则使用React的DOM diffing算法进行有效更新。
+>
+>ReactDOM.render()不会修改container节点（仅修改container的子节点）。 可能会将组件插入到现有的DOM节点，而不会覆盖现有的子节点。
+>
+>当前ReactDOM.render()返回对ReactComponent实例的引用。 但是，应该避免使用此返回值，这种做法将被废弃，因为React的未来版本在某些情况下可能异步呈现组件。 如果您需要对根React组件实例的引用，首选解决方案是将 [引用回调](../React高级指南/React高级指南（三）Refs与DOM.md) 附加到根元素。
 
-4.   获取图片文件，通过getAsFile()方法获取图片的二进制数据
+### unmountComponentAtNode()
+```javasript
+ReactDOM.unmountComponentAtNode(container)
+```
+从DOM中删除已装载的React组件，并清理其事件处理程序和state。 如果容器中没有已安装组件，调用此函数不会做任何事情。 如果组件已卸载，则返回true，如果没有组件卸载，则返回false。
+### findDOMNode()
+```javasript
+ReactDOM.findDOMNode(component)
+```
 
-5.   读取文件，用FileReader来读取本地文件
+如果组件已经被安装到DOM中，则返回相应的浏览器原生的DOM元素。 此方法对于从DOM读取值非常有用，例如表单字段值和执行DOM测量。 **在大多数情况下，您可以附加一个ref到DOM节点，并避免使用findDOMNode。** 当render返回null或false时，findDOMNode返回null。
 
-      通过 reader.readAsDataURL(imageFile);将图片文件转化为dataURL,即  data:image/png;base64,xxx  形式的url,将它放在image元素的src中可以将本地文件显示出来。（前提是能够拿到本地文件）
-
-
- 6.  当读取操作成功时，调用 reader.onload，同时,result属性中将包含一个data: URL格式的字符串以表示所读取文件的内容.e对象为 ProgressEvent, this.result（this:reader）就是e.target.result,即图片的base64
-
- 
-7.  用base64将图片上传至服务器
-
-     在dataURL中获取base64编码  ，上传至服务器
-
-        var fileBase64 = src.split(",")[1]
-
-
-8.  从服务器返回图片url后，将图片放在id为images-paste的div中，若要放在光标处，需要另外写js处理
-
-
-## 兼容性问题
-在获取剪切板文件时，只有chrome浏览器可以支持,chrome 通过clipboardData对象获取剪切板中的文件
-
-chrome浏览器的clipboardData.items属性与getAsFile方法结合使用，可获得剪切板中的文件的二进制数据。
-
-浏览器对获取剪贴板文件的支持情况：
-
-|| Firefox 14.0.1          | Chrome 22.0          |Safari 6.0|IE 9.0|Opera 12.01
-| ------------- |:-------------:| :-----:|:-----:|:-----:|:-----:|
-| paste event      | Yes | Yes|Yes|Yes|No
-| paste event on non-editable element      | No | Yes|No|No|No
-| clipboardData | No | Yes|Yes|Yes|No
-| clipboardData.types   |No |Yes|   Yes|    No  |No
-|clipboardData.items    |No |Yes    |No |No |No
-|clipboardData.getData  |No |Yes    |Yes    |Yes|No
-|clipboardData.setData  |No |Yes    |Yes    |Yes|No
-|mime types |No |Yes    |Yes    |No |No
-|custom types   |No |Yes    |Yes    |Yes    |No
-|event.clipboardData    |No |Yes    |Yes    |No |No
-|window.clipboardData   |No |No |No |Yes    |No
- 
-
-## 参考文章
-
-1.  [Web API 接口](https://developer.mozilla.org/zh-CN/docs/Web/API )    
-
-2.  [Pasting image from clipboardData object](http://codebits.glennjones.net/copypaste/pasteimagedata.htm)      
-
-3.  [Clipboard API and events](https://w3c.github.io/clipboard-apis/ )        
+>findDOMNode是一个用于访问底层DOM节点的最后方案。 在大多数情况下，不鼓励使用此方法，因为它打破了组件抽象。
+>
+>findDOMNode仅适用于已安装的组件（即已放置在DOM中的组件）。 如果您尝试在尚未挂载的组件上调用此函数（例如在render()方法中尚未创建的组件上调用findDOMNode()），将抛出异常。
+>
+>findDOMNode不能用于函数组件。

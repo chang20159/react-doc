@@ -8,7 +8,7 @@
 
 * React高级指南
 
-* React参考
+* React参考文档
 
 * React官方博客
 
