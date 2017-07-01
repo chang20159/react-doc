@@ -41,6 +41,8 @@
 * [浅层渲染](React参考指南/React参考（八）浅层渲染.md)
 
 ## 官方博客
+* [为什么开发React？](React官方博客/React官方博客（一）为什么开发React？.md)
+* [React组件、元素和实例](React官方博客/React官方博客（二）React组件、元素和实例.md)
 
 ----
 
