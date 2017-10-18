@@ -31,11 +31,11 @@ class SomePlugin extends React.Component {
 }
 ```
 
-在根DOM元素上添加[ref](React高级指南/React高级指南（三）Refs与DOM.md)属性，获取DOM节点的引用。 在componentDidMount中，把它传递给jQuery插件。
+在根DOM元素上添加[ref](../React高级指南/React高级指南（三）Refs与DOM.md)属性，获取DOM节点的引用。 在componentDidMount中，把它传递给jQuery插件。
 
 为了防止React在安装后更新DOM，我们从render()方法返回一个空的&lt;div />。 &lt;div />元素没有属性或子元素，所以React不会更新它，这样jQuery插件可以自由地管理DOM的一部分。
 
-注意，我们同时定义了componentDidMount和componentWillUnmount [生命周期钩子](https://facebook.github.io/react/docs/react-component.html#the-component-lifecycle)。 许多jQuery插件会将事件侦听器添加到DOM，因此在componentWillUnmount中从DOM上去除监听器很重要。 如果插件没有提供清理方法，您可能需要提供自己的方法，记住删除任何注册事件侦听器，防止内存泄漏。
+注意，我们同时定义了componentDidMount和componentWillUnmount [生命周期钩子](../React参考指南/React参考（二）React.Component.md)。 许多jQuery插件会将事件侦听器添加到DOM，因此在componentWillUnmount中从DOM上去除监听器很重要。 如果插件没有提供清理方法，您可能需要提供自己的方法，记住删除任何注册事件侦听器，防止内存泄漏。
 
 
 ### 与jQuery选择插件集成
@@ -97,7 +97,7 @@ ReactDOM.render(
 );
 ```
 ## 与其他UI库集成
-因为 [ReactDOM.render()](https://facebook.github.io/react/docs/react-dom.html#render) 比较灵活，React可以嵌入到其他应用程序中。
+因为 [ReactDOM.render()](../React参考指南/React参考（三）ReactDOM.md#render) 比较灵活，React可以嵌入到其他应用程序中。
 
 虽然React在启动时通常是将单个根React组件加载到DOM中，但也可以为UI的独立模块（可以小到一个按钮，大到一个应用程序）调用ReactDOM.render()多次。
 ### 用React替换基于字符串的渲染
@@ -130,7 +130,7 @@ ReactDOM.render(
 );
 ```
 
-这里将更多的逻辑转移到组件中。例如，在组件中，最好不要依赖于ID，因为相同的组件会被渲染多次。 我们可以使用 [React事件系统](React快速开始/React快速开始（六）事件处理.html)，直接在React &lt;button>元素上注册点击处理程序：
+这里将更多的逻辑转移到组件中。例如，在组件中，最好不要依赖于ID，因为相同的组件会被渲染多次。 我们可以使用 [React事件系统](../React快速开始/React快速开始（六）事件处理.md)，直接在React &lt;button>元素上注册点击处理程序：
 
 [Try it on CodePen](https://codepen.io/gaearon/pen/RVKbvW?editors=1010)
 
@@ -157,7 +157,7 @@ ReactDOM.render(
 ### 在Backbone中嵌入React
 [Backbone](http://backbonejs.org/) views通常使用HTML字符串或字符串生成模板函数来为其DOM元素创建内容。 这个过程也可以通过渲染一个React组件来代替。
 
-下面我们来创建一个Backbone视图ParagraphView，它将覆盖Backbone的render()函数，将React &lt;Paragraph>组件呈现到由Backbone(this.el)提供的DOM元素中。 这里也是使用 [ReactDOM.render()](https://facebook.github.io/react/docs/react-dom.html#render)：
+下面我们来创建一个Backbone视图ParagraphView，它将覆盖Backbone的render()函数，将React &lt;Paragraph>组件呈现到由Backbone(this.el)提供的DOM元素中。 这里也是使用 [ReactDOM.render()](../React参考指南/React参考（三）ReactDOM.md#render)：
 
 [Try it on CodePen](https://codepen.io/gaearon/pen/gWgOYL?editors=0010)
 
@@ -189,7 +189,7 @@ const ParagraphView = Backbone.View.extend({
 ### 在React组件中使用Backbone Model
 在React组件使用Backbone模型和集合的最简单方法是监听各种更改事件并手动强制更新。
 
-负责渲染模型的组件监听“change”事件，而负责呈现集合的组件监听“add”和“remove”事件。 在这两种情况下，调用 [this.forceUpdate()](https://facebook.github.io/react/docs/react-component.html#forceupdate) 来重新渲染具有新数据的组件。
+负责渲染模型的组件监听“change”事件，而负责呈现集合的组件监听“add”和“remove”事件。 在这两种情况下，调用 [this.forceUpdate()](../React参考指南/React参考（二）React.Component.md#forceupdate) 来重新渲染具有新数据的组件。
 
 在下面的示例中，List组件呈现了一个Backbone集合。
 
