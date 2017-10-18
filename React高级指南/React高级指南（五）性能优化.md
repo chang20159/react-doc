@@ -11,12 +11,12 @@ React内部已经最大限度地减少更新UI时DOM操作次数，不需要做�
 
 如果在生产模式下访问React应用页面，图标背景是深色：
 
-![](https://facebook.github.io/react/img/docs/devtools-prod.png)
+![](../image/devtools-prod.png)
 
 如果是在开发模式下访问React应用页面，图标背景是红色（明明是橙色嘛）：
 
 
-![](https://facebook.github.io/react/img/docs/devtools-dev.png)
+![](../image/devtools-dev.png)
 
 建议在开发应用程序时使用开发模式，将应用程序部署到线上时的使用生产模式。
 
@@ -105,7 +105,7 @@ plugins: [
 
 ### webpack配置
 
-```
+```javascript
 if(env == 'production'){
   new webpack.DefinePlugin({
     'process.env': {
@@ -120,7 +120,7 @@ if(env == 'production'){
 在开发模式下，我们可以使用浏览器中的性能工具来显示组件是怎样装载、更新和卸载的。 
 例如：
 
-![](https://facebook.github.io/react/img/blog/react-perf-chrome-timeline.png)
+![](../image/react-perf-chrome-timeline.png)
 
 你需要在Chrome中执行下面的操作：
 
@@ -135,7 +135,7 @@ if(env == 'production'){
 目前，支持此功能的浏览器只有Chrome，Edge和IE，但是我们使用标准的 [User Timing API](https://developer.mozilla.org/en-US/docs/Web/API/User_Timing_API) ，所以我们希望有更多的浏览器可以支持。
 
 ## 避免不必要的DOM更新
-React构建并维护已渲染UI的内部表示信息（JavaScript对象），包括从组件返回的React元素。 这种UI表示信息能够让React避免在不必要的情况下创建DOM节点并访问已有的节点，因为操作DOM比操作JavaScript对象更慢.有时这个React内部表示信息被称为**“虚拟DOM”**，但它与在React Native上的工作方式相同。
+React构建并维护已渲染UI的内部表示信息（JavaScript对象），包括从组件返回的React元素。 这种UI表示信息能够让React避免在不必要的情况下创建DOM节点并访问已有的节点，因为操作DOM比操作JavaScript对象更慢.有时这个React内部表示信息被称为**虚拟DOM**，但它与在React Native上的工作方式相同。
 
 当组件的props或state更改时，React通过将新返回的元素与先前渲染的元素进行比较来决定是否需要更新真实DOM。 当它们不相等时，React将更新真实DOM元素。
 
@@ -156,7 +156,7 @@ shouldComponentUpdate(nextProps, nextState) {
 - 绿色vDOMEq表示虚拟DOM相等，红色vDOMEq表示虚拟DOM不相等
 - 圆圈表示组件是否需要更新真实DOM，绿色表示不需要，红色表示需要。
 
-![](https://facebook.github.io/react/img/docs/should-component-update.png)
+![](../image/should-component-update.png)
 
 由于在以C2为根节点的子树上shouldComponentUpdate返回了false，所以React没有去渲染C2，也没有在C4和C5上调用shouldComponentUpdate。
 
