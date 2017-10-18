@@ -9,11 +9,11 @@ React实现了与浏览器独立的DOM系统，以实现性能和跨浏览器兼
 ## React与HTML的DOM属性差异
 有一些属性在React与在HTML中有些不同：
 ### checked
-**checked**属性在checkbox或radio类型的&lt;input>组件中使用，可以使用它来设置是否选中组件，这对于构建受控组件很有用。 **defaultChecked**属性不具有控制性，用语在组件首次挂载时设置是否选中。
+**checked**属性在checkbox或radio类型的&lt;input>组件中使用，可以使用它来设置是否选中组件，这对于构建受控组件很有用。 **defaultChecked**属性不具有控制性，用于在组件首次挂载时设置是否选中。
 ### className
 在React中要指定一个CSS类，请使用**className**属性。 这适用于所有常规的DOM和SVG元素，如&lt;div>，&lt;a>和其他。
 
-如果在React中使用 [Web Components](../React高级指南/React高级指南（十）Web Components.md)（这不常见），请改用class属性。
+如果在React中使用 [Web Components](../React高级指南/React高级指南（十）Web Components.md)，请改用class属性。
 ### dangerouslySetInnerHTML
 **dangerlySetInnerHTML**是相当于在浏览器DOM中使用innerHTML。 一般来说，在代码中设置HTML是有风险的，因为很容易无意中将用户暴露在跨站点脚本（XSS）攻击中。您可以直接设置HTML，但是必须给dangerouslySetInnerHTML传递一个带有__html键的对象，以提醒自己这是危险的。 例如：
 
@@ -31,7 +31,7 @@ function MyComponent() {
 由于for是JavaScript中的保留字，React元素使用**htmlFor**代替。
 ### onChange
 每当更改表单字段时，将触发onChange事件。 我们特意不使用现有的浏览器行为，因为onChange不能正确处理浏览器行为，而React依赖此事件来实时处理用户输入。
-### selected#
+### selected
 **selected**属性由&lt;option>组件支持，可以使用它来设置是否选择组件。 这对于构建受控组件很有用。
 ### style
 **style属性接收一个JavaScript对象**，它的属性必须是驼峰式命名而不是CSS字符串。 这与DOM风格的JavaScript属性一致，效率更高，并且可以防止XSS安全漏洞。 例如：

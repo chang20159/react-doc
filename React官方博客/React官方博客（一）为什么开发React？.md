@@ -13,8 +13,9 @@ React是一个用于构建可组合用户界面的库，React鼓励创建可重�
 - 通过将标记与其相应的视图逻辑统一，React可以**使视图更容易扩展和维护**。
 - 通过将对标记和内容的理解融入JavaScript之中，**没有手动拼接的字符串**，因此很少有引发XSS漏洞的地方。
 
-我们还创建了[JSX]()，一种可选的语法扩展，相对于原生JavaScript，您可能更喜欢HTML的可读性。
-## 草鸡简单的响应式更新
+我们还创建了[JSX](../React快速开始/React快速开始（二）使用JSX.md)，一种可选的语法扩展，相对于原生JavaScript，您可能更喜欢HTML的可读性。
+
+## 超级简单的响应式更新
 如果您的数据是动态变化的，React会让你爱不释手。
 
 在传统的JavaScript应用程序中，您需要查看哪些数据已更改，并强制更改DOM以保持最新。 即使AngularJS通过指令和数据绑定提供声明性接口，也需要一个 [链接函数](https://code.angularjs.org/1.0.8/docs/guide/directive#reasonsbehindthecompilelinkseparation) 来手动更新DOM节点。

@@ -54,7 +54,7 @@ React.PureComponent与 [React.Component](#React.Component)完全相同，但实�
 
 如果您的React组件的render()方法在相同的prop和state下呈现相同的结果，则可以在某些情况下使用React.PureComponent提升性能。
 
->注意：React.PureComponent的shouldComponentUpdate()只是对对象进行浅比较，如果包含复杂的数据结构，对于深层次的数据变化会判定为无变化。 只有当prop和state比较简单时才能extend PureComponent，或者在知道深层数据结构已更改时使用 [forceUpdate()](https://facebook.github.io/react/docs/react-component.html#forceupdate)。 或者使用[不可变对象](https://facebook.github.io/immutable-js/)对嵌套数据进行快速比较。
+>注意：React.PureComponent的shouldComponentUpdate()只是对对象进行浅比较，如果包含复杂的数据结构，对于深层次的数据变化会判定为无变化。 只有当prop和state比较简单时才能extend PureComponent，或者在知道深层数据结构已更改时使用 [forceUpdate()](../React参考指南/React参考（二）React.Component.md#forceupdate)。 或者使用[不可变对象](https://facebook.github.io/immutable-js/)对嵌套数据进行快速比较。
 
 >此外，React.PureComponent的shouldComponentUpdate() 将跳过整个组件子树的prop更新。 
 

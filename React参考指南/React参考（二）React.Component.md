@@ -131,7 +131,7 @@ shouldComponentUpdate(nextProps, nextState)
 
 在接收新的props或state时，在render之前调用shouldComponentUpdate()，默认情况下返回true,表示需要执行render()方法。
 
-**在初次渲染或则使用forceUpdate()时不执行此方法。**
+**在初次渲染或者使用forceUpdate()时不执行此方法。**
 
 **返回false时不会阻止子组件在state更改时重新渲染。**
 
@@ -173,7 +173,7 @@ setState(updater, [callback])
 ```
 setState()将对组件状态的更改进行排队，并告诉React，该组件及其子组件需要更新状态重新渲染。 这是用于更新用户界面以响应事件处理程序和服务器响应的主要方法。
 
-可以将setState()认为是更新组件的一个请求而不是立即执行的命令。 为了更好的渲染性能，React可能会延迟执行，然后一次更新多个组件。 React不能保证state的更改会立即提现在UI上。
+可以将setState()认为是更新组件的一个请求而不是立即执行的命令。 为了更好的渲染性能，React可能会延迟执行，然后一次更新多个组件。 React不能保证state的更改会立即体现在UI上。
 
 setState()并不总是立即更新组件,它可能会批量或延迟更新。 如果在调用setState()之后立即读取this.state会出现问题。我们可以使用componentDidUpdate或setState回调（setState(updater，callback)），他们会在更新完成之后触发执行。 如果需要根据先前的state设置state，请看下面updater参数的介绍。
 
@@ -269,7 +269,7 @@ render() {
 ### displayName
 displayName字符串用于调试。 JSX会自动设置此值; 见[深入JSX](../React高级指南/React高级指南（一）深入理解JSX.md)。 
 
-(这篇并没有提到displayName啊，高阶组件里有提到，另外[Context](https://facebook.github.io/react/docs/context.html)中提到的contextTypes和childContextTypes算类属性么？)
+(这篇并没有提到displayName啊，高阶组件里有提到，另外[Context](https://facebook.github.io/react/docs/context.html)中提到的contextTypes和childContextTypes也是类属性吧？这里怎么没有。。)
 
 ## 实例属性
 
