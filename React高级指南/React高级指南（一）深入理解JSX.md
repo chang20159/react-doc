@@ -187,7 +187,7 @@ function NumberDescriber(props) {
 }
 ```
 
-可以在前面的章节中，了解 [条件渲染]() 和 [循环]() 的更多信息
+可以在前面的章节中，了解 [条件渲染](../React快速开始/React快速开始（七）条件渲染.md) 的更多信息
 ### 字符串
 也可以给props传一个字符串，下面两种方式是等同的
 
@@ -278,7 +278,7 @@ React.createElement(
 );
 ```
 
-JSX会在行的开始和结尾处移除空格，也会删除空行， 删除与标签相邻的新行; **在字符串文字中间的换行会被压缩成一个空格。**下面这些渲染结果都已一样的：
+JSX会在行的开始和结尾处移除空格，也会删除空行， 删除与标签相邻的新行; **在字符串文字中间的换行会被压缩成一个空格**。下面这些渲染结果都一样的：
 
 ```html
 <div>Hello World</div>
@@ -368,7 +368,7 @@ JavaScript表达式可以与其他类型的Children混合使用。
 
 ```javascript
 function Hello(props) {
-  return <div>Hello {props.addressee}!</div>;
+  return <div>Hello {props.address}!</div>;
 }
 ```
 
@@ -412,9 +412,9 @@ function ListOfTenThings() {
 	items.push(<div key={i}>This is item {i} in the list</div>);
 	}
    return (
-	    <Repeat >
-	    	{ items}
-	    </Repeat>
+    <Repeat >
+    	{ items}
+    </Repeat>
   );
 }
 
@@ -437,7 +437,7 @@ false，null，undefined和true是有效的children，但它们不会渲染。
 <div>{true}</div>
 ```
 
-这对于React元素的条件渲染很有用，下面的例子，如果showHeader为true，仅呈现<Header />：
+这对于React元素的条件渲染很有用，下面的例子，如果showHeader为true，仅呈现&lt;Header /&gt;:
 
 ```html
 <div>
@@ -446,7 +446,7 @@ false，null，undefined和true是有效的children，但它们不会渲染。
 </div>
 ```
 
-要注意的是： 有一些假值，比如数字0，仍然会被React渲染。
+**要注意的是**： 有一些假值，比如数字0，仍然会被React渲染。
 
 例如，下面的代码将不会按您预期的那样运行，当props.messages为空数组时会渲染出 ‘0’：
 

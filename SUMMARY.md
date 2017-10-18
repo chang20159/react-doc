@@ -16,7 +16,6 @@
 * [组合vs继承](React快速开始/React快速开始（十一）组合vs继承.md)
 
 ## 高级指南
-
 * [深入JSX](React高级指南/React高级指南（一）深入理解JSX.md)
 * [使用PropTypes进行类型检测](React高级指南/React高级指南（二）使用PropTypes进行类型检测.md)
 * [Refs与DOM](React高级指南/React高级指南（三）Refs与DOM.md)
@@ -44,6 +43,5 @@
 * [为什么开发React？](React官方博客/React官方博客（一）为什么开发React？.md)
 * [React组件、元素和实例](React官方博客/React官方博客（二）React组件、元素和实例.md)
 
-----
+-----
 
-* [Last part without title](part3/title.md)

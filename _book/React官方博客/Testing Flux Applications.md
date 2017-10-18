@@ -1,1 +1,0 @@
->[Testing Flux Applications](https://facebook.github.io/react/blog/2014/09/24/testing-flux-applications.html)

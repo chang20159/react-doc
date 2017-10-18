@@ -20,13 +20,13 @@ Refs有一些比较适合的使用场景：
 ## 不要过度使用Refs
 你可能更倾向于使用Refs来控制事情的发生，如果是这样的话，建议多花一点时间研究一下state应该在组件树中的那个位置。
 
-可以在 [State提升](快速开始/state提升.md) 这篇看下示例
+可以在 [State提升](../快速开始/React快速开始（十）state提升.md) 这篇看下示例
 
 ## 给DOM元素添加Ref
 React提供一个可以访问任何组件的特殊属性ref，ref属性接受一个回调函数，并且在组件被装载或卸载之后立即执行回调。
 
-**当在HTML元素上使用ref属性时，ref回调函数接收底层的DOM元素作为参数。 **
-例如，下面的代码使用引用回调来存储对DOM节点的引用：
+**当在HTML元素上使用ref属性时，ref回调函数接收底层的DOM元素作为参数**
+。例如，下面的代码使用引用回调来存储对DOM节点的引用：
 
 ```javascript
 class CustomTextInput extends React.Component {
@@ -116,7 +116,7 @@ class Parent extends React.Component {
 
 >可以在回调中把input打印出来看一下，输出是null。
 
-如果确实需要ref属性，可以把函数组件转换成类组件，就像在需要生命周期方法或状态时转换步骤一样。[Converting a Function to a Class](https://facebook.github.io/react/docs/state-and-lifecycle.html#converting-a-function-to-a-class)
+如果确实需要ref属性，可以把函数组件转换成类组件，就像在需要生命周期方法或状态时转换步骤一样。[Converting a Function to a Class](../React快速开始/React快速开始（五）State和生命周期.md)
 
 不过我们可以在功能组件内部使用ref，只要是在DOM元素或者类组件上就行:
 
