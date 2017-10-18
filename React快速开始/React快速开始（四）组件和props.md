@@ -7,6 +7,7 @@
 
 ## 函数组件和类组件（Functional and Class ）
 定义组件最简单的方法是：编写一个JavaScript函数：
+
 ```javascript
 function Welcome(props) {
   return <h1>Hello, {props.name}</h1>;
@@ -16,6 +17,7 @@ function Welcome(props) {
 这个函数是一个有效的React组件，因为它接受一个单一的“props”对象参数并返回一个React元素。 我们将这样的组件称为“functional组件”，因为它们在字面上是一个JavaScript函数。
 
 还可以使用[ES6类](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Classes)来定义组件：
+
 ```javascript
 class Welcome extends React.Component {
   render() {
@@ -27,17 +29,20 @@ class Welcome extends React.Component {
 
 ## 渲染组件
 之前我们遇到的元素，都是DOM标签：
+
 ```javascript
 const element = <div />;
 ```
 
 我们也可以自定义元素，代表一个组件
+
 ```javascript
 const element = <Welcome name="Sara" />;
 ```
 当React知道这是一个表示用户定义的元素时，它将JSX属性作为单个对象传递给该组件。 我们称这个对象为“props”。例如：
 
 [Try it on CodePen](https://codepen.io/gaearon/pen/YGYmEG?editors=0010)
+
 ```javascript
 function Welcome(props) {
   return <h1>Hello, {props.name}</h1>;
@@ -59,6 +64,7 @@ ReactDOM.render(
 **注意：组件名称要以大写字母开头，例如，&lt;div /&gt;表示一个DOM标签，但&lt;Welcome /&gt;表示一个组件，并且要求Welcome在作用范围内（在本模块中或从其他模块引入）。**
 
 我们可以创建一个组件，然后呈现多个
+
 ```javascript
 function Welcome(props) {
   return <h1>Hello, {props.name}</h1>;
@@ -91,6 +97,7 @@ function sum(a, b) {
 }
 ```
 相比之下，这个函数是不纯的，因为它改变了自己的输入：
+
 ```javascript
 function withdraw(account, amount) {
   account.total -= amount;
@@ -98,6 +105,7 @@ function withdraw(account, amount) {
 ```
 
 再看下组件声明：
+
 ```javascript
 function Welcome(props) {
   return <h1>Hello, {props.name}</h1>;

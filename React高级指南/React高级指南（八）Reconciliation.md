@@ -83,7 +83,7 @@ React提供了一个声明式的API，因此您不必担心每次更新发生了
 
 ```
 
-React会匹配第一个li &lt;li>first&lt;/li> 和第二个li &lt;li>first&lt;/li>，然后插入第三个li。
+React会匹配第一个li &lt;li>first&lt;/li> 和第二个li &lt;li>second&lt;/li>，然后插入第三个li。
 
 但是如果在列表最前面插入一项，性能就会变差。例如：
 
@@ -133,4 +133,5 @@ React的这种diff算法基于两个假设，如果这个假设不能满足，�
 - key应该是稳定的、可预测的、唯一的。不稳定的键（如Math.random()生成的）将导致许多组件实例和DOM节点被不必要地重新创建，这会导致子组件的性能下降和状态丢失。
 
 ## 总结
-这篇主要是讲react更新的细节：diff算法。 这篇翻译的不太好，不能完全概括diff算法。可以参考这篇[深入浅出React（四）：虚拟DOM Diff算法解析](http://www.infoq.com/cn/articles/react-dom-diff?from=timeline)，讲的很详细。
+这篇主要是讲react更新的细节：diff算法。 这篇翻译的不太好，不能完全概括diff算法。
+可以参考这篇[深入浅出React（四）：虚拟DOM Diff算法解析](http://www.infoq.com/cn/articles/react-dom-diff?from=timeline)，讲的很详细。

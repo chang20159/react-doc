@@ -165,7 +165,7 @@ class SayHello extends React.Component {
 
 有时完全不同的组件可能会共享一些常见的功能。 这种情况有时被称为[ cross-cutting concerns](https://en.wikipedia.org/wiki/Cross-cutting_concern)，为此可以让您可以通过createReactClass使用老的mixins系统来实现。
 
-一个常见的例子是希望每个一段时间更新一次组件，你会很容易想到setInterval()，但有一点很重要：当你不需要时要去取消这个定时功能，以节省内存。
+一个常见的例子是希望每隔一段时间更新一次组件，你会很容易想到setInterval()，但有一点很重要：当你不需要时要去取消这个定时功能，以节省内存。
 
 React提供了生命周期方法，让您知道何时创建或销毁组件。我们可以创建一个简单的mixin:用这些方法来提供一个简单的setInterval() 函数，当组件销毁时，这个函数会自动清除。
 

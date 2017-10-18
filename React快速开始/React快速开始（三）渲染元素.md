@@ -5,7 +5,7 @@
 
 元素是React应用最小构建块，每一个元素都描述了呈现在屏幕上的内容。不同于真实的DOM元素，React元素就是一个普通的对象，创建成本很低，React DOM负责更新真实DOM与React元素匹配。
 
-关于组件、元素和实例可以看这个 [React Components, Elements, and Instances](https://facebook.github.io/react/blog/2015/12/18/react-components-elements-and-instances.html)
+关于组件、元素和实例可以看这个 [React组件、元素和实例](../React官方博客/React官方博客（二）React组件、元素和实例)
 
 ## 将元素渲染到DOM中
 假设你的HTML文件中有一个&lt;div&gt;,这个节点里面的内容都由 React DOM来管理。

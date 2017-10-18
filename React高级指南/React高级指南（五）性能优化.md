@@ -221,7 +221,7 @@ class CounterButton extends React.PureComponent {
 }
 ```
 
-多数情况下，您可以使用React.PureComponent而不需要自己编写通过浅比较不能检测props或state是否发生变化，就不能使用这种方式。
+多数情况下，您可以使用React.PureComponent而不需要自己编写。但是这只是做一个浅比较，如果浅比较无法检测props或state是否发生变化，就不能使用这种方式。（比如state的某个属性引用没有变，但这个引用指向的数据变化了，浅比较是比较不出来的。）
 
 对于复杂的数据结构来说这是一个问题，例如，你想要一个ListOfWords组件来呈现一个逗号分隔的单词列表，其中包含一个父组件WordAdder，我们可以单击一个按钮将单词添加到列表中。 
 

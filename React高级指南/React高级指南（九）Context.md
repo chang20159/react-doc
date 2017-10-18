@@ -6,9 +6,9 @@
 有时候希望通过组件树传递数据，但又不想在每个级别都编写代码传递props。 我们可以使用强大的“context”API直接在React中执行此操作。
 
 ## 为什么不使用Context
-绝大多数应用程序不需要使用Context,如果您希望应用程序稳定，请不要使用上下文。 **这是一个实验性API，将来的React版本不一定支持**。
+绝大多数应用程序不需要使用Context,如果您希望应用程序稳定，请不要使用上下文Context。 **这是一个实验性API，将来的React版本不一定支持**。
 
-如果您不熟悉[Redux](https://github.com/reactjs/redux)或[MobX](https://github.com/mobxjs/mobx)等状态管理库，请不要使用上下文。 对于许多实际应用，这些库及其与React的绑定库（如react-redux）是管理与许多组件相关联的状态的不错选择。 更可您的正确解决方案更可能是Redux，而不是Context。
+如果您不熟悉[Redux](https://github.com/reactjs/redux)或[MobX](https://github.com/mobxjs/mobx)等状态管理库，请不要使用上下文。 对于许多实际应用，这些库及其与React的绑定库（如react-redux）是管理与许多组件相关联的状态的不错选择。 您的正确解决方案更可能是Redux，而不是Context。
 
 如果您不是有经验的React开发人员，请不要使用Context。 通常使用props和state是实现功能的更好的方法。
 
@@ -48,7 +48,7 @@ class MessageList extends React.Component {
   }
 }
 ```
-在上面这个例子中，在MessageList中设置color,然后手动将color通过props向下传递至Button，穿了了组件树 MessageList > Message > Button。
+在上面这个例子中，在MessageList中设置color,然后手动将color通过props向下传递至Button，穿过了组件树 MessageList > Message > Button。
 
 使用Context，可以自动在组件树中传递：
 
@@ -128,13 +128,13 @@ const BasicExample = () => (
 可以研究一下react-router的实现原理。
 
 ## 在生命周期方法中使用Context
-如果给组件定义了contextTypes，则以下 [生命周期方法](https://facebook.github.io/react/docs/react-component.html#componentwillreceiveprops) 将接收一个附加参数，即context对象：
+如果给组件定义了contextTypes，则以下 [生命周期方法](../React参考指南/React参考（二）React.Component.md) 将接收一个附加参数，即context对象：
 
-- constructor(props, context)
-- componentWillReceiveProps(nextProps, nextContext)
-- shouldComponentUpdate(nextProps, nextState, nextContext)
-- componentWillUpdate(nextProps, nextState, nextContext)
-- componentDidUpdate(prevProps, prevState, prevContext)
+- `constructor(props, context)`
+- `componentWillReceiveProps(nextProps, nextContext)`
+- `shouldComponentUpdate(nextProps, nextState, nextContext)`
+- `componentWillUpdate(nextProps, nextState, nextContext)`
+- `componentDidUpdate(prevProps, prevState, prevContext)`
 
 ## 在无状态函数组件中使用Context
 如果给函数组件也定义了contextTypes属性，那在无状态函数组件中也可以使用Context。
