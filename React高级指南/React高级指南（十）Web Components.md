@@ -35,7 +35,7 @@ function BrickFlipbox() {
 
 ## 在你的Web Components中使用React
 
-```
+```javascript
 const proto = Object.create(HTMLElement.prototype, {
   attachedCallback: {
     value: function() {

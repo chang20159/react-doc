@@ -14,7 +14,7 @@ const EnhancedComponent = higherOrderComponent(WrappedComponent);
 
 ## 使用HOC解决不同组件有相似功能的问题
 
->[不使用ES6的React](../React高级指南/React高级指南（六）不使用ES6的React.html#mixins) 这篇有提到这个：有时完全不同的组件可能会共享一些常见的功能。 这种情况有时被称为 [cross-cutting concerns](https://en.wikipedia.org/wiki/Cross-cutting_concern)
+>[不使用ES6的React](../React高级指南/React高级指南（六）不使用ES6的React.md#mixins) 这篇有提到这个：有时完全不同的组件可能会共享一些常见的功能。 这种情况有时被称为 [cross-cutting concerns](https://en.wikipedia.org/wiki/Cross-cutting_concern)
 
 之前我们建议用mixins解决Cross-Cutting问题，但我们意识到mixins会带来很多问题，可以阅读更多关于为什么我们要弃用mixins，以及如何将你现有的使用到mixins的组件剥离mixins。 戳 [Mixins Considered Harmful](https://facebook.github.io/react/blog/2016/07/13/mixins-considered-harmful.html)。
 
@@ -169,7 +169,7 @@ function withSubscription(WrappedComponent, selectData) {
 
 
 ## 不要改变原始组件，请使用组合
-不要再HOC内修改组件的原型
+不要在HOC内修改组件的原型
 
 ```javascript
 function logProps(InputComponent) {
@@ -383,7 +383,7 @@ import MyComponent, { someFunction } from './MyComponent.js';
 ### 不能传递Refs
 高阶组件一般会将所有的props传递给被包装的组件，但是不可能传递ref。 ref和key一样，并不是真正的prop,是由React特别处理的。 如果想要给一个元素添加ref，该元素的组件是HOC返回的组件，则ref引用的是最外层的容器组件的实例，而不是被包装组件的实例。
 
-如果你遇到了这个问题，应该想想怎么避免使用ref，如前面介绍过的 [Refs与DOM](./React高级指南（三）Refs与DOM.html#将dom的refs暴露给父组件)，可以使用props传递ref回调。例如：
+如果你遇到了这个问题，应该想想怎么避免使用ref，如前面介绍过的 [Refs与DOM](./React高级指南（三）Refs与DOM.md#将dom的refs暴露给父组件)，可以使用props传递ref回调。例如：
 
 ```javascript
 function Field({ inputRef, ...rest }) {
