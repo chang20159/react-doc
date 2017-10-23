@@ -100,65 +100,70 @@ title: 'title',
 下面是具体细节：
 
 - 给未知属性传递string, number,和 object类型值
-
-	```xml
-<div mycustomattribute="value" />
-<div mycustomattribute={42} />
-<div mycustomattribute={myObject} />
-	```
-	
 	- React 15: 警告并忽略
 	- React 16：将数据转换成string,并传递给DOM
 	- 注意：以on开头的属性不会传递，因为可能会成为潜在的安全漏洞。
 
-- 已知属性用不规范的react名称
 
-	```
-<div tabindex="-1" />
-<div class="hi" />
-	```
+```xml
+<div mycustomattribute="value" />
+<div mycustomattribute={42} />
+<div mycustomattribute={myObject} />
+```
+	
+- 已知属性用不规范的react名称
 	- React 15: 警告并忽略
 	- React 16: 发出警告，但将数据转换成string,并传递给DOM
 	- 注意：对于所有支持的属性要用规范的命名方式
 
-- 给非布尔属性传递布尔值
+```
+<div tabindex="-1" />
+<div class="hi" />
+```
 
-	```
-<div className={false} />
-	```
+
+- 给非布尔属性传递布尔值
 	- React 15: 将布尔值转换成string,并传递给DOM
 	- React 16: 警告并忽略
 
-- 给非事件属性传递函数
+```
+<div className={false} />
+```
 
-  ```
-<div className={function() {}} />
-  ```
+
+- 给非事件属性传递函数
   - React 15: 将函数转换成string,并传递给DOM
   - React 16: 警告并忽略
 
- - 给属性传递Symbol类型值
+```
+<div className={function() {}} />
+```
 
- 	```
-<div className={Symbol('foo')} />
- 	```
- 	- React 15: 崩溃
+
+ - 给属性传递Symbol类型值
+	- React 15: 崩溃
 	- React 16: 警告并忽略
 
-- 给属性传递NaN
+```
+<div className={Symbol('foo')} />
+```
+ 	
 
-	```
-<div tabIndex={0 / 0} />
-	```
-	
+- 给属性传递NaN
 	- React 15: 将NaNs转换成string,并传递给DOM
 	- React 16: 将NaNs转换成string,并传递给DOMwith a warning
+
+```
+<div tabIndex={0 / 0} />
+```
+	
+
 
 在测试此版本时，我们还为所有已知属性创建了一个[自动生成的表](https://github.com/facebook/react/blob/master/fixtures/attribute-behavior/AttributeTableSnapshot.md)来查看结果。
 
 ## 试一试
 
-可以在这里试一下这些改变 [this CodePen](https://codepen.io/gaearon/pen/gxNVdP?editors=0010)
+可以在这里试一下这些改变 [CodePen](https://codepen.io/gaearon/pen/gxNVdP?editors=0010)
 
 ## 最后
 
