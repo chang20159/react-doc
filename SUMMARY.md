@@ -42,6 +42,7 @@
 ## 官方博客
 * [为什么开发React？](React官方博客/React官方博客（一）为什么开发React？.md)
 * [React组件、元素和实例](React官方博客/React官方博客（二）React组件、元素和实例.md)
+* [React16中的DOM属性](React官方博客/React官方博客（三）React16中的DOM属性.md)
 
 -----
 
