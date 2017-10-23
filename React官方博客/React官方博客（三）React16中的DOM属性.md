@@ -116,7 +116,7 @@ title: 'title',
 	- React 16: 发出警告，但将数据转换成string,并传递给DOM
 	- 注意：对于所有支持的属性要用规范的命名方式
 
-```
+```xml
 <div tabindex="-1" />
 <div class="hi" />
 ```
@@ -126,7 +126,7 @@ title: 'title',
 	- React 15: 将布尔值转换成string,并传递给DOM
 	- React 16: 警告并忽略
 
-```
+```xml
 <div className={false} />
 ```
 
@@ -135,7 +135,7 @@ title: 'title',
   - React 15: 将函数转换成string,并传递给DOM
   - React 16: 警告并忽略
 
-```
+```xml
 <div className={function() {}} />
 ```
 
@@ -144,7 +144,7 @@ title: 'title',
 	- React 15: 崩溃
 	- React 16: 警告并忽略
 
-```
+```xml
 <div className={Symbol('foo')} />
 ```
  	
@@ -153,7 +153,7 @@ title: 'title',
 	- React 15: 将NaNs转换成string,并传递给DOM
 	- React 16: 将NaNs转换成string,并传递给DOMwith a warning
 
-```
+```xml
 <div tabIndex={0 / 0} />
 ```
 	
