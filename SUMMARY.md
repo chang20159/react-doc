@@ -28,6 +28,7 @@
 * [Web组件](React高级指南/React高级指南（十）Web Components.md)
 * [高阶组件](React高级指南/React高级指南（十一）高阶组件.md)
 * [React与其他库整合](React高级指南/React高级指南（十二）React与其他库整合.md)
+* [Portals](React高级指南/React高级指南（十三）Portals.md)
 
 ## 参考文档
 * [React顶级API](React参考指南/React参考（一）React顶级API.md)
