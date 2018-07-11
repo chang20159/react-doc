@@ -175,7 +175,7 @@ class Parent extends React.Component {
 
 这样 在父组件中就能访问到子组件内部的组件或DOM节点了，这个子组件（比如这里的CustomTextInput）可以声明为类，也可以声明为函数。
 
-注意，这里prop属性取名为inputRef并没有特树含义，就是一个普通的prop，只是用Ref结尾语义会更好一些。
+注意，这里prop属性取名为inputRef并没有特殊含义，就是一个普通的prop，只是用Ref结尾语义会更好一些。
 
 >其实这告诉了我们一个访问函数组件的方法，上面的例子，我们可以把ref={props.inputRef}挪到CustomTextInput最顶层的节点div上。
 
